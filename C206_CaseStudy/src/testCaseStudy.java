@@ -25,7 +25,7 @@ public class testCaseStudy {
 		 * 
 		 * Patient p1 = patientList.get(1); 
 		 * p1.display();
-		 * patientList.get(1).display(); 
+		 * patientList.get(1).display();
 		 * 
 		 */
 
