@@ -65,20 +65,21 @@ public class C206_CaseStudy {
 						String password = Helper.readString("Enter password > ");
 						
 						if(validatePassword(password, userList) == true) {
-							
+							login = true; 
 						}
 						else {
-							System.out.println("Invalid password");
+							System.out.println("\nInvalid password");
 						}
 						
 					}
 					else {
-						System.out.println("Invalid user ID");
+						System.out.println("\nInvalid user ID");
 					}
 				}
 			}
 
 		}
+		System.out.println("\nExit program");
 		
 	}
 	
@@ -91,6 +92,7 @@ public class C206_CaseStudy {
 		
 		System.out.println("1. Login");
 		System.out.println("-9. Exit program");
+		System.out.println();
 	}
 	
 	// Shou Kang code
@@ -107,6 +109,7 @@ public class C206_CaseStudy {
 		System.out.println("5. Change user role");
 		System.out.println("-8. Logout");
 		System.out.println("-9. Exit program");
+		System.out.println();
 	}
 	
 	// Shou Kang code
@@ -124,6 +127,7 @@ public class C206_CaseStudy {
 		System.out.println("6. Mark attendance");
 		System.out.println("-8. Logout");
 		System.out.println("-9. Exit program");
+		System.out.println();
 	}
 	
 	// Shou Kang code
@@ -139,6 +143,7 @@ public class C206_CaseStudy {
 		System.out.println("4. View attendance record");
 		System.out.println("-8. Logout");
 		System.out.println("-9. Exit program");
+		System.out.println();
 	}
 	
 	//Shou Kang code
@@ -166,7 +171,7 @@ public class C206_CaseStudy {
 		
 		
 		for(int i = 0; i < userList.size(); i++) {
-			String userPasswordList = userList.get(i).getID();
+			String userPasswordList = userList.get(i).getPassword();
 			
 			if(passwordInput.equals(userPasswordList)) {
 				found = true; 
@@ -176,5 +181,6 @@ public class C206_CaseStudy {
 		
 		return found; 
 	}
+	
 
 }
