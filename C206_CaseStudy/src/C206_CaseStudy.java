@@ -45,6 +45,15 @@ public class C206_CaseStudy {
 		 * 5.attendanceList
 		 * 
 		 */
+		
+		/*-------------------------------------*/
+		
+		//initialize all class objects here:
+		
+		
+		
+		
+		
 		boolean login = false; 
 		int options = 123;
 		ArrayList<Users> userList = new ArrayList<Users>(); 
