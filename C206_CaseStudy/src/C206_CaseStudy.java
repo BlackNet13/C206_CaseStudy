@@ -51,13 +51,14 @@ public class C206_CaseStudy {
 		//initialize all class objects here:
 		
 		
+		//initialize the userList, done by Shou Kang
+		ArrayList<Users> userList = new ArrayList<Users>(); 
+		
 		
 		
 		
 		boolean login = false; 
 		int options = 123;
-		ArrayList<Users> userList = new ArrayList<Users>(); 
-		
 		
 		while(options != -9) {
 			
@@ -86,7 +87,7 @@ public class C206_CaseStudy {
 		
 	}
 	
-	// Shou Kang code
+	// Shou Kang code, login Menu
 	public static void loginMenu(){
 		System.out.println();
 		Helper.line(45,"=");
@@ -98,6 +99,8 @@ public class C206_CaseStudy {
 		System.out.println();
 	}
 	
+	
+	//Shou Kang code, userMenus
 	public static void userMenus(int roleIndex) {
 		if(roleIndex == 1) {
 			System.out.println();
@@ -146,7 +149,9 @@ public class C206_CaseStudy {
 		}
 	}
 	
-	//Shou Kang code
+	
+	
+	//Shou Kang code, validation for login
 	public static boolean validateUserLogin(String userID, String password, ArrayList<Users>userList) {
 		boolean permitted = false;
 		String UIDinp = userID;
