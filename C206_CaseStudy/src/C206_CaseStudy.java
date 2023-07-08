@@ -58,6 +58,7 @@ public class C206_CaseStudy {
 		int options = 123;
 		ArrayList<Users> userList = new ArrayList<Users>(); 
 		
+		
 		while(options != -9) {
 			
 			if(login == false) {
@@ -68,23 +69,16 @@ public class C206_CaseStudy {
 				if(options == 1) {
 					
 					String userID = Helper.readString("Enter user ID > ");
+					String password = Helper.readString("Enter password > ");
 					
-					if(validateUserID(userID, userList) == true) {
-						
-						String password = Helper.readString("Enter password > ");
-						
-						if(validatePassword(password, userList) == true) {
-							login = true; 
-						}
-						else {
-							System.out.println("\nInvalid password");
-						}
-						
+					if(validateUserLogin(userID, password, userList)) {
+						System.out.println("\nlogin successful");
 					}
 					else {
-						System.out.println("\nInvalid user ID");
+						System.out.println("\nInvalid username or password");
 					}
 				}
+				
 			}
 
 		}
@@ -104,91 +98,74 @@ public class C206_CaseStudy {
 		System.out.println();
 	}
 	
-	// Shou Kang code
-	public static void adminMenu() {
-		System.out.println();
-		Helper.line(45,"=");
-		System.out.println("==== ADMIN MENU ====");
-		Helper.line(45,"=");
-		
-		System.out.println("1. View all users");
-		System.out.println("2. Add user");
-		System.out.println("3. Remove user");
-		System.out.println("4. Update user information");
-		System.out.println("5. Change user role");
-		System.out.println("-8. Logout");
-		System.out.println("-9. Exit program");
-		System.out.println();
-	}
-	
-	// Shou Kang code
-	public static void teacherMenu() {
-		System.out.println();
-		Helper.line(45,"=");
-		System.out.println("==== TEACHER MENU ====");
-		Helper.line(45,"=");
-		
-		System.out.println("1. Activity overview");
-		System.out.println("2. View activities posted by you");
-		System.out.println("3. Create new activity");
-		System.out.println("4. Delete activity");
-		System.out.println("5. Approve activity registration");
-		System.out.println("6. Mark attendance");
-		System.out.println("-8. Logout");
-		System.out.println("-9. Exit program");
-		System.out.println();
-	}
-	
-	// Shou Kang code
-	public static void studentMenu() {
-		System.out.println();
-		Helper.line(45,"=");
-		System.out.println("==== STUDENT MENU ====");
-		Helper.line(45,"=");
-		
-		System.out.println("1. View all activities");
-		System.out.println("2. Register for activity");
-		System.out.println("3. View notifications");
-		System.out.println("4. View attendance record");
-		System.out.println("-8. Logout");
-		System.out.println("-9. Exit program");
-		System.out.println();
+	public static void userMenus(int roleIndex) {
+		if(roleIndex == 1) {
+			System.out.println();
+			Helper.line(45,"=");
+			System.out.println("==== ADMIN MENU ====");
+			Helper.line(45,"=");
+			
+			System.out.println("1. View all users");
+			System.out.println("2. Add user");
+			System.out.println("3. Remove user");
+			System.out.println("4. Update user information");
+			System.out.println("5. Change user role");
+			System.out.println("-8. Logout");
+			System.out.println("-9. Exit program");
+			System.out.println();
+		}
+		else if(roleIndex == 2){
+			System.out.println();
+			Helper.line(45,"=");
+			System.out.println("==== TEACHER MENU ====");
+			Helper.line(45,"=");
+			
+			System.out.println("1. Activity overview");
+			System.out.println("2. View activities posted by you");
+			System.out.println("3. Create new activity");
+			System.out.println("4. Delete activity");
+			System.out.println("5. Approve activity registration");
+			System.out.println("6. Mark attendance");
+			System.out.println("-8. Logout");
+			System.out.println("-9. Exit program");
+			System.out.println();
+		}
+		else if(roleIndex == 3) {
+			System.out.println();
+			Helper.line(45,"=");
+			System.out.println("==== STUDENT MENU ====");
+			Helper.line(45,"=");
+			
+			System.out.println("1. View all activities");
+			System.out.println("2. Register for activity");
+			System.out.println("3. View notifications");
+			System.out.println("4. View attendance record");
+			System.out.println("-8. Logout");
+			System.out.println("-9. Exit program");
+			System.out.println();
+		}
 	}
 	
 	//Shou Kang code
-	public static boolean validateUserID(String UID, ArrayList<Users>userList) {
-		String userIDInput = UID;
-		boolean found = false; 
-		
+	public static boolean validateUserLogin(String userID, String password, ArrayList<Users>userList) {
+		boolean permitted = false;
+		String UIDinp = userID;
+		String passinp = password;
 		
 		for(int i = 0; i < userList.size(); i++) {
-			String userIDList = userList.get(i).getID();
+			String UIDList = userList.get(i).getID();
 			
-			if(userIDInput.equals(userIDList)) {
-				found = true; 
-				break; 
+			if(UIDinp.equals(UIDList)) {
+				String passList = userList.get(i).getPassword();
+				
+				if(passinp.equals(passList)) {
+					permitted = true;
+					break; 
+				}
 			}
 		}
 		
-		return found; 
-	}
-	
-	//Shou Kang code
-	public static boolean validatePassword(String password, ArrayList<Users>userList) {
-		String passwordInput = password;
-		boolean found = false; 
-		
-		
-		for(int i = 0; i < userList.size(); i++) {
-			String userPasswordList = userList.get(i).getPassword();
-			
-			if(passwordInput.equals(userPasswordList)) {
-				found = true; 
-				break; 
-			}
-		}
-		
-		return found; 
+		return permitted; 
 	}
 	
 
