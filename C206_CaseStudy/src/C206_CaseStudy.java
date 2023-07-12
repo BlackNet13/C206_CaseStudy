@@ -35,13 +35,13 @@ public class C206_CaseStudy {
 		/*java class:
 		 * 1.users(Shou Kang) : userid(Str), pw(Str), name(Str), roleid(int)
 		 * 2.roles(Aliyah) : roleid(int),name(str)
-		 * 3.activity(Edry/Yvonne) : activityid(int), type(string), totalCCAdays(int), maxPax(int), status(String, open/closed),teacherid(Int)
+		 * 3.activity(Edry) : activityid(int), type(string), totalCCAdays(int), maxPax(int), status(String, open/closed),teacherid(Int)
 		 * 4.applications(Marcus) : applicationid(int), activityid(int),studentid(int), status(string,start out as blank "", filled with approved/rejected) 
 		 * 5.attendance(Alex) :  attendanceid(int), studentid(int), activityid(int),attended(int, days attended)
 		 * 
 		 * arraylist:
 		 * 1.userList (all users indexed with same fields refer to github flow section: 1.1 add/update user)
-		 * 2.roleList (defines the roles with index and permissions)
+		 * 2.roleList (defines the roles with index and name)
 		 * 3.activityList
 		 * 4.applicationList
 		 * 5.attendanceList

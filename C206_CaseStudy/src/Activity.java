@@ -1,4 +1,4 @@
-
+//Edry code
 public class Activity {
 	
 private int activityID;
