@@ -1,4 +1,4 @@
-//Marcus
+//Marcus code
 public class Applications {
 private int appId;
 private int activityId;
