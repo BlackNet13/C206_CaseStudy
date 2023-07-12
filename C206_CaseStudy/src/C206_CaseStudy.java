@@ -109,10 +109,9 @@ public class C206_CaseStudy {
 			Helper.line(45,"=");
 			
 			System.out.println("1. View all users");
-			System.out.println("2. Add user");
+			System.out.println("2. Add/Update user");
 			System.out.println("3. Remove user");
-			System.out.println("4. Update user information");
-			System.out.println("5. Change user role");
+			System.out.println("4. Change user role");
 			System.out.println("-8. Logout");
 			System.out.println("-9. Exit program");
 			System.out.println();
@@ -124,11 +123,9 @@ public class C206_CaseStudy {
 			Helper.line(45,"=");
 			
 			System.out.println("1. Activity overview");
-			System.out.println("2. View activities posted by you");
-			System.out.println("3. Create new activity");
-			System.out.println("4. Delete activity");
-			System.out.println("5. Approve activity registration");
-			System.out.println("6. Mark attendance");
+			System.out.println("2. Manage Activites");
+			System.out.println("3. Manage Student's Application");
+			System.out.println("4. Mark Attendance");
 			System.out.println("-8. Logout");
 			System.out.println("-9. Exit program");
 			System.out.println();
@@ -141,8 +138,8 @@ public class C206_CaseStudy {
 			
 			System.out.println("1. View all activities");
 			System.out.println("2. Register for activity");
-			System.out.println("3. View notifications");
-			System.out.println("4. View attendance record");
+			System.out.println("3. Application Status");
+			System.out.println("4. View attendance records");
 			System.out.println("-8. Logout");
 			System.out.println("-9. Exit program");
 			System.out.println();
