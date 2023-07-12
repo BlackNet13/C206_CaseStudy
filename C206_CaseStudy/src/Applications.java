@@ -16,25 +16,14 @@ public int getAppId() {
 	return appId;
 }
 
-public void setAppId(int appId) {
-	this.appId = appId;
-}
-
 public int getActivityId() {
 	return activityId;
-}
-
-public void setActivityId(int activityId) {
-	this.activityId = activityId;
 }
 
 public String getStudentId() {
 	return studentId;
 }
 
-public void setStudentId(String studentId) {
-	this.studentId = studentId;
-}
 
 public String getStatus() {
 	return status;
