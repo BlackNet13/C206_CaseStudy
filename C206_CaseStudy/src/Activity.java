@@ -14,7 +14,7 @@ public Activity(int activityID, String type , int totalCCAdays , int maxPax, Str
 	this.type = type;
 	this.totalCCAdays = totalCCAdays;
 	this.maxPax = maxPax;
-	this.status = status;
+	this.status = status; //
 	this.teacherID = teacherID;
 	
 	
@@ -39,5 +39,4 @@ public int getteacherID() {
 	return teacherID;
 }
 
-//activityid(int), type(string), totalCCAdays(int), maxPax(int), status(String, open/closed),teacherid(Int)
 }
