@@ -56,6 +56,9 @@ public class C206_CaseStudy {
 		//initialize the userList, done by Shou Kang
 		ArrayList<Users> userList = new ArrayList<Users>(); 
 		
+		//initialize the activityList, done by Edry
+		ArrayList<Activity> activityList = new ArrayList<Activity>();
+		
 		
 		
 		
