@@ -153,7 +153,7 @@ public class C206_CaseStudy {
 	
 	
 	
-	//Shou Kang code, validation for login
+	//Shou Kang code, validation for login/
 	public static boolean validateUserLogin(String userID, String password, ArrayList<Users>userList) {
 		boolean permitted = false;
 		String UIDinp = userID;
