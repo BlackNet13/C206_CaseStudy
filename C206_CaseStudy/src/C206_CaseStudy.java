@@ -34,7 +34,7 @@ public class C206_CaseStudy {
 		//to create:
 		/*java class:
 		 * 1.users(Shou Kang) : userid(Str), pw(Str), name(Str), roleid(int)
-		 * 2.roles(Aliyah) : roleid(int),name(str)
+		 * 2.roles(Aliyah) : roleid(int),rolename(str)
 		 * 3.activity(Edry) : activityid(int), type(string), totalCCAdays(int), maxPax(int), status(String, open/closed),teacherid(Int)
 		 * 4.applications(Marcus) : applicationid(int), activityid(int),studentid(int), status(string,start out as blank "", filled with approved/rejected) 
 		 * 5.attendance(Alex) :  attendanceid(int), studentid(int), activityid(int),attended(int, days attended)
