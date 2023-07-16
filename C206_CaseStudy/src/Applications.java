@@ -2,10 +2,10 @@
 public class Applications {
 private int appId;
 private int activityId;
-private String studentId;
+private int studentId;
 private String status;
 
-public Applications(int appId, int activityId, String studentId, String status ) {
+public Applications(int appId, int activityId, int studentId, String status ) {
 	this.appId = appId;
 	this.activityId = activityId;
 	this.studentId = studentId;
@@ -20,7 +20,7 @@ public int getActivityId() {
 	return activityId;
 }
 
-public String getStudentId() {
+public int getStudentId() {
 	return studentId;
 }
 
