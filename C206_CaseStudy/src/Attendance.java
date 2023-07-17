@@ -1,14 +1,16 @@
 //Alex code
 public class Attendance {
+private int attendanceId;
 private String activityName;
 private String studentName;
-private int studentId;
+private String studentId;
 private int activityId;
 private String date;
 private int teacherID;
 private String teacherName;
 
-public Attendance(String activityName, String studentName, int studentId, int activityId, String date, int teacherID, String teacherName, boolean AttendanceStatus ) {
+public Attendance(int attendanceId,String activityName, String studentName, String studentId, int activityId, String date, int teacherID, String teacherName ) {
+	this.attendanceId=attendanceId;
 	this.activityName=activityName;
 	this.studentName=studentName;
 	this.studentId=studentId;
@@ -16,7 +18,10 @@ public Attendance(String activityName, String studentName, int studentId, int ac
 	this.date = date;
 	this.teacherID = teacherID;
 	this.teacherName=teacherName;
-	this.AttendanceStatus=AttendanceStatus;
+	
+}
+public int getattendanceId(){
+	return attendanceId;
 }
 public String getactivityName() {
 	return activityName;
@@ -24,7 +29,7 @@ public String getactivityName() {
 public String getstudentName() {
 	return studentName;
 }
-public int getstudentId() {
+public String getstudentId() {
 	return studentId;
 }
 public int getactivityId() {
@@ -39,7 +44,5 @@ public int getteacherID() {
 public String getteacherName() {
 	return teacherName;
 }
-public boolean getAttendanceStatus() {
-	return AttendanceStatus;
-}
+
 }
