@@ -6,28 +6,17 @@ public class testCaseStudy {
 		// TODO Auto-generated method stub
 		
 		//conduct tests here:
-		/*example1:
-		 * 
-		 * Ward[] wardArr = new Ward[4];
-		 * 
-		 * wardArr[0] = new Ward("A","ER Patients",20,100.00);
-		 * 
-		 * 
-		 * -------------------
-		 * 
-		 * example2:
-		 * 
-		 * ArrayList<Patient> patientList = new ArrayList<Patient>();
-		 * 
-		 * patientList.add(new Patient("123U","John1","A",5,"03/01/2022","04/02/2022",0,1));
-		 * patientList.add(new Patient("123K","John2","B1",5,"03/01/2022",2));
-		 * 
-		 * 
-		 * Patient p1 = patientList.get(1); 
-		 * p1.display();
-		 * patientList.get(1).display();
-		 * 
-		 */
+	
+		 
+		 ArrayList<Users> userList = new ArrayList<Users>(); 
+			
+			userList.add(new Users("S123","1234","Kelly",1)); //admin
+			userList.add(new Users("S897","4562","Mark",2)); //teacher
+			userList.add(new Users("S111","1111","Kelly",3)); //student
+		
+			System.out.print(userList.get(0).getName()+" "+
+			userList.get(0).getPassword());
+		
 
 	}
 

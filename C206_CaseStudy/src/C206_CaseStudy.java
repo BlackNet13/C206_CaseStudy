@@ -79,6 +79,7 @@ public class C206_CaseStudy {
 		
 		boolean login = false; 
 		int options = 123;
+		int role = 0;
 		
 		while(options != -9) {
 			
@@ -92,20 +93,49 @@ public class C206_CaseStudy {
 					String userID = Helper.readString("Enter user ID > ");
 					String password = Helper.readString("Enter password > ");
 					
-					if(validateUserLogin(userID, password, userList)) {
-						System.out.println("\nlogin successful");
-					}
-					else {
-						System.out.println("\nInvalid username or password");
-					}
+				
+						//Yvonne
+						for(int i = 0; i<userList.size(); i++) {
+							if(userID.equals(userList.get(i).getID())&&password.equals(userList.get(i).getPassword())) {
+								System.out.println("\nlogin successful");
+								role = userList.get(i).getRoleIndex();
+								login = true;
+								break;
+							}else {
+								System.out.println("\nInvalid username or password");
+								break;
+							}
+						}
+					
+					
+					
 				}
 				
-			}
+			}   //Yvonne
+				options = userMenus(role);	
+				switch(options) { //we will need to check for what role it is, since all users will use similar option numbers to access their options
+				case 1:
+					System.out.print("placeholder 1");
+					break;
+				case 2:
+					System.out.print("placeholder 2");
+					break;
+				case -8:
+					login =false;
+					System.out.print("You have log out successfully");
+					break;
+				case -9:
+					System.out.print("sys end");
+					break;
+			
+				}
+			
 
 		}
+		
 		System.out.println("\nExit program");
 		
-	}
+	} //end of main
 	
 	// Shou Kang code, login Menu
 	public static void loginMenu(){
@@ -121,7 +151,8 @@ public class C206_CaseStudy {
 	
 	
 	//Shou Kang code, userMenus
-	public static void userMenus(int roleIndex) {
+	public static int userMenus(int roleIndex) {
+		int options = 0;
 		if(roleIndex == 1) {
 			System.out.println();
 			Helper.line(45,"=");
@@ -131,10 +162,14 @@ public class C206_CaseStudy {
 			System.out.println("1. View all users");
 			System.out.println("2. Add/Update user");
 			System.out.println("3. Remove user");
-			System.out.println("4. Change user role");
+			System.out.println("4. View all roles");
 			System.out.println("-8. Logout");
 			System.out.println("-9. Exit program");
 			System.out.println();
+			
+			options = Helper.readInt("Enter option number >");
+			
+			
 		}
 		else if(roleIndex == 2){
 			System.out.println();
@@ -149,6 +184,9 @@ public class C206_CaseStudy {
 			System.out.println("-8. Logout");
 			System.out.println("-9. Exit program");
 			System.out.println();
+			
+			options = Helper.readInt("Enter option number >");
+			
 		}
 		else if(roleIndex == 3) {
 			System.out.println();
@@ -163,31 +201,10 @@ public class C206_CaseStudy {
 			System.out.println("-8. Logout");
 			System.out.println("-9. Exit program");
 			System.out.println();
-		}
-	}
-	
-	
-	
-	//Shou Kang code, validation for login/
-	public static boolean validateUserLogin(String userID, String password, ArrayList<Users>userList) {
-		boolean permitted = false;
-		String UIDinp = userID;
-		String passinp = password;
-		
-		for(int i = 0; i < userList.size(); i++) {
-			String UIDList = userList.get(i).getID();
 			
-			if(UIDinp.equals(UIDList)) {
-				String passList = userList.get(i).getPassword();
-				
-				if(passinp.equals(passList)) {
-					permitted = true;
-					break; 
-				}
-			}
+			options = Helper.readInt("Enter option number >");
 		}
-		
-		return permitted; 
+		return options;
 	}
 	
 

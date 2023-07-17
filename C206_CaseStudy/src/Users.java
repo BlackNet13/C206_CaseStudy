@@ -5,7 +5,7 @@ private String name;
 private String password; 
 private int roleIndex; 
 
-public Users(String id, String name, String password, int roleIndex) {
+public Users(String id, String password, String name,int roleIndex) {
 	this.id = id;
 	this.name = name; 
 	this.password = password; 
