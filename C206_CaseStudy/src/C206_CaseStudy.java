@@ -63,17 +63,16 @@ public class C206_CaseStudy {
 		//initialize the activityList, done by Edry, to create 1 or 2 more activity, activity id follow in numerical order
 		ArrayList<Activity> activityList = new ArrayList<Activity>(); 
 		
-		activityList.add(new Activity(01,"sports",8,25,"Yes","S897"));
-		activityList.add(new Activity(02,"uniformGroup",8,60,"Yes","S897"));
+		activityList.add(new Activity(01,"sports","Football",8,25,"Close","S897"));
+		activityList.add(new Activity(02,"uniformGroup","NCC SEA",8,60,"Open","S897"));
 
-		activityList.add(new Activity(03,"performanceArts",8,45,"Yes","S897"));
+		activityList.add(new Activity(03,"performanceArts","Chinese Orchestra",8,45,"Close","S897"));
 
 		//type = sports, uniformGroup, performanceArts
 		//totalDays = total cca days in a month, so if once a week will be 4 as in a month got four weeks. 
 		//maxpax = maximum people for cca
 		//teacher id must be from existing userid that have teacher's role
 		
-		activityList.add(new Activity(1,"sports", 6, 15, "open","S897"));
 		
 		//initialize roleList, done by Aliyah /done
 		ArrayList<Roles> roleList = new ArrayList<Roles>() ;
