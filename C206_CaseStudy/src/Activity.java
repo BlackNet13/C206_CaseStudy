@@ -3,15 +3,17 @@ public class Activity {
 	
 private int activityID;
 private String type;
+private String name;
 private int totalCCAdays;
 private int maxPax;
 private String status;
 private String teacherID;
 
 
-public Activity(int activityID, String type , int totalCCAdays , int maxPax, String status, String teacherID) {
+public Activity(int activityID, String type ,String name, int totalCCAdays , int maxPax, String status, String teacherID) {
 	this.activityID = activityID;
 	this.type = type;
+	this.name = name;
 	this.totalCCAdays = totalCCAdays;
 	this.maxPax = maxPax;
 	this.status = status; //
@@ -23,6 +25,11 @@ public Activity(int activityID, String type , int totalCCAdays , int maxPax, Str
 public int getActivityID() {
 	return activityID;
 }
+
+public String name() {
+	return name;
+}
+
 public String getType() {
 	return type;
 }
