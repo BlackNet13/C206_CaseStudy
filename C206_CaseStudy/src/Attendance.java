@@ -7,7 +7,6 @@ private int activityId;
 private String date;
 private int teacherID;
 private String teacherName;
-private boolean AttendanceStatus;
 
 public Attendance(String activityName, String studentName, int studentId, int activityId, String date, int teacherID, String teacherName, boolean AttendanceStatus ) {
 	this.activityName=activityName;
