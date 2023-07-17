@@ -59,7 +59,12 @@ public class C206_CaseStudy {
 		//initialize the activityList, done by Edry
 		ArrayList<Activity> activityList = new ArrayList<Activity>();
 		
+		//initialize roleList, done by Aliyah
+		ArrayList<Roles> roleList = new ArrayList<Roles>() ;
 		
+		roleList.add(new Roles(1, "Admin")) ;
+		roleList.add(new Roles(2, "Teacher")) ;
+		roleList.add(new Roles(3, "Student")) ;
 		
 		
 		boolean login = false; 
