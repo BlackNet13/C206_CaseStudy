@@ -35,15 +35,15 @@ public class C206_CaseStudy {
 		/*java class:
 		 * 1.users(Shou Kang) : userid(Str), pw(Str), name(Str), roleid(int)
 		 * 2.roles(Aliyah) : roleid(int),rolename(str)
-		 * 3.activity(Edry) : activityid(int), type(string), totalCCAdays(int), maxPax(int), status(String, open/closed),teacherid(Int)
+		 * 3.activity(Edry) : activityid(int), type(string), totalCCAdays(int), maxPax(int), status(String, open/closed),teacherid(str)
 		 * 4.applications(Marcus) : applicationid(int), activityid(int),studentid(Str), status(string,start out as blank "", filled with approved/rejected) 
-		 * 5.attendance(Alex) :  attendanceid(int), studentid(int), activityid(int),attended(int, days attended)
+		 * 5.attendance(Alex) :  attendanceid(int), studentid(string), activityid(int),attended(int, days attended)
 		 * 
 		 * arraylist:
-		 * 1.userList (all users indexed with same fields refer to github flow section: 1.1 add/update user)
-		 * 2.roleList (defines the roles with index and name)
-		 * 3.activityList
-		 * 4.applicationList
+		 * 1.userList (all users indexed with same fields)~
+		 * 2.roleList (defines the roles with index and name) /done
+		 * 3.activityList ~
+		 * 4.applicationList 
 		 * 5.attendanceList
 		 * 
 		 */
@@ -53,13 +53,23 @@ public class C206_CaseStudy {
 		//initialize all class objects here:
 		
 		
-		//initialize the userList, done by Shou Kang
+		//initialize the userList, done by Shou Kang, to create 1 more of each role
 		ArrayList<Users> userList = new ArrayList<Users>(); 
 		
-		//initialize the activityList, done by Edry
-		ArrayList<Activity> activityList = new ArrayList<Activity>();
+		userList.add(new Users("S123","1234","Kelly",1)); //admin
+		userList.add(new Users("S897","4562","Mark",2)); //teacher
+		userList.add(new Users("S111","1111","Kelly",3)); //student
 		
-		//initialize roleList, done by Aliyah
+		//initialize the activityList, done by Edry, to create 1 or 2 more activity, activity id follow in numerical order
+		ArrayList<Activity> activityList = new ArrayList<Activity>(); 
+		//type = sports, uniformGroup, performanceArts
+		//totalDays = total cca days in a month, so if once a week will be 4 as in a month got four weeks. 
+		//maxpax = maximum people for cca
+		//teacher id must be from existing userid that have teacher's role
+		
+		activityList.add(new Activity(1,"sports", 6, 15, "open","S897"));
+		
+		//initialize roleList, done by Aliyah /done
 		ArrayList<Roles> roleList = new ArrayList<Roles>() ;
 		
 		roleList.add(new Roles(1, "Admin")) ;

@@ -6,10 +6,10 @@ private String type;
 private int totalCCAdays;
 private int maxPax;
 private String status;
-private int teacherID;
+private String teacherID;
 
 
-public Activity(int activityID, String type , int totalCCAdays , int maxPax, String status, int teacherID) {
+public Activity(int activityID, String type , int totalCCAdays , int maxPax, String status, String teacherID) {
 	this.activityID = activityID;
 	this.type = type;
 	this.totalCCAdays = totalCCAdays;
@@ -35,7 +35,7 @@ public int maxPax() {
 public String getStatus() {
 	return status;
 }
-public int getteacherID() {
+public String getteacherID() {
 	return teacherID;
 	
 	///////
