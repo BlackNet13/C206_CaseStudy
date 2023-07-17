@@ -37,7 +37,7 @@ public class C206_CaseStudy {
 		 * 2.roles(Aliyah) : roleid(int),rolename(str)
 		 * 3.activity(Edry) : activityid(int), type(string), totalCCAdays(int), maxPax(int), status(String, open/closed),teacherid(Int)
 		 * 4.applications(Marcus) : applicationid(int), activityid(int),studentid(Str), status(string,start out as blank "", filled with approved/rejected) 
-		 * 5.attendance(Alex) :  attendanceid(int), studentid(int), activityid(int),attended(int, days attended)
+		 * 5.attendance(Alex) :  attendanceid(int), studentid(int), activityid(int),attended(int, days attended)/
 		 * 
 		 * arraylist:
 		 * 1.userList (all users indexed with same fields refer to github flow section: 1.1 add/update user)
