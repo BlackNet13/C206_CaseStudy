@@ -39,7 +39,7 @@ public class C206_CaseStudy {
 		 * 4.applications(Marcus) : applicationid(int), activityid(int),studentid(Str), status(string,start out as blank "", filled with approved/rejected) 
 		 * 5.attendance(Alex) :  attendanceid(int), studentid(string), activityid(int),attended(int, days attended)
 		 * 
-		 * arraylist:
+		 * arraylist: //
 		 * 1.userList (all users indexed with same fields)~
 		 * 2.roleList (defines the roles with index and name) /done
 		 * 3.activityList ~
