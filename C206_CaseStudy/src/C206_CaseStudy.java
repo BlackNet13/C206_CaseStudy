@@ -60,12 +60,11 @@ public class C206_CaseStudy {
 		userList.add(new Users("S897","4562","Mark",2)); //teacher
 		userList.add(new Users("S111","1111","Kelly",3)); //student
 		
-		//initialize the activityList, done by Edry, to create 1 or 2 more activity, activity id follow in numerical order
+		//initialize the activityList, done by Edry 
 		ArrayList<Activity> activityList = new ArrayList<Activity>(); 
 		
 		activityList.add(new Activity(01,"sports","Football",8,25,"Close","S897"));
 		activityList.add(new Activity(02,"uniformGroup","NCC SEA",8,60,"Open","S897"));
-
 		activityList.add(new Activity(03,"performanceArts","Chinese Orchestra",8,45,"Close","S897"));
 
 		//type = sports, uniformGroup, performanceArts
