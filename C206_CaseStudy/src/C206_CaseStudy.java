@@ -18,9 +18,11 @@ public class C206_CaseStudy {
 		 * 
 		 * 1.2:teacher:
 		 * -Activity Overview list(even those from other teachers,activity list)
-		 * -manage activities(owned) ->1.view all activities 2.add/update activity (only can add their own)--> input activityName, maxDate, maxPax, status(open/closed/draft), teacherID ,activityID, 3. remove activity(only can delete their own)
+		 * -view all activities(Owned)
+		 * -add/update activity (only can add their own) --> input activityName, maxDate, maxPax, status(open/closed/draft), teacherID ,activityID
+		 * -remove activity(only can delete their own)
 		 * -manage student applications[number of students waiting for approval] ->1.accept/reject students(shows list of students that applied and is of pending status)->will cycle through students, approve/reject
-		 * -activity attendance -> 1. view all students(show all students it will show each activity's list of students ordered by attivity group) -> show activity name, student name and id before and adding of attendance, 2.mark attendance ->input date(searches for activity for that teacher for that day, show student name and id, retrieves from attendance list based on student id,activity id,date)-> cycles through students to mark attendance
+		 * -update attendance -> view all students(show all students it will show each activity's list of students ordered by attivity group) -> show activity name, student name and id before and adding of attendance, mark attendance ->input date(searches for activity for that teacher for that day, show student name and id, retrieves from attendance list based on student id,activity id,date)-> cycles through students to mark attendance
 		 *
 		 * 
 		 * 1.3:student:
@@ -104,11 +106,13 @@ public class C206_CaseStudy {
 								System.out.println("\nlogin successful");
 								role = userList.get(i).getRoleIndex();
 								login = true;
-								break;
-							}else {
-								System.out.println("\nInvalid username or password");
-								break;
+								//break;
 							}
+						}
+						if(!login) {
+							options =123;
+							role =0;
+							System.out.println("\nInvalid username or password");
 						}
 					
 					
@@ -116,28 +120,95 @@ public class C206_CaseStudy {
 				}
 				
 			}   //Yvonne
-				options = userMenus(role);	
-				switch(options) { //we will need to check for what role it is, since all users will use similar option numbers to access their options
-				case 1:
-					System.out.print("placeholder 1");
-					break;
-				case 2:
-					System.out.print("placeholder 2");
-					break;
-				case -8:
+				options = userMenus(role);
+				if(options!=-8) {
+				if(role == 1) { //admin
+					switch(options) {
+					case 1: //view all users code here, Aliyah
+						//<<Insert code here:>>
+						
+						
+						
+						//<<end of code for case 1>>
+						System.out.print("admin1"); //<--this is just to test that it can reach this lvl before you start coding
+						break;
+					case 2: //add/update users code here, Shou Kang
+						//<<Insert code here:>>
+						
+						
+						
+						//<<end of code for case 2>>
+						System.out.print("admin2"); //<--this is just to test that it can reach this lvl before you start coding
+						break;
+					case 3: //remove users code here,Marcus
+						//<<Insert code here:>>
+						
+						
+						
+						//<<end of code for case 3>>
+						System.out.print("admin3"); //<--this is just to test that it can reach this lvl before you start coding
+						break;
+					case 4: //view all roles code here, Alex
+						//<<Insert code here:>>
+						
+						
+						
+						//<<end of code for case 4>>
+						System.out.print("admin4"); //<--this is just to test that it can reach this lvl before you start coding
+						break;
+						
+					}
+					
+					
+				}else if(role == 2) {
+					switch(options) { //teacher
+					case 1: //Activity overview code here
+						
+						System.out.print("teach1");
+						break;
+					case 2: //view all activities they own code here
+						System.out.print("teach2");
+						break;
+					case 3: //add/update activities(that they owned)code here
+						System.out.print("teach3");
+						break;
+					case 4: //remove activities that they owned code here
+						System.out.print("teach4");
+						break;
+					case 5: //manage student applications code here
+						System.out.print("teach5");
+						break;
+					case 6: //update attendance code here
+						System.out.print("teach6");
+						break;
+					}
+					
+				}else if(role == 3) { //students
+					switch(options) {
+					case 1: //activity overview code here
+						
+						System.out.print("student1");
+						break;
+					case 2: //apply for activities code here
+						System.out.print("student2");
+						break;
+					case 3: //application status code here
+ 						System.out.print("student3");
+						break;
+					case 4: //attendance record code here
+						System.out.print("student4");
+						break;
+				}
+					
+				}}else {
 					login =false;
 					System.out.print("You have log out successfully");
-					break;
-				case -9:
-					System.out.print("sys end");
-					break;
-			
 				}
-			
+				
 
 		}
 		
-		System.out.println("\nExit program");
+		System.out.println("\nProgram Exited");
 		
 	} //end of main
 	
@@ -182,9 +253,11 @@ public class C206_CaseStudy {
 			Helper.line(45,"=");
 			
 			System.out.println("1. Activity overview");
-			System.out.println("2. Manage Activites");
-			System.out.println("3. Manage Student's Application");
-			System.out.println("4. Mark Attendance");
+			System.out.println("2. View activities(Own)");
+			System.out.println("3. Add/Update Activities");
+			System.out.println("4. Remove activites");
+			System.out.println("5. Manage Student's Applications");
+			System.out.println("6. Mark Attendance");
 			System.out.println("-8. Logout");
 			System.out.println("-9. Exit program");
 			System.out.println();
