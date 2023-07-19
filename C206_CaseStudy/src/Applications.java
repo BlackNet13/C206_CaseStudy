@@ -16,7 +16,7 @@ public Applications(int appId, int activityId, String studentId ) {
 	this.appId = appId;
 	this.activityId = activityId;
 	this.studentId = studentId;
-	this.status = "";
+	this.status = "pending";
 }
 
 public int getAppId() {
