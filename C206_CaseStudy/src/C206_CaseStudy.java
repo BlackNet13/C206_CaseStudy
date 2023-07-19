@@ -16,19 +16,18 @@ public class C206_CaseStudy {
 		 * -remove user -> removes related ccas -> confirmation screen 
 		 * 
 		 * 1.2:teacher:
-		 * -Activity Overview list(even those from other teachers,activity list) teacher name
-		 * -view all activities(Owned) x
+		 * -Browse activity(even those from other teachers,activity list) teacher name
 		 * -add/update activity (only can add their own) --> input activityName, maxDate, maxPax, status(open/closed/draft), teacherID ,activityID
 		 * -remove activity(only can delete their own)
 		 * -manage student applications[number of students waiting for approval] ->1.accept/reject students(shows list of students that applied and is of pending status)->will cycle through students, approve/reject
-		 * -record attendance -> view all students(show all students it will show each activity's list of students ordered by attivity group) -> show activity name, student name and id before and adding of attendance, mark attendance ->input date(searches for activity for that teacher for that day, show student name and id, retrieves from attendance list based on student id,activity id,date)-> cycles through students to mark attendance
+		 * -Mark attendance -> view all students(show all students it will show each activity's list of students ordered by activity group) -> show activity name, student name and id before and adding of attendance, mark attendance ->input date(searches for activity for that teacher for that day, show student name and id, retrieves from attendance list based on student id,activity id,date)-> cycles through students to mark attendance
 		 *
 		 * 
 		 * 1.3:student:
-		 * -Activity Overview list(shows all) =browse
-		 * -apply for activities -> input activity ID (shows list of activities and their status(open/closed))-> if succesfull will show that they have to wait for approval
+		 * -Browse activity(shows all)
+		 * -apply for activities -> input activity ID (shows list of activities and their status(open/closed))-> if successful will show that they have to wait for approval
 		 * -application status/notifications(number of notifications) -> show applications and notifications(reminders)
-		 * -attendance record -> show list of activites enrolled in and their attendance status and completion rate(generated%)
+		 * -attendance record -> show list of activities enrolled in and their attendance status and completion rate(generated%)
 		 * 
 		 */
 		
@@ -36,8 +35,8 @@ public class C206_CaseStudy {
 		/*java class:
 		 * 1.users(Shou Kang) : userid(Str), pw(Str), name(Str), roleid(int)
 		 * 2.roles(Aliyah) : roleid(int),rolename(str)
-		 * 3.activity(Edry) : activityid(int), type(string), name(String) totalCCAdays(int), maxPax(int), status(String, open/closed),teacherid(str)
-		 * 4.applications(Marcus) : applicationid(int), activityid(int),studentid(Str), status(string,start as pending, filled with approved/rejected) 
+		 * 3.activity(Edry) : activityid(int), type(string), name(String) totalCCAdays(int), maxPax(int), status(String, open/closed),teacherid(str), date(str), time(str)
+		 * 4.applications(Marcus) : applicationid(int), activityid(int),studentid(Str), status(string,start as pending, filled with approved/rejected/pending) 
 		 * 5.attendance(Alex) :  attendanceid(int), studentid(string), activityid(int),attended(int, days attended)
 		 * 
 		 * arraylist: 
@@ -52,6 +51,8 @@ public class C206_CaseStudy {
 		/*Perma updates:
 		 * -remove admin's view all roles
 		 * -remove admin's update function as it is sprint1
+		 * -combine view all activities with add activities
+		 * -default status for application will be pending.
 		 * 
 		 */
 		
@@ -157,7 +158,7 @@ public class C206_CaseStudy {
 						//<<end of code for case 1>>
 						//System.out.print("admin1"); //<--this is just to test that it can reach this lvl before you start coding
 						break;
-					case 2: //add/update users code here, Shou Kang//
+					case 2: //add users code here, Shou Kang//
 						//<<Insert code here:>>
 						String idInp = Helper.readString("Enter user id > ");
 						
@@ -187,24 +188,46 @@ public class C206_CaseStudy {
 					
 				}else if(role == 2) {
 					switch(options) { //teacher
-					case 1: //Activity overview code here
+					case 1: //Browse activities code here, Edry
+						//<<Insert code here:>>
 						
+						
+						
+						//<<end of code for case 1>>
 						System.out.print("teach1");
 						break;
-					case 2: //view all activities they own code here
+					case 2: //add activities(that they owned)code here, Aliyah
+						//<<Insert code here:>>
+						
+							//show activities that they owned first
+						
+						
+						//<<end of code for case 2>>
 						System.out.print("teach2");
 						break;
-					case 3: //add/update activities(that they owned)code here
+					case 3: //remove activities that they owned code here, Alex,Edry
+						//<<Insert code here:>>
+						
+						
+						
+						//<<end of code for case 3>>
 						System.out.print("teach3");
 						break;
-					case 4: //remove activities that they owned code here
+					case 4: //manage student applications code here, Yvonne
+						//<<Insert code here:>>
+						
+						
+						
+						//<<end of code for case 4>>
 						System.out.print("teach4");
 						break;
-					case 5: //manage student applications code here
+					case 5: //Mark attendance code here, Marcus,Shou Kang
+						//<<Insert code here:>>
+						
+						
+						
+						//<<end of code for case 5>>
 						System.out.print("teach5");
-						break;
-					case 6: //update attendance code here
-						System.out.print("teach6");
 						break;
 					default: 
 						if(options != -9) {
@@ -215,17 +238,36 @@ public class C206_CaseStudy {
 					
 				}else if(role == 3) { //students
 					switch(options) {
-					case 1: //activity overview code here
+					case 1: //Browse activities code here, Alex
+						//<<Insert code here:>>
 						
+						
+						
+						//<<end of code for case 1>>
 						System.out.print("student1");
 						break;
-					case 2: //apply for activities code here
+					case 2: //apply for activities code here,Yvonne, Aliyah
+						//<<Insert code here:>>
+						
+						
+						
+						//<<end of code for case 2>>
 						System.out.print("student2");
 						break;
-					case 3: //application status code here
+					case 3: //view application status code here,Yvonne
+						//<<Insert code here:>>
+						
+						
+						
+						//<<end of code for case 3>>
  						System.out.print("student3");
 						break;
-					case 4: //attendance record code here
+					case 4: //view attendance record code here,Aliyah
+						//<<Insert code here:>>
+						
+						
+						
+						//<<end of code for case 4>>
 						System.out.print("student4");
 						break;
 					default: 
@@ -287,11 +329,10 @@ public class C206_CaseStudy {
 			Helper.line(45,"=");
 			
 			System.out.println("1. Activity overview");
-			System.out.println("2. View activities(Own)");
-			System.out.println("3. Add/Update Activities");
-			System.out.println("4. Remove activites");
-			System.out.println("5. Manage Student's Applications");
-			System.out.println("6. Mark Attendance");
+			System.out.println("2. Add Activities"); //show activities and add as well
+			System.out.println("3. Remove activites");
+			System.out.println("4. Manage Student's Applications");
+			System.out.println("5. Mark Attendance");
 			System.out.println("-8. Logout");
 			System.out.println("-9. Exit program");
 			System.out.println();
@@ -318,7 +359,7 @@ public class C206_CaseStudy {
 		return options;
 	}
 	
-	//done by Aliyah
+	//Aliyah code, displays userList
 	public static void displayAllUsers(ArrayList<Roles> roleList, ArrayList<Users> userList) {
 		System.out.println() ;
 		Helper.line(45, "=");
