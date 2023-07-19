@@ -146,15 +146,10 @@ public class C206_CaseStudy {
 							String idList = userList.get(i).getID();
 							
 							if(idInp.equals(idList)) {
-<<<<<<< HEAD
-								char confirmation = Helper.readChar("Do you want to edit this user's record? (y/n) > ");
-								if(confirmation == 'y') {
-=======
-								
+
 								String confirmation = Helper.readString("Do you want to edit this user's record? (y/n) > ");
 								
 								if(confirmation.equalsIgnoreCase("y")) {
->>>>>>> branch 'master' of https://github.com/BlackNet13/C206_CaseStudy
 									
 									String newPassword = Helper.readString("Please enter the new password (Leave empty to not change) > ");
 									int newRole = Helper.readInt("Please enter the new role index (Leave empty to not change) > ");
@@ -173,9 +168,7 @@ public class C206_CaseStudy {
 										System.out.println("\nThe New password does not meet the minimun length");
 									}
 								}
-								else if(confirmation == 'n') {
-									
-								}
+								
 								else {
 									System.out.println("Invalid");
 								}
