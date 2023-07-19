@@ -131,7 +131,7 @@ public class C206_CaseStudy {
 					case 1: //view all users code here, Aliyah
 						//<<Insert code here:>>
 						
-						
+						displayAllUsers(userList) ;
 						
 						//<<end of code for case 1>>
 						System.out.print("admin1"); //<--this is just to test that it can reach this lvl before you start coding
@@ -321,5 +321,28 @@ public class C206_CaseStudy {
 		return options;
 	}
 	
-
+	public static void displayAllUsers(ArrayList<Users> userList) {
+		System.out.println() ;
+		Helper.line(45, "=");
+		System.out.println("=======     USER LIST     =======");
+		Helper.line(45, "=");
+		System.out.println() ;
+		
+		String table = String.format("%s %5s", "User ID", " ") ;
+		table += String.format("%s %5s", "User Name", " ") ;
+		table += String.format("%s", "User Role") ;
+		
+		System.out.println(table) ;
+		Helper.line(45, "-");
+		
+		for (int i = 0; i < userList.size(); i++) {
+			Users u = userList.get(i) ;
+			
+			String output = String.format("%-8s %4s", u.getID(), "") ;
+			output += String.format("%-10s %4s", u.getName(), "") ;
+			output += String.format("%s", u.getRoleIndex()) ;
+			
+			System.out.println(output) ;
+		}
+	}
 }
