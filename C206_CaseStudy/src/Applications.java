@@ -12,6 +12,13 @@ public Applications(int appId, int activityId, String studentId, String status )
 	this.status = status;
 }
 
+public Applications(int appId, int activityId, String studentId ) {
+	this.appId = appId;
+	this.activityId = activityId;
+	this.studentId = studentId;
+	this.status = "";
+}
+
 public int getAppId() {
 	return appId;
 }
