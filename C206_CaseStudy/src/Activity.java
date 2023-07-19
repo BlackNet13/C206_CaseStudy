@@ -4,21 +4,23 @@ public class Activity {
 private int activityID;
 private String type;
 private String name;
-private int totalCCAdays;
+//private int totalCCAdays;
 private int maxPax;
 private String status;
 private String teacherID;
+private String date;
 private String timeSlot;
 
 
-public Activity(int activityID, String type ,String name, int totalCCAdays , int maxPax, String status, String teacherID,String timeSlot) {
+public Activity(int activityID, String type ,String name, int maxPax, String status, String teacherID,String date,String timeSlot) {
 	this.activityID = activityID;
 	this.type = type;
 	this.name = name;
-	this.totalCCAdays = totalCCAdays;
+	//this.totalCCAdays = totalCCAdays;
 	this.maxPax = maxPax;
 	this.status = status; //
 	this.teacherID = teacherID;
+	this.date = date;
 	this.timeSlot = timeSlot;
 	
 	

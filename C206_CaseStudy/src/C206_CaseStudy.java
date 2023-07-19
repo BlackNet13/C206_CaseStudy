@@ -75,9 +75,9 @@ public class C206_CaseStudy {
 		//initialize the activityList, done by Edry, add date, time
 		ArrayList<Activity> activityList = new ArrayList<Activity>(); 
 		
-		activityList.add(new Activity(01,"sports","Football",8,25,"Close","S897","15:00-17:00"));
-		activityList.add(new Activity(02,"uniformGroup","NCC SEA",8,60,"Open","S897","14:00-17:00"));
-		activityList.add(new Activity(03,"performanceArts","Chinese Orchestra",8,45,"Close","S897","15:00-18:00"));
+		activityList.add(new Activity(01,"sports","Football",25,"Open","S897","01/08/2023","15:00-17:00"));
+		activityList.add(new Activity(02,"uniformGroup","NCC SEA",60,"Open","S897","15/08/2023","14:00-17:00"));
+		activityList.add(new Activity(03,"performanceArts","Chinese Orchestra",45,"Close","S897","16/07/2023","15:00-18:00"));
 
 		//type = sports, uniformGroup, performanceArts
 		//totalDays = total cca days in a month, so if once a week will be 4 as in a month got four weeks. 
