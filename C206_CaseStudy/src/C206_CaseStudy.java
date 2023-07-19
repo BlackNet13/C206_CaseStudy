@@ -151,11 +151,32 @@ public class C206_CaseStudy {
 						String idInp = Helper.readString("Enter user id > ");
 						
 						for(int i = 0; i > userList.size(); i++) {
+							
+							int added = 0;
 							String idList = userList.get(i).getID();
+							
 							if(idInp.equals(idList)) {
+								
 								String confirmation = Helper.readString("Do you want to edit this user's record? (y/n) > ");
+								
 								if(confirmation.equalsIgnoreCase("y")) {
 									
+									String newPassword = Helper.readString("Please enter the new password (Leave empty to not change) > ");
+									int newRole = Helper.readInt("Please enter the new role index (Leave empty to not change) > ");
+									
+									if(newPassword.length() >= 4) {
+										String passCheck = newPassword.trim();
+										
+										if(newPassword.length() != passCheck.length()) {
+											
+										}
+										else {
+											
+										}
+									}
+									else {
+										System.out.println("\nThe New password does not meet the minimun length");
+									}
 								}
 								else if(confirmation.equalsIgnoreCase("n")) {
 									break; 
