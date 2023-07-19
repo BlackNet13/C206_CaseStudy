@@ -162,7 +162,11 @@ public class C206_CaseStudy {
 						break;
 						
 					default: 
-						System.out.println("\nPlease enter a proper option");
+						
+						if(options != -9) {
+							System.out.println("\nPlease enter a proper option");
+						}
+						
 						break; 
 					}
 					
@@ -189,7 +193,9 @@ public class C206_CaseStudy {
 						System.out.print("teach6");
 						break;
 					default: 
-						System.out.println("\nPlease enter a proper option");
+						if(options != -9) {
+							System.out.println("\nPlease enter a proper option");
+						}
 						break; 
 					}
 					
@@ -209,7 +215,9 @@ public class C206_CaseStudy {
 						System.out.print("student4");
 						break;
 					default: 
-						System.out.println("\nPlease enter a proper option");
+						if(options != -9) {
+							System.out.println("\nPlease enter a proper option");
+						}
 						break; 
 				}
 					
