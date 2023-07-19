@@ -93,10 +93,13 @@ public class C206_CaseStudy {
 		
 		//initialize attendanceList, done by Alex
 		ArrayList<Attendance> attendanceList = new ArrayList<Attendance>() ;
-		attendanceList.add(new Attendance(1,"S111",01,4));
-		attendanceList.add(new Attendance(2,"S908",02,7));
+
 		
 		//initialize applicationList, done by Marcus
+		ArrayList<Applications> applicationList = new ArrayList<Applications>();
+		
+		applicationList.add(new Applications(1, 01, "S111"));
+		applicationList.add(new Applications(2, 03, "S908"));
 		
 		
 		boolean login = false; 
