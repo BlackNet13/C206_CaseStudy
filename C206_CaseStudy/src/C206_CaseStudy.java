@@ -37,7 +37,7 @@ public class C206_CaseStudy {
 		 * 1.users(Shou Kang) : userid(Str), pw(Str), name(Str), roleid(int)
 		 * 2.roles(Aliyah) : roleid(int),rolename(str)
 		 * 3.activity(Edry) : activityid(int), type(string), name(String) totalCCAdays(int), maxPax(int), status(String, open/closed),teacherid(str)
-		 * 4.applications(Marcus) : applicationid(int), activityid(int),studentid(Str), status(string,start out as blank "", filled with approved/rejected) 
+		 * 4.applications(Marcus) : applicationid(int), activityid(int),studentid(Str), status(string,start as pending, filled with approved/rejected) 
 		 * 5.attendance(Alex) :  attendanceid(int), studentid(string), activityid(int),attended(int, days attended)
 		 * 
 		 * arraylist: 
@@ -95,6 +95,8 @@ public class C206_CaseStudy {
 		ArrayList<Attendance> attendanceList = new ArrayList<Attendance>() ;
 		attendanceList.add(new Attendance(1,"S111",01,4));
 		attendanceList.add(new Attendance(2,"S908",02,7));
+		
+		
 		boolean login = false; 
 		int options = 123;
 		int role = 0;
@@ -142,13 +144,13 @@ public class C206_CaseStudy {
 				if(options!=-8) {
 				if(role == 1) { //admin
 					switch(options) {
-					case 1: //view all users code here, Aliyah
+					case 1: //view all users code here, Aliyah, done/
 						//<<Insert code here:>>
 						
 						displayAllUsers(roleList, userList) ;
 						
 						//<<end of code for case 1>>
-						System.out.print("admin1"); //<--this is just to test that it can reach this lvl before you start coding
+						//System.out.print("admin1"); //<--this is just to test that it can reach this lvl before you start coding
 						break;
 					case 2: //add/update users code here, Shou Kang//
 						//<<Insert code here:>>
