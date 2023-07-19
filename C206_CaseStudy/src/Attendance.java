@@ -4,7 +4,7 @@ private int attendanceId;
 private String studentId;
 private int activityId;
 private int daysAttended;
-private int teacherID;
+
 
 public Attendance(int attendanceId,String studentId, int activityId, int daysAttended ) {
 	this.attendanceId=attendanceId;
@@ -27,9 +27,4 @@ public String getstudentId() {
 public int daysAttended() {
 	return daysAttended;
 }
-public int getteacherID() {
-	return teacherID;
-}
-
-
 }
