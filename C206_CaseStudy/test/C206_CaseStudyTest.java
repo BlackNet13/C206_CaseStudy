@@ -17,6 +17,7 @@ public class C206_CaseStudyTest { //Edry will be supervisor of junit test cases 
 	
 	private Activity Acti1;
 	private Activity Acti2;
+	private Activity Acti3;
 	
 	private Applications apply1;
 	private Applications apply2;
@@ -39,9 +40,9 @@ public class C206_CaseStudyTest { //Edry will be supervisor of junit test cases 
 		Student2 = new Users("S890", "2222", "Katy", 3); //student
 		
 		//to add date and time when class constructor is ready
-		Acti1 = new Activity(01,"sports","Football",8,25,"Close","S789");
-		Acti2 =new Activity(02,"uniformGroup","NCC SEA",8,60,"Open","S0120");
-		
+		Acti1 = new Activity(01,"sports","Football",8,25,"Close","S789","15:00-17:00");
+		Acti2 =new Activity(02,"uniformGroup","NCC SEA",8,60,"Open","S0120","14:00-17:00");
+		Acti3 = new Activity(03,"performanceArts","Chinese Orchestra",8,45,"Close","S897","15:00-18:00");
 		apply1 = new Applications(1, 01, "S555");
 		apply2 = new Applications(2, 01, "S890");
 		apply3 = new Applications(3, 02, "S555"); //test whether if all can be shown instead of just under one activity ID
@@ -145,6 +146,7 @@ public class C206_CaseStudyTest { //Edry will be supervisor of junit test cases 
 		Student2 = null;
 		Acti1 = null;
 		Acti2 = null;
+		Acti3 = null;
 		apply1 = null;
 		apply2 = null;
 		apply3 = null;

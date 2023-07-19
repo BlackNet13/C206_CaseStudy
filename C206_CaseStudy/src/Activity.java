@@ -8,9 +8,10 @@ private int totalCCAdays;
 private int maxPax;
 private String status;
 private String teacherID;
+private String timeSlot;
 
 
-public Activity(int activityID, String type ,String name, int totalCCAdays , int maxPax, String status, String teacherID) {
+public Activity(int activityID, String type ,String name, int totalCCAdays , int maxPax, String status, String teacherID,String timeSlot) {
 	this.activityID = activityID;
 	this.type = type;
 	this.name = name;
@@ -18,6 +19,7 @@ public Activity(int activityID, String type ,String name, int totalCCAdays , int
 	this.maxPax = maxPax;
 	this.status = status; //
 	this.teacherID = teacherID;
+	this.timeSlot = timeSlot;
 	
 	
 }
