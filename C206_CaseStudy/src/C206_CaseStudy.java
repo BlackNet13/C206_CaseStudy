@@ -61,6 +61,9 @@ public class C206_CaseStudy {
 		userList.add(new Users("S123","1234","Kelly",1)); //admin
 		userList.add(new Users("S897","4562","Mark",2)); //teacher
 		userList.add(new Users("S111","1111","Kelly",3)); //student
+		userList.add(new Users("S345", "2345", "Helen", 1)); //admin
+		userList.add(new Users("S567", "6543", "Jake", 2)); //teacher
+		userList.add(new Users("S908", "3232", "Kate", 3)); //student
 		
 		//initialize the activityList, done by Edry 
 		ArrayList<Activity> activityList = new ArrayList<Activity>(); 
@@ -141,14 +144,35 @@ public class C206_CaseStudy {
 						String idInp = Helper.readString("Enter user id > ");
 						
 						for(int i = 0; i > userList.size(); i++) {
+							
+							int added = 0;
 							String idList = userList.get(i).getID();
+							
 							if(idInp.equals(idList)) {
-								char confirmation = Helper.readChar("Do you want to edit this user's record? (y/n) > ");
-								if(confirmation == 'y') {
+								
+								String confirmation = Helper.readString("Do you want to edit this user's record? (y/n) > ");
+								
+								if(confirmation.equalsIgnoreCase("y")) {
 									
+									String newPassword = Helper.readString("Please enter the new password (Leave empty to not change) > ");
+									int newRole = Helper.readInt("Please enter the new role index (Leave empty to not change) > ");
+									
+									if(newPassword.length() >= 4) {
+										String passCheck = newPassword.trim();
+										
+										if(newPassword.length() != passCheck.length()) {
+											
+										}
+										else {
+											
+										}
+									}
+									else {
+										System.out.println("\nThe New password does not meet the minimun length");
+									}
 								}
-								else if(confirmation == 'n') {
-									
+								else if(confirmation.equalsIgnoreCase("n")) {
+									break; 
 								}
 								else {
 									System.out.println("Invalid");
