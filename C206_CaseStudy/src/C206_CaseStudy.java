@@ -224,7 +224,9 @@ public class C206_CaseStudy {
 					case 5: //Mark attendance code here, Marcus,Shou Kang
 						//<<Insert code here:>>
 						
-						
+						//-show list of activities own by the teacher
+						//-ask what activity id the user wants
+						//-shows list of students
 						
 						//<<end of code for case 5>>
 						System.out.print("teach5");
@@ -249,7 +251,8 @@ public class C206_CaseStudy {
 					case 2: //apply for activities code here,Yvonne, Aliyah
 						//<<Insert code here:>>
 						
-						
+						//-ask what activity id they want, then we search the activityList if the activity id exist
+						//-show confirmation screen
 						
 						//<<end of code for case 2>>
 						System.out.print("student2");
