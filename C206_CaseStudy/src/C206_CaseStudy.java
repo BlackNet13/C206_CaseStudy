@@ -138,7 +138,23 @@ public class C206_CaseStudy {
 						break;
 					case 2: //add/update users code here, Shou Kang
 						//<<Insert code here:>>
+						String idInp = Helper.readString("Enter user id > ");
 						
+						for(int i = 0; i > userList.size(); i++) {
+							String idList = userList.get(i).getID();
+							if(idInp.equals(idList)) {
+								char confirmation = Helper.readChar("Do you want to edit this user's record? (y/n) > ");
+								if(confirmation == 'y') {
+									
+								}
+								else if(confirmation == 'n') {
+									
+								}
+								else {
+									System.out.println("Invalid");
+								}
+							}
+						}
 						
 						
 						//<<end of code for case 2>>
@@ -263,7 +279,7 @@ public class C206_CaseStudy {
 			System.out.println("-9. Exit program");
 			System.out.println();
 			
-			options = Helper.readInt("Enter option number >");
+			options = Helper.readInt("Enter option number > ");
 			
 			
 		}
@@ -283,7 +299,7 @@ public class C206_CaseStudy {
 			System.out.println("-9. Exit program");
 			System.out.println();
 			
-			options = Helper.readInt("Enter option number >");
+			options = Helper.readInt("Enter option number > ");
 			
 		}
 		else if(roleIndex == 3) {
@@ -300,7 +316,7 @@ public class C206_CaseStudy {
 			System.out.println("-9. Exit program");
 			System.out.println();
 			
-			options = Helper.readInt("Enter option number >");
+			options = Helper.readInt("Enter option number > ");
 		}
 		return options;
 	}
