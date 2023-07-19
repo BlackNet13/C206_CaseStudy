@@ -62,7 +62,7 @@ public class C206_CaseStudy {
 		userList.add(new Users("S897","4562","Mark",2)); //teacher //re
 		userList.add(new Users("S111","1111","Kelly",3)); //student
 		
-		//initialize the activityList, done by Edry  /done
+		//initialize the activityList, done by Edry 
 		ArrayList<Activity> activityList = new ArrayList<Activity>(); 
 		
 		activityList.add(new Activity(01,"sports","Football",8,25,"Close","S897"));
@@ -81,11 +81,6 @@ public class C206_CaseStudy {
 		roleList.add(new Roles(1, "Admin")) ;
 		roleList.add(new Roles(2, "Teacher")) ;
 		roleList.add(new Roles(3, "Student")) ;
-		
-		//initialize applicationsList, done by Marcus
-		
-		
-		//initialize attendanceList, done by Alex
 		
 		
 		boolean login = false; 
@@ -122,13 +117,11 @@ public class C206_CaseStudy {
 					
 					
 					
-				}else if(options != -9) {
+				}else {
 					
 					System.out.println("\nPlease enter a correct option");
-				}else if(options == -9) {
-					break;
+					//break;
 				}
-				
 				
 			}   //Yvonne
 				options = userMenus(role);
@@ -138,7 +131,7 @@ public class C206_CaseStudy {
 					case 1: //view all users code here, Aliyah
 						//<<Insert code here:>>
 						
-						displayAllUsers(userList) ;
+						displayAllUsers(roleList, userList) ;
 						
 						//<<end of code for case 1>>
 						System.out.print("admin1"); //<--this is just to test that it can reach this lvl before you start coding
@@ -148,11 +141,37 @@ public class C206_CaseStudy {
 						String idInp = Helper.readString("Enter user id > ");
 						
 						for(int i = 0; i > userList.size(); i++) {
+							
+							int added = 0;
 							String idList = userList.get(i).getID();
+							
 							if(idInp.equals(idList)) {
+<<<<<<< HEAD
 								char confirmation = Helper.readChar("Do you want to edit this user's record? (y/n) > ");
 								if(confirmation == 'y') {
+=======
+								
+								String confirmation = Helper.readString("Do you want to edit this user's record? (y/n) > ");
+								
+								if(confirmation.equalsIgnoreCase("y")) {
+>>>>>>> branch 'master' of https://github.com/BlackNet13/C206_CaseStudy
 									
+									String newPassword = Helper.readString("Please enter the new password (Leave empty to not change) > ");
+									int newRole = Helper.readInt("Please enter the new role index (Leave empty to not change) > ");
+									
+									if(newPassword.length() >= 4) {
+										String passCheck = newPassword.trim();
+										
+										if(newPassword.length() != passCheck.length()) {
+											
+										}
+										else {
+											
+										}
+									}
+									else {
+										System.out.println("\nThe New password does not meet the minimun length");
+									}
 								}
 								else if(confirmation == 'n') {
 									
@@ -328,7 +347,7 @@ public class C206_CaseStudy {
 		return options;
 	}
 	
-	public static void displayAllUsers(ArrayList<Users> userList) {
+	public static void displayAllUsers(ArrayList<Roles> roleList, ArrayList<Users> userList) {
 		System.out.println() ;
 		Helper.line(45, "=");
 		System.out.println("=======     USER LIST     =======");
@@ -344,12 +363,21 @@ public class C206_CaseStudy {
 		
 		for (int i = 0; i < userList.size(); i++) {
 			Users u = userList.get(i) ;
-			
-			String output = String.format("%-8s %4s", u.getID(), "") ;
-			output += String.format("%-10s %4s", u.getName(), "") ;
-			output += String.format("%s", u.getRoleIndex()) ;
-			
-			System.out.println(output) ;
+			for (int j = 0; j < roleList.size(); j++) {
+				Roles r = roleList.get(j) ;
+
+				if (u.getRoleIndex() == r.getRoleID()) {					
+					String roleName = r.getRoleName() ;
+					
+					String output = String.format("%-8s %4s", u.getID(), "") ;
+					output += String.format("%-10s %4s", u.getName(), "") ;
+					output += String.format("%s", roleName) ;
+					
+					System.out.println(output) ;
+					break ;
+				}
+			}			
 		}
-	}
+		
+	}	
 }
