@@ -117,11 +117,13 @@ public class C206_CaseStudy {
 					
 					
 					
-				}else {
+				}else if(options != -9) {
 					
 					System.out.println("\nPlease enter a correct option");
-					//break;
+				}else if(options == -9) {
+					break;
 				}
+				
 				
 			}   //Yvonne
 				options = userMenus(role);
