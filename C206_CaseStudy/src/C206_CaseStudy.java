@@ -65,7 +65,7 @@ public class C206_CaseStudy {
 		userList.add(new Users("S567", "6543", "Jake", 2)); //teacher
 		userList.add(new Users("S908", "3232", "Kate", 3)); //student//
 		
-		//initialize the activityList, done by Edry 
+		//initialize the activityList, done by Edry  /done
 		ArrayList<Activity> activityList = new ArrayList<Activity>(); 
 		
 		activityList.add(new Activity(01,"sports","Football",8,25,"Close","S897"));
@@ -84,6 +84,11 @@ public class C206_CaseStudy {
 		roleList.add(new Roles(1, "Admin")) ;
 		roleList.add(new Roles(2, "Teacher")) ;
 		roleList.add(new Roles(3, "Student")) ;
+		
+		//initialize applicationsList, done by Marcus
+		
+		
+		//initialize attendanceList, done by Alex
 		
 		
 		boolean login = false; 
