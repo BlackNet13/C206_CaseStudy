@@ -55,7 +55,7 @@ public class C206_CaseStudy {
 		//initialize all class objects here:
 		
 		
-		//initialize the userList, done by Shou Kang, to create 1 more of each role
+		//initialize the userList, done by Shou Kang, to create 1 more of each role//
 		ArrayList<Users> userList = new ArrayList<Users>(); 
 		
 		userList.add(new Users("S123","1234","Kelly",1)); //admin
