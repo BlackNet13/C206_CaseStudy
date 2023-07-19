@@ -118,7 +118,9 @@ public class C206_CaseStudy {
 					
 					
 				}else {
-					break;
+					
+					System.out.println("\nPlease enter a correct option");
+					//break;
 				}
 				
 			}   //Yvonne
@@ -159,6 +161,9 @@ public class C206_CaseStudy {
 						System.out.print("admin4"); //<--this is just to test that it can reach this lvl before you start coding
 						break;
 						
+					default: 
+						System.out.println("\nPlease enter a proper option");
+						break; 
 					}
 					
 					
@@ -183,6 +188,9 @@ public class C206_CaseStudy {
 					case 6: //update attendance code here
 						System.out.print("teach6");
 						break;
+					default: 
+						System.out.println("\nPlease enter a proper option");
+						break; 
 					}
 					
 				}else if(role == 3) { //students
@@ -200,6 +208,9 @@ public class C206_CaseStudy {
 					case 4: //attendance record code here
 						System.out.print("student4");
 						break;
+					default: 
+						System.out.println("\nPlease enter a proper option");
+						break; 
 				}
 					
 				}}else {
