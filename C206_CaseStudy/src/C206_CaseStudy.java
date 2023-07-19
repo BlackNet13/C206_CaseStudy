@@ -55,7 +55,7 @@ public class C206_CaseStudy {
 		//initialize all class objects here:
 		
 		
-		//initialize the userList, done by Shou Kang, to create 1 more of each role//
+		//initialize the userList, done by Shou Kang, to create 1 more of each role
 		ArrayList<Users> userList = new ArrayList<Users>(); 
 		
 		userList.add(new Users("S123","1234","Kelly",1)); //admin
@@ -63,7 +63,7 @@ public class C206_CaseStudy {
 		userList.add(new Users("S111","1111","Kelly",3)); //student
 		userList.add(new Users("S345", "2345", "Helen", 1)); //admin
 		userList.add(new Users("S567", "6543", "Jake", 2)); //teacher
-		userList.add(new Users("S908", "3232", "Kate", 3)); //student//
+		userList.add(new Users("S908", "3232", "Kate", 3)); //student
 		
 		//initialize the activityList, done by Edry  /done
 		ArrayList<Activity> activityList = new ArrayList<Activity>(); 
