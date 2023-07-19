@@ -144,13 +144,6 @@ public class C206_CaseStudy {
 						//<<Insert code here:>>
 						String idInp = Helper.readString("Enter user id > ");
 						
-						for(int i = 0; i > userList.size(); i++) {
-							String idList = userList.get(i).getID();
-							boolean found = false;
-							if(idInp.equals(idList)) {
-								
-							}
-						}
 						
 						
 						//<<end of code for case 2>>
