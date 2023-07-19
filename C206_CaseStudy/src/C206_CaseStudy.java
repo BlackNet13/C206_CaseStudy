@@ -136,7 +136,7 @@ public class C206_CaseStudy {
 						//<<end of code for case 1>>
 						System.out.print("admin1"); //<--this is just to test that it can reach this lvl before you start coding
 						break;
-					case 2: //add/update users code here, Shou Kang
+					case 2: //add/update users code here, Shou Kang//
 						//<<Insert code here:>>
 						String idInp = Helper.readString("Enter user id > ");
 						
