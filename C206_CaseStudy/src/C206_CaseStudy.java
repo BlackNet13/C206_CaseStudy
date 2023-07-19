@@ -117,6 +117,8 @@ public class C206_CaseStudy {
 					
 					
 					
+				}else {
+					break;
 				}
 				
 			}   //Yvonne
