@@ -171,7 +171,8 @@ public class C206_CaseStudy {
 									else {
 										System.out.println("\nThe New password does not meet the minimun length");
 									}
-								}else if(confirmation.equalsIgnoreCase("n")) {
+								}
+								else if(confirmation.equalsIgnoreCase("n")) {
 									break;
 								}
 								
