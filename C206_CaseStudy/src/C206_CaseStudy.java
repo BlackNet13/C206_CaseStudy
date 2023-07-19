@@ -14,19 +14,18 @@ public class C206_CaseStudy {
 		 * -view all user list
 		 * -add/update user -> input student/teacher/admin Id, pw, name, role(role list with role name) -> if user exist, ask if want to update each field
 		 * -remove user -> removes related ccas -> confirmation screen 
-		 * -View all roles
 		 * 
 		 * 1.2:teacher:
-		 * -Activity Overview list(even those from other teachers,activity list)
-		 * -view all activities(Owned)
+		 * -Activity Overview list(even those from other teachers,activity list) teacher name
+		 * -view all activities(Owned) x
 		 * -add/update activity (only can add their own) --> input activityName, maxDate, maxPax, status(open/closed/draft), teacherID ,activityID
 		 * -remove activity(only can delete their own)
 		 * -manage student applications[number of students waiting for approval] ->1.accept/reject students(shows list of students that applied and is of pending status)->will cycle through students, approve/reject
-		 * -update attendance -> view all students(show all students it will show each activity's list of students ordered by attivity group) -> show activity name, student name and id before and adding of attendance, mark attendance ->input date(searches for activity for that teacher for that day, show student name and id, retrieves from attendance list based on student id,activity id,date)-> cycles through students to mark attendance
+		 * -record attendance -> view all students(show all students it will show each activity's list of students ordered by attivity group) -> show activity name, student name and id before and adding of attendance, mark attendance ->input date(searches for activity for that teacher for that day, show student name and id, retrieves from attendance list based on student id,activity id,date)-> cycles through students to mark attendance
 		 *
 		 * 
 		 * 1.3:student:
-		 * -Activity Overview list(shows all)
+		 * -Activity Overview list(shows all) =browse
 		 * -apply for activities -> input activity ID (shows list of activities and their status(open/closed))-> if succesfull will show that they have to wait for approval
 		 * -application status/notifications(number of notifications) -> show applications and notifications(reminders)
 		 * -attendance record -> show list of activites enrolled in and their attendance status and completion rate(generated%)
@@ -50,6 +49,12 @@ public class C206_CaseStudy {
 		 * 
 		 */
 		
+		/*Perma updates:
+		 * -remove admin's view all roles
+		 * -remove admin's update function as it is sprint1
+		 * 
+		 */
+		
 		/*-------------------------------------*/
 		
 		//initialize all class objects here:
@@ -66,7 +71,7 @@ public class C206_CaseStudy {
 		userList.add(new Users("S908", "3232", "Kate", 3)); //student
 
 		
-		//initialize the activityList, done by Edry 
+		//initialize the activityList, done by Edry, add date, time
 		ArrayList<Activity> activityList = new ArrayList<Activity>(); 
 		
 		activityList.add(new Activity(01,"sports","Football",8,25,"Close","S897"));
@@ -121,10 +126,12 @@ public class C206_CaseStudy {
 					
 					
 					
-				}else {
-					
+				}else if(options!= -9){
 					System.out.println("\nPlease enter a correct option");
-					//break;
+				}else{
+					
+				
+					break;
 				}
 				
 			}   //Yvonne
@@ -193,14 +200,6 @@ public class C206_CaseStudy {
 						
 						//<<end of code for case 3>>
 						System.out.print("admin3"); //<--this is just to test that it can reach this lvl before you start coding
-						break;
-					case 4: //view all roles code here, Alex
-						//<<Insert code here:>>
-						
-						
-						
-						//<<end of code for case 4>>
-						System.out.print("admin4"); //<--this is just to test that it can reach this lvl before you start coding
 						break;
 						
 					default: 
@@ -298,9 +297,8 @@ public class C206_CaseStudy {
 			Helper.line(45,"=");
 			
 			System.out.println("1. View all users");
-			System.out.println("2. Add/Update user");
+			System.out.println("2. Add user"); //update was remove
 			System.out.println("3. Remove user");
-			System.out.println("4. View all roles");
 			System.out.println("-8. Logout");
 			System.out.println("-9. Exit program");
 			System.out.println();
