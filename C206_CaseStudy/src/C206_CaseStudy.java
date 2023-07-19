@@ -96,6 +96,8 @@ public class C206_CaseStudy {
 		attendanceList.add(new Attendance(1,"S111",01,4));
 		attendanceList.add(new Attendance(2,"S908",02,7));
 		
+		//initialize applicationList, done by Marcus
+		
 		
 		boolean login = false; 
 		int options = 123;
