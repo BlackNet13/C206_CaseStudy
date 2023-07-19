@@ -313,6 +313,7 @@ public class C206_CaseStudy {
 		return options;
 	}
 	
+	//done by Aliyah
 	public static void displayAllUsers(ArrayList<Roles> roleList, ArrayList<Users> userList) {
 		System.out.println() ;
 		Helper.line(45, "=");
