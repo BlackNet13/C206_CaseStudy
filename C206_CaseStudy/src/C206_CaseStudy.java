@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class C206_CaseStudy {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub//
 		
 		//commenting
 		
@@ -86,7 +86,10 @@ public class C206_CaseStudy {
 		roleList.add(new Roles(2, "Teacher")) ;
 		roleList.add(new Roles(3, "Student")) ;
 		
-		
+		//initialize attendanceList, done by Alex
+		ArrayList<Attendance> attendanceList = new ArrayList<Attendance>() ;
+		attendanceList.add(new Attendance(1,"S111",01,4));
+		attendanceList.add(new Attendance(2,"S908",02,7));
 		boolean login = false; 
 		int options = 123;
 		int role = 0;
