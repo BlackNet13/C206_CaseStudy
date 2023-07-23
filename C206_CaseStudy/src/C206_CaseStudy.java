@@ -64,11 +64,11 @@ public class C206_CaseStudy {
 		//initialize the userList, done by Shou Kang
 		ArrayList<Users> userList = new ArrayList<Users>(); 
 		
-		userList.add(new Users("S123","1234","Kelly",1)); //admin
-		userList.add(new Users("S897","4562","Mark",2)); //teacher 
+		userList.add(new Users("A123","1234","Kelly",1)); //admin
+		userList.add(new Users("T897","4562","Mark",2)); //teacher 
 		userList.add(new Users("S111","1111","Kelly",3)); //student
-		userList.add(new Users("S345", "2345", "Helen", 1)); //admin
-		userList.add(new Users("S567", "6543", "Jake", 2)); //teacher
+		userList.add(new Users("A345", "2345", "Helen", 1)); //admin
+		userList.add(new Users("T567", "6543", "Jake", 2)); //teacher
 		userList.add(new Users("S908", "3232", "Kate", 3)); //student
 
 		
@@ -160,12 +160,70 @@ public class C206_CaseStudy {
 						break;
 					case 2: //add users code here, Shou Kang//
 						//<<Insert code here:>>
-						String idInp = Helper.readString("Enter user id > ");
+						String nameRegex = "[a-zA-Z]+";
+						String passwordChecker = "[0-9]+";
+						
+						
+						int newUserRole = Helper.readInt("Enter new user role > ");
+						
+						String regex = regexReturn(newUserRole);
+						
+						if(!regex.equals("")) {
+							String newID = Helper.readString("Enter new users id > ");
+							newID = newID.toUpperCase();
+							
+							if(newID.length() == 4) {
+								
+								if(idChecker(userList, newID) == false) {
+																	
+									if(newID.matches(regex)) {
+										String newName = Helper.readString("Enter the new user's name > ");
+										String nameChecker = newName.replace(" ", "");
+									
+										if(nameChecker.matches(nameRegex)) {
+											String newPassword = Helper.readString("Enter the new user's password > ");
+										
+											if(newPassword.length() >= 4) {
+											
+												if(newPassword.matches(passwordChecker)) {
+													userList.add(new Users(newID, newPassword, newName, newUserRole));
+													System.out.println("\nNew user has been added");
+												}
+												else {
+													System.out.println("\nInvalid password");
+												}
+											}
+											else {
+												System.out.println("\nInvalid password");
+											}
+										}
+										else {
+											System.out.println("\nPlease enter a proper name");
+										}
+									}
+									else {
+										System.out.println("\nInvalid id was entered");
+									}
+								}
+								else {
+									System.out.println("\nID already exists");
+								}
+
+							}
+							else {
+								System.out.println("\nInvalid id was entered");
+							}
+							
+						}
+						else {
+							System.out.println("\nInvalid role was entered");
+						}
+						
+						
 						
 						
 						
 						//<<end of code for case 2>>
-						System.out.print("admin2"); //<--this is just to test that it can reach this lvl before you start coding
 						break;
 					case 3: //remove users code here,Marcus
 						//<<Insert code here:>>
@@ -396,4 +454,47 @@ public class C206_CaseStudy {
 		}
 		
 	}	
+	
+	//Shou kang code
+	public static boolean idChecker(ArrayList<Users> userList, String id) {
+		boolean exist = false;
+		
+		for(int i = 0; i < userList.size(); i++) {
+			String userListID = userList.get(i).getID();
+			
+			if(id.equals(userListID)) {
+				exist = true;
+				break; 
+			}
+		}
+		
+		return exist; 
+	}
+	
+	//Shou kang code
+	public static String regexReturn(int roleIndex) {
+		String regex = "";
+		
+		switch(roleIndex) {
+		
+		case 1:
+			regex = "[A][0-9]+";
+			break;	
+			
+		case 2:
+			regex = "[T][0-9]+";
+			break;
+			
+		case 3:
+			regex = "[S][0-9]+";
+			break;
+			
+		default:	
+			regex = "";
+		}
+
+		return regex; 
+
+	}
+	
 }

@@ -37,9 +37,9 @@ public String name() {
 public String getType() {
 	return type;
 }
-public int gettotalCCAdays() {
-	return totalCCAdays;
-}
+//public int gettotalCCAdays() {
+//	return totalCCAdays;
+//}
 public int maxPax() {
 	return maxPax;
 }
