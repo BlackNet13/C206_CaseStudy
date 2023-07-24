@@ -549,7 +549,7 @@ public class C206_CaseStudy {
 			for (int j = 0; j < activityList.size(); j++) {
 				Activity a = activityList.get(j) ;
 				
-				if (userID == a.getTeacherID()) {
+				if (userID.equalsIgnoreCase(a.getTeacherID())) {
 
 					String output = String.format("%-12s %4s", a.getActivityID(), "") ;
 					output += String.format("%-20s %4s", a.getName(), "") ;
