@@ -110,13 +110,13 @@ public class C206_CaseStudy {
 		int options = 123;
 		int role = 0;
 		
-		login(userList, roleList, activityList ,login, options, role);
+		login(userList, roleList, activityList, applicationList, attendanceList ,login, options, role);
 		
 		System.out.println("\nProgram Exited");
 		
 	}
 
-	public static void login(ArrayList<Users> userList, ArrayList<Roles> roleList, ArrayList<Activity> activityList, boolean login, int options,
+	public static void login(ArrayList<Users> userList, ArrayList<Roles> roleList, ArrayList<Activity> activityList, ArrayList<Applications> applicationList,ArrayList<Attendance> attendanceList, boolean login, int options,
 			int role) {
 		while(options != -9) {
 			
