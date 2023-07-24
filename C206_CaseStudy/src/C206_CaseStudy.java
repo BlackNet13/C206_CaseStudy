@@ -11,23 +11,25 @@ public class C206_CaseStudy {
 		 * 1.login -> show different menu choices
 		 * 
 		 * 1.1: admin: 
-		 * -view all user list
-		 * -add/update user -> input student/teacher/admin Id, pw, name, role(role list with role name) -> if user exist, ask if want to update each field
-		 * -remove user -> removes related ccas -> confirmation screen 
+		 * -view all user list(1st sprint)
+		 * -add(1st sprint)/update(2nd sprint) user -> input student/teacher/admin Id, pw, name, role(role list with role name) -> if user exist, ask if want to update each field
+		 * -remove user(1st sprint) -> removes related ccas -> confirmation screen 
 		 * 
 		 * 1.2:teacher:
-		 * -Browse activity(even those from other teachers,activity list) teacher name
-		 * -add/update activity (only can add their own) --> input activityName, maxDate, maxPax, status(open/closed/draft), teacherID ,activityID
-		 * -remove activity(only can delete their own)
-		 * -manage student applications[number of students waiting for approval] ->1.accept/reject students(shows list of students that applied and is of pending status)->will cycle through students, approve/reject
-		 * -Mark attendance -> view all students(show all students it will show each activity's list of students ordered by activity group) -> show activity name, student name and id before and adding of attendance, mark attendance ->input date(searches for activity for that teacher for that day, show student name and id, retrieves from attendance list based on student id,activity id,date)-> cycles through students to mark attendance
+		 * -Browse activity(1st sprint)(even those from other teachers,activity list) teacher name
+		 * -add(1st sprint:)/update(2nd sprint) activity (only can add their own) --> input activityName, maxDate, maxPax, status(open/closed/draft), teacherID ,activityID
+		 * -remove activity(1st sprint)(only can delete their own)
+		 * -manage student applications(1st sprint:approved & viewing)[number of students waiting for approval] ->1.accept/reject students(shows list of students that applied and is of pending status)->will cycle through students, approve/reject
+		 * -Remove student application(1st sprint: delete for both, will remove attendance as well if created)
+		 * -Mark attendance(1st sprint: add) -> view all students(show all students it will show each activity's list of students ordered by activity group) -> show activity name, student name and id before and adding of attendance, mark attendance ->input date(searches for activity for that teacher for that day, show student name and id, retrieves from attendance list based on student id,activity id,date)-> cycles through students to mark attendance
+		 * -Delete attendance(1st sprint: remove)
 		 *
 		 * 
 		 * 1.3:student:
 		 * -Browse activity(shows all)
-		 * -apply for activities -> input activity ID (shows list of activities and their status(open/closed))-> if successful will show that they have to wait for approval
-		 * -application status/notifications(number of notifications) -> show applications and notifications(reminders)
-		 * -attendance record -> show list of activities enrolled in and their attendance status and completion rate(generated%)
+		 * -apply for activities(1st sprint: add) -> input activity ID (shows list of activities and their status(open/closed))-> if successful will show that they have to wait for approval
+		 * -application status(1st sprint: viewing)/notifications(number of notifications) -> show applications and notifications(reminders)
+		 * -attendance record(1st sprint: view) -> show list of activities enrolled in and their attendance status and completion rate(generated%)
 		 * 
 		 */
 		
@@ -279,15 +281,32 @@ public class C206_CaseStudy {
 						//<<end of code for case 4>>
 						System.out.print("teach4");
 						break;
-					case 5: //Mark attendance code here, Marcus,Shou Kang
+					case 5: //Remove attendance code here
+						//<<Insert code here:>>
+						
+					
+						
+						//<<end of code for case 5>>
+						System.out.print("teach5");
+						break;
+						
+					case 6: //Mark attendance code here, Marcus,Shou Kang
 						//<<Insert code here:>>
 						
 						//-show list of activities own by the teacher
 						//-ask what activity id the user wants
 						//-shows list of students
 						
-						//<<end of code for case 5>>
-						System.out.print("teach5");
+						//<<end of code for case 6>>
+						System.out.print("teach6");
+						break;
+					case 7: //Delete attendance code here, 
+						//<<Insert code here:>>
+						
+						
+						
+						//<<end of code for case 7>>
+						System.out.print("teach7");
 						break;
 					default: 
 						if(options != -9) {
@@ -393,7 +412,9 @@ public class C206_CaseStudy {
 			System.out.println("2. Add Activities"); //show activities and add as well
 			System.out.println("3. Remove activites");
 			System.out.println("4. Manage Student's Applications");
-			System.out.println("5. Mark Attendance");
+			System.out.println("5. Remove Student's Applications");
+			System.out.println("6. Mark Attendance");
+			System.out.println("7. Delete Attendance");
 			System.out.println("-8. Logout");
 			System.out.println("-9. Exit program");
 			System.out.println();
