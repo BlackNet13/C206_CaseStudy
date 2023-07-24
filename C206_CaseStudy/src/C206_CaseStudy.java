@@ -77,10 +77,10 @@ public class C206_CaseStudy {
 		//initialize the activityList, done by Edry, add date, time
 		ArrayList<Activity> activityList = new ArrayList<Activity>(); 
 		
-		activityList.add(new Activity(1.1,"sports","Football",25,"Open","S897","01/08/2023","15:00-17:00"));
-		activityList.add(new Activity(1.2,"sports","Football", 25,"Open","S897","02/08/2023","14:00-16:00"));
-		activityList.add(new Activity(2.1,"uniformGroup","NCC SEA",60,"Open","S897","15/08/2023","14:00-17:00"));
-		activityList.add(new Activity(3.1,"performanceArts","Chinese Orchestra",45,"Close","S897","16/07/2023","15:00-18:00"));
+		activityList.add(new Activity(1.1,"sports","Football",25,"Open","T897","01/08/2023","15:00-17:00"));
+		activityList.add(new Activity(1.2,"sports","Football", 25,"Open","T897","02/08/2023","14:00-16:00"));
+		activityList.add(new Activity(2.1,"uniformGroup","NCC SEA",60,"Open","T897","15/08/2023","14:00-17:00"));
+		activityList.add(new Activity(3.1,"performanceArts","Chinese Orchestra",45,"Close","T897","16/07/2023","15:00-18:00"));
 
 		//type = sports, uniformGroup, performanceArts
 		//totalDays = total cca days in a month, so if once a week will be 4 as in a month got four weeks. 
@@ -153,7 +153,7 @@ public class C206_CaseStudy {
 				if(options!=-8) {
 				if(role == 1) { //admin
 					switch(options) {
-					case 1: //view all users code here, Aliyah, done/
+					case 1: //view all users code here, Aliyah, done//
 						//<<Insert code here:>>
 						
 						displayAllUsers(roleList, userList) ;
