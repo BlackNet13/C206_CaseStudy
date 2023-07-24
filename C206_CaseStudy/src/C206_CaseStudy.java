@@ -161,71 +161,10 @@ public class C206_CaseStudy {
 						//<<end of code for case 1>>
 						//System.out.print("admin1"); //<--this is just to test that it can reach this lvl before you start coding
 						break;
-					case 2: //add users code here, Shou Kang//
+					case 2: //add users code here, Shou Kang, Done//
 						//<<Insert code here:>>
-						String nameRegex = "[a-zA-Z]+";
-						String passwordChecker = "[0-9]+";
-						
-						
-						int newUserRole = Helper.readInt("Enter new user role > ");
-						
-						String regex = regexReturn(newUserRole);
-						
-						if(!regex.equals("")) {
-							String newID = Helper.readString("Enter new users id > ");
-							newID = newID.toUpperCase();
-							
-							if(newID.length() == 4) {
-								
-								if(idChecker(userList, newID) == false) {
-																	
-									if(newID.matches(regex)) {
-										String newName = Helper.readString("Enter the new user's name > ");
-										String nameChecker = newName.replace(" ", "");
-									
-										if(nameChecker.matches(nameRegex)) {
-											String newPassword = Helper.readString("Enter the new user's password > ");
-										
-											if(newPassword.length() >= 4) {
-											
-												if(newPassword.matches(passwordChecker)) {
-													userList.add(new Users(newID, newPassword, newName, newUserRole));
-													System.out.println("\nNew user has been added");
-												}
-												else {
-													System.out.println("\nInvalid password");
-												}
-											}
-											else {
-												System.out.println("\nInvalid password");
-											}
-										}
-										else {
-											System.out.println("\nPlease enter a proper name");
-										}
-									}
-									else {
-										System.out.println("\nInvalid id was entered");
-									}
-								}
-								else {
-									System.out.println("\nID already exists");
-								}
+						addUserAdmin(userList);
 
-							}
-							else {
-								System.out.println("\nInvalid id was entered");
-							}
-							
-						}
-						else {
-							System.out.println("\nInvalid role was entered");
-						}
-						
-						
-						
-						
-						
 						//<<end of code for case 2>>
 						break;
 					case 3: //remove users code here,Marcus
@@ -368,7 +307,7 @@ public class C206_CaseStudy {
 		
 		System.out.println("\nProgram Exited");
 		
-	} //end of main
+	}
 	
 	// Shou Kang code, login Menu
 	public static void loginMenu(){
@@ -518,5 +457,66 @@ public class C206_CaseStudy {
 		return regex; 
 
 	}
-	
+	 //Shou Kang code
+
+	private static void addUserAdmin(ArrayList<Users> userList) {
+		String nameRegex = "[a-zA-Z]+";
+		String passwordChecker = "[0-9]+";
+		
+		
+		int newUserRole = Helper.readInt("Enter new user role > ");
+		
+		String regex = regexReturn(newUserRole);
+		
+		if(!regex.equals("")) {
+			String newID = Helper.readString("Enter new users id > ");
+			newID = newID.toUpperCase();
+			
+			if(newID.length() == 4) {
+				
+				if(idChecker(userList, newID) == false) {
+													
+					if(newID.matches(regex)) {
+						String newName = Helper.readString("Enter the new user's name > ");
+						String nameChecker = newName.replace(" ", "");
+					
+						if(nameChecker.matches(nameRegex)) {
+							String newPassword = Helper.readString("Enter the new user's password > ");
+						
+							if(newPassword.length() >= 4) {
+							
+								if(newPassword.matches(passwordChecker)) {
+									userList.add(new Users(newID, newPassword, newName, newUserRole));
+									System.out.println("\nNew user has been added");
+								}
+								else {
+									System.out.println("\nInvalid password");
+								}
+							}
+							else {
+								System.out.println("\nInvalid password");
+							}
+						}
+						else {
+							System.out.println("\nPlease enter a proper name");
+						}
+					}
+					else {
+						System.out.println("\nInvalid id was entered");
+					}
+				}
+				else {
+					System.out.println("\nID already exists");
+				}
+
+			}
+			else {
+				System.out.println("\nInvalid id was entered");
+			}
+			
+		}
+		else {
+			System.out.println("\nInvalid role was entered");
+		}
+	}
 }
