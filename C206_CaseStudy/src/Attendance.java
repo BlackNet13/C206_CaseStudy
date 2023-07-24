@@ -2,21 +2,21 @@
 public class Attendance {
 private int attendanceId;
 private String studentId;
-private int activityId;
-private int daysAttended;
+private double activityId;
+private String attended;
 
 
-public Attendance(int attendanceId,String studentId, int activityId, int daysAttended ) {
+public Attendance(int attendanceId,String studentId, double activityId, String attended ) {
 	this.attendanceId=attendanceId;
 	this.studentId=studentId;
 	this.activityId = activityId;
-	this.daysAttended = daysAttended;
+	this.attended = attended;
 	
 }
 public int getattendanceId(){
 	return attendanceId;
 }
-public int getactivityId() {
+public double getactivityId() {
 	return activityId;
 }
 
@@ -24,7 +24,7 @@ public String getstudentId() {
 	return studentId;
 }
 
-public int daysAttended() {
-	return daysAttended;
+public String attended() {
+	return attended;
 }
 }

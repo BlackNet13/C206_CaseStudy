@@ -23,6 +23,8 @@ public class C206_CaseStudyTest { //Edry will be supervisor of junit test cases 
 	private Applications apply2;
 	private Applications apply3;
 	
+	private Attendance attendance1;
+	
 	private ArrayList<Users> userList;
 	private ArrayList<Activity> activityList; 
 	private ArrayList<Roles> roleList;
@@ -46,6 +48,8 @@ public class C206_CaseStudyTest { //Edry will be supervisor of junit test cases 
 		apply1 = new Applications(1, 01, "S555");
 		apply2 = new Applications(2, 01, "S890");
 		apply3 = new Applications(3, 02, "S555"); //test whether if all can be shown instead of just under one activity ID
+		
+		attendance1 = new Attendance(1,"S555",1.1,"Y");
 		
 		userList = new ArrayList<Users>(); 
 		activityList = new ArrayList<Activity>(); 
@@ -123,6 +127,9 @@ public class C206_CaseStudyTest { //Edry will be supervisor of junit test cases 
 	
 	@Test
 	public void testAddAttendance() { //Yvonne
+		assertNotNull("Test if valid attendancelist to add to exist", attendanceList);
+		assertEquals("Test that the attendanceList is empty.", 0, attendanceList.size());
+		//C206_CaseStudy.addMethodName(attendanceList, attendance1); <- to be replace with method name, now methodName does not exist.
 		
 	}
 	
