@@ -1,18 +1,18 @@
 //Marcus code
 public class Applications {
 private int appId;
-private int activityId;
+private double activityId;
 private String studentId;
 private String status;
 
-public Applications(int appId, int activityId, String studentId, String status ) {
+public Applications(int appId, double activityId, String studentId, String status ) {
 	this.appId = appId;
 	this.activityId = activityId;
 	this.studentId = studentId;
 	this.status = status;
 }
 
-public Applications(int appId, int activityId, String studentId ) {
+public Applications(int appId, double activityId, String studentId ) {
 	this.appId = appId;
 	this.activityId = activityId;
 	this.studentId = studentId;
@@ -23,7 +23,7 @@ public int getAppId() {
 	return appId;
 }
 
-public int getActivityId() {
+public double getActivityId() {
 	return activityId;
 }
 

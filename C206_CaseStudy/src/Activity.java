@@ -4,7 +4,6 @@ public class Activity {
 private double activityID;
 private String type;
 private String name;
-//private int totalCCAdays;
 private int maxPax;
 private String status;
 private String teacherID;
@@ -16,9 +15,8 @@ public Activity(double activityID, String type ,String name, int maxPax, String 
 	this.activityID = activityID;
 	this.type = type;
 	this.name = name;
-	//this.totalCCAdays = totalCCAdays;
 	this.maxPax = maxPax;
-	this.status = status; //
+	this.status = status; 
 	this.teacherID = teacherID;
 	this.date = date;
 	this.timeSlot = timeSlot;
