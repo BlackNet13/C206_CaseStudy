@@ -24,6 +24,7 @@ public class C206_CaseStudyTest { //Edry will be supervisor of junit test cases 
 	private Applications apply3;
 	
 	private Attendance attendance1;
+	private Attendance attendance2;
 	
 	private ArrayList<Users> userList;
 	private ArrayList<Activity> activityList; 
@@ -50,6 +51,7 @@ public class C206_CaseStudyTest { //Edry will be supervisor of junit test cases 
 		apply3 = new Applications(3, 02, "S555"); //test whether if all can be shown instead of just under one activity ID
 		
 		attendance1 = new Attendance(1,"S555",1.1,"Y");
+		attendance2 = new Attendance(2,"S890",1.1,"Y");
 		
 		userList = new ArrayList<Users>(); 
 		activityList = new ArrayList<Activity>(); 
@@ -130,7 +132,21 @@ public class C206_CaseStudyTest { //Edry will be supervisor of junit test cases 
 		assertNotNull("Test if valid attendancelist to add to exist", attendanceList);
 		assertEquals("Test that the attendanceList is empty.", 0, attendanceList.size());
 		//C206_CaseStudy.addMethodName(attendanceList, attendance1); <- to be replace with method name, now methodName does not exist.
+		assertEquals("Test that the attendanceList size is 1.", 1, attendanceList.size());
 		
+		// Add an item
+		//C206_CaseStudy.addMethodName(attendanceList, attendance2);
+		assertEquals("Test that the attendanceList size is now 2.", 2, attendanceList.size());
+		assertSame("Test that attendance is added to the end of the list.", attendance2, attendanceList.get(1));
+
+		// Add an item that already exists in the list
+		//C206_CaseStudy.addMethodName(attendanceList, attendance2);
+		assertEquals("Test that the attendanceList size is unchange.", 2, attendanceList.size());
+
+		// Add an item that has missing detail
+		Attendance att_Missing = new Attendance(2, "", 2.1,"Y");
+		//C206_CaseStudy.addMethodName(attendanceList, att_Missing);
+		assertEquals("Test that the attendanceList size is unchange.", 2, attendanceList.size());
 	}
 	
 	@Test
