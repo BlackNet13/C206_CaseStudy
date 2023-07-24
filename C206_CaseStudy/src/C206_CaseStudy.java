@@ -120,6 +120,7 @@ public class C206_CaseStudy {
 	public static void login(ArrayList<Users> userList, ArrayList<Roles> roleList, ArrayList<Activity> activityList, ArrayList<Applications> applicationList,ArrayList<Attendance> attendanceList, boolean login, int options,
 			int role) {
 		while(options != -9) {
+				String userID;
 			
 			if(login == false) {
 				loginMenu();
@@ -128,7 +129,7 @@ public class C206_CaseStudy {
 				
 				if(options == 1) {
 					
-					String userID = Helper.readString("Enter user ID > ");
+					userID = Helper.readString("Enter user ID > ");
 					String password = Helper.readString("Enter password > ");
 					
 				
