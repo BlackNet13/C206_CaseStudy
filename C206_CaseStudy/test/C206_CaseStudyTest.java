@@ -25,6 +25,7 @@ public class C206_CaseStudyTest { //Edry will be supervisor of junit test cases 
 	
 	private Attendance attendance1;
 	private Attendance attendance2;
+	private Attendance attendance3;
 	
 	private ArrayList<Users> userList;
 	private ArrayList<Activity> activityList; 
@@ -52,6 +53,7 @@ public class C206_CaseStudyTest { //Edry will be supervisor of junit test cases 
 		
 		attendance1 = new Attendance(1,"S555",1.1,"Y");
 		attendance2 = new Attendance(2,"S890",1.1,"Y");
+		attendance3 = new Attendance(3, "S555", 2.1, "Y");
 		
 		userList = new ArrayList<Users>(); 
 		activityList = new ArrayList<Activity>(); 
@@ -151,9 +153,29 @@ public class C206_CaseStudyTest { //Edry will be supervisor of junit test cases 
 	
 	@Test
 	public void testViewAttendance() { //Yvonne
+		assertNotNull("Test if valid attendanceList exist", attendanceList);
+		assertEquals("Test that the attendanceList is empty.", 0, attendanceList.size());
 		
+		// Attempt to retrieve the attendanceList records 
+		//String allAttendance= C206_CaseStudy.getAllMethod(attendanceList);
+		String testOutput = "";
+		
+		// Test if the output is empty
+		//assertEquals("Test that nothing is displayed", testOutput, allAttendance);
+		
+		//----------Test Case 2
+		//C206_CaseStudy.addMethod(attendanceList, attendance1);
+		//C206_CaseStudy.addMethod(attendanceList, attendance2);
+		
+		// Test that the list is not empty
+		assertEquals("Test that attendanceList size is 2.", 2, attendanceList.size());
+		// Attempt to retrieve the Attendance 
+		//allAttendance= C206_CaseStudy.retrieveAllMethod(attendanceList);
+		testOutput = String.format("%-10d %-30s %-10.2f %-10s\n",1, "S555", 1.1, "Y");
+		testOutput += String.format("%-10d %-30s %-10.2f %-10s\n",2, "S890", 1.1, "Y");
+		// Test that the details are displayed correctly
+		//assertEquals("Test that the display is correct.", testOutput, allAttendance);
 	}
-	
 	
 	
 	
