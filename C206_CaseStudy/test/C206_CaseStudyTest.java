@@ -65,7 +65,7 @@ public class C206_CaseStudyTest { //Edry will be supervisor of junit test cases 
 	
 	@Test
 	public void testLogin() { //Edry
-		//boolean test similiar to resource centre test in testDoLoan
+		//boolean test similiar to resource centre test in testDoLoan but different
 		
 	}
 	

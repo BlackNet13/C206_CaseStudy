@@ -110,6 +110,14 @@ public class C206_CaseStudy {
 		int options = 123;
 		int role = 0;
 		
+		login(userList, roleList, login, options, role);
+		
+		System.out.println("\nProgram Exited");
+		
+	}
+
+	public static void login(ArrayList<Users> userList, ArrayList<Roles> roleList, boolean login, int options,
+			int role) {
 		while(options != -9) {
 			
 			if(login == false) {
@@ -304,9 +312,6 @@ public class C206_CaseStudy {
 				
 
 		}
-		
-		System.out.println("\nProgram Exited");
-		
 	}
 	
 	// Shou Kang code, login Menu
