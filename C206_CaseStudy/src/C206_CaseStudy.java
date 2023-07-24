@@ -110,13 +110,13 @@ public class C206_CaseStudy {
 		int options = 123;
 		int role = 0;
 		
-		login(userList, roleList, login, options, role);
+		login(userList, roleList, activityList ,login, options, role);
 		
 		System.out.println("\nProgram Exited");
 		
 	}
 
-	public static void login(ArrayList<Users> userList, ArrayList<Roles> roleList, boolean login, int options,
+	public static void login(ArrayList<Users> userList, ArrayList<Roles> roleList, ArrayList<Activity> activityList, boolean login, int options,
 			int role) {
 		while(options != -9) {
 			
@@ -207,8 +207,7 @@ public class C206_CaseStudy {
 					case 2: //add activities(that they owned)code here, Aliyah
 						//show activities that they owned first
 						//<<Insert code here:>>
-						//showOwnActivties(userList, activityList) ; w
-							
+						showOwnActivties(userList,activityList);							
 						
 						//<<end of code for case 2>>
 						System.out.print("teach2");
