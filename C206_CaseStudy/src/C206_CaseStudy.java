@@ -163,7 +163,7 @@ public class C206_CaseStudy {
 						break;
 					case 2: //add users code here, Shou Kang, Done//
 						//<<Insert code here:>>
-						addUserAdmin(userList);
+						addUser(userList);
 
 						//<<end of code for case 2>>
 						break;
@@ -459,7 +459,7 @@ public class C206_CaseStudy {
 	}
 	 //Shou Kang code
 
-	private static void addUserAdmin(ArrayList<Users> userList) {
+	private static void addUser(ArrayList<Users> userList) {
 		String nameRegex = "[a-zA-Z]+";
 		String passwordChecker = "[0-9]+";
 		
