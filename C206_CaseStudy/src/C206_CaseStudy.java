@@ -116,6 +116,7 @@ public class C206_CaseStudy {
 		
 	}
 
+	//code done by Shou Kang and Yvonne
 	public static void login(ArrayList<Users> userList, ArrayList<Roles> roleList, ArrayList<Activity> activityList, ArrayList<Applications> applicationList,ArrayList<Attendance> attendanceList, boolean login, int options,
 			int role) {
 		while(options != -9) {
