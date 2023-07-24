@@ -151,9 +151,7 @@ public class C206_CaseStudy {
 					
 				}else if(options!= -9){
 					System.out.println("\nPlease enter a correct option");
-				}else{
-					
-				
+				}else{				
 					break;
 				}
 				
@@ -208,7 +206,7 @@ public class C206_CaseStudy {
 					case 2: //add activities(that they owned)code here, Aliyah
 						//show activities that they owned first
 						//<<Insert code here:>>
-						showOwnActivties(userList,activityList);							
+						showOwnActivties(userList, activityList);							
 						
 						//<<end of code for case 2>>
 						System.out.print("teach2");
@@ -529,40 +527,39 @@ public class C206_CaseStudy {
 	public static void showOwnActivties(ArrayList<Users> userList, ArrayList<Activity> activityList) {
 		System.out.println() ;
 		Helper.line(45, "=");
-		System.out.println("=======     OWN ACTIVITY LIST     =======");
+		System.out.println("=======       OWN ACTIVITY LIST       =======");
 		Helper.line(45, "=");
 		System.out.println() ;
 		
 		String table = String.format("%s %5s", "Activity ID", " ") ;
-		table += String.format("%s %5s", "Activity Name", " ") ;
-		table += String.format("%s %5s", "Category", " ") ;
+		table += String.format("%s %11s", "Activity Name", " ") ;
+		table += String.format("%s %11s", "Category", " ") ;
 		table += String.format("%s %5s", "Max Pax", " ") ;
 		table += String.format("%s %5s", "Status", " ") ;
-		table += String.format("%s %5s", "Date", " ") ;
-		table += String.format("%s %5s", "Time Slot", " ") ;
+		table += String.format("%s %10s", "Date", " ") ;
+		table += String.format("%s %8s", "Time Slot", " ") ;
 		table += String.format("%s", "Teacher ID") ;
 		
 		System.out.println(table) ;
-		Helper.line(45, "-");
+		Helper.line(120, "-");
 		
 		for (int i = 0; i < userList.size(); i++) {
 			Users t = userList.get(i) ;
 			for (int j = 0; j < activityList.size(); j++) {
-				Activity a = activityList.get(i) ;
+				Activity a = activityList.get(j) ;
 				
-				if (t.getID().equals(a.getTeacherID())) {
+				if (t.getID() == a.getTeacherID()) {
 
-					String output = String.format("%-8s %4s", a.getActivityID(), "") ;
-					output += String.format("%-10s %4s", a.getName(), "") ;
-					output += String.format("%-10s %4s", a.getType(), "") ;
-					output += String.format("%-10s %4s", a.getMaxPax(), "") ;
-					output += String.format("%-10s %4s", a.getStatus(), "") ;
+					String output = String.format("%-12s %4s", a.getActivityID(), "") ;
+					output += String.format("%-20s %4s", a.getName(), "") ;
+					output += String.format("%-15s %4s", a.getType(), "") ;
+					output += String.format("%-8s %4s", a.getMaxPax(), "") ;
+					output += String.format("%-7s %4s", a.getStatus(), "") ;
 					output += String.format("%-10s %4s", a.getDate(), "") ;
-					output += String.format("%-10s %4s", a.getTimeSlot(), "") ;
+					output += String.format("%-13s %4s", a.getTimeSlot(), "") ;
 					output += String.format("%s", a.getTeacherID()) ;
 					
 					System.out.println(output) ;
-					break ;
 				}
 			}
 		}
