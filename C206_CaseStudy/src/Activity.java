@@ -28,7 +28,7 @@ public double getActivityID() {
 	return activityID;
 }
 
-public String name() {
+public String getName() {
 	return name;
 }
 
@@ -36,17 +36,24 @@ public String getType() {
 	return type;
 }
 
-public int maxPax() {
+public int getMaxPax() {
 	return maxPax;
 }
+
 public String getStatus() {
 	return status;
 }
-public String getteacherID() {
+
+public String getTeacherID() {
 	return teacherID;
-	
-	///////
 }
 
+public String getDate() {
+	return date ;
+}
+
+public String getTimeSlot() {
+	return timeSlot ;
+}
 
 }

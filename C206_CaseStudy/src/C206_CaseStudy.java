@@ -79,8 +79,8 @@ public class C206_CaseStudy {
 		
 		activityList.add(new Activity(1.1,"sports","Football",25,"Open","T897","01/08/2023","15:00-17:00"));
 		activityList.add(new Activity(1.2,"sports","Football", 25,"Open","T897","02/08/2023","14:00-16:00"));
-		activityList.add(new Activity(2.1,"uniformGroup","NCC SEA",60,"Open","T897","15/08/2023","14:00-17:00"));
-		activityList.add(new Activity(3.1,"performanceArts","Chinese Orchestra",45,"Close","T897","16/07/2023","15:00-18:00"));
+		activityList.add(new Activity(2.1,"uniformGroup","NCC SEA",60,"Open","T567","15/08/2023","14:00-17:00"));
+		activityList.add(new Activity(3.1,"performanceArts","Chinese Orchestra",45,"Close","T567","16/07/2023","15:00-18:00"));
 
 		//type = sports, uniformGroup, performanceArts
 		//totalDays = total cca days in a month, so if once a week will be 4 as in a month got four weeks. 
@@ -205,10 +205,10 @@ public class C206_CaseStudy {
 						System.out.print("teach1");
 						break;
 					case 2: //add activities(that they owned)code here, Aliyah
+						//show activities that they owned first
 						//<<Insert code here:>>
-						
-							//show activities that they owned first
-						
+						showOwnActivties(userList, activityList) ;
+							
 						
 						//<<end of code for case 2>>
 						System.out.print("teach2");
@@ -524,4 +524,48 @@ public class C206_CaseStudy {
 			System.out.println("\nInvalid role was entered");
 		}
 	}
+	
+	//Aliyah code, show all owned activities
+	public static void showOwnActivties(ArrayList<Users> userList, ArrayList<Activity> activityList) {
+		System.out.println() ;
+		Helper.line(45, "=");
+		System.out.println("=======     OWN ACTIVITY LIST     =======");
+		Helper.line(45, "=");
+		System.out.println() ;
+		
+		String table = String.format("%s %5s", "Activity ID", " ") ;
+		table += String.format("%s %5s", "Activity Name", " ") ;
+		table += String.format("%s %5s", "Category", " ") ;
+		table += String.format("%s %5s", "Max Pax", " ") ;
+		table += String.format("%s %5s", "Status", " ") ;
+		table += String.format("%s %5s", "Date", " ") ;
+		table += String.format("%s %5s", "Time Slot", " ") ;
+		table += String.format("%s", "Teacher ID") ;
+		
+		System.out.println(table) ;
+		Helper.line(45, "-");
+		
+		for (int i = 0; i < userList.size(); i++) {
+			Users t = userList.get(i) ;
+			for (int j = 0; j < activityList.size(); j++) {
+				Activity a = activityList.get(i) ;
+				
+				if (t.getID().equals(a.getTeacherID())) {
+
+					String output = String.format("%-8s %4s", a.getActivityID(), "") ;
+					output += String.format("%-10s %4s", a.getName(), "") ;
+					output += String.format("%-10s %4s", a.getType(), "") ;
+					output += String.format("%-10s %4s", a.getMaxPax(), "") ;
+					output += String.format("%-10s %4s", a.getStatus(), "") ;
+					output += String.format("%-10s %4s", a.getDate(), "") ;
+					output += String.format("%-10s %4s", a.getTimeSlot(), "") ;
+					output += String.format("%s", a.getTeacherID()) ;
+					
+					System.out.println(output) ;
+					break ;
+				}
+			}
+		}
+	}
+	
 }
