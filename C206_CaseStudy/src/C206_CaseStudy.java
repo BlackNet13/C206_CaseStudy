@@ -207,7 +207,7 @@ public class C206_CaseStudy {
 					case 2: //add activities(that they owned)code here, Aliyah
 						//show activities that they owned first
 						//<<Insert code here:>>
-						//showOwnActivties(userList, activityList) ;
+						//showOwnActivties(userList, activityList) ; w
 							
 						
 						//<<end of code for case 2>>
