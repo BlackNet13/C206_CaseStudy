@@ -1,7 +1,7 @@
 //Edry code
 public class Activity {
 	
-private int activityID;
+private double activityID;
 private String type;
 private String name;
 //private int totalCCAdays;
@@ -12,7 +12,7 @@ private String date;
 private String timeSlot;
 
 
-public Activity(int activityID, String type ,String name, int maxPax, String status, String teacherID,String date,String timeSlot) {
+public Activity(double activityID, String type ,String name, int maxPax, String status, String teacherID,String date,String timeSlot) {
 	this.activityID = activityID;
 	this.type = type;
 	this.name = name;
@@ -26,7 +26,7 @@ public Activity(int activityID, String type ,String name, int maxPax, String sta
 	
 }
 
-public int getActivityID() {
+public double getActivityID() {
 	return activityID;
 }
 
@@ -37,9 +37,7 @@ public String name() {
 public String getType() {
 	return type;
 }
-//public int gettotalCCAdays() {
-//	return totalCCAdays;
-//}
+
 public int maxPax() {
 	return maxPax;
 }

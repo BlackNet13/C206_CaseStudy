@@ -40,9 +40,9 @@ public class C206_CaseStudyTest { //Edry will be supervisor of junit test cases 
 		Student2 = new Users("S890", "2222", "Katy", 3); //student
 		
 		//to add date and time when class constructor is ready
-		Acti1 = new Activity(01,"sports","Football",25,"Open","S897","01/08/2023","15:00-17:00");
-		Acti2 = new Activity(02,"uniformGroup","NCC SEA",60,"Open","S897","15/08/2023","14:00-17:00");
-		Acti3 = new Activity(03,"performanceArts","Chinese Orchestra",45,"Close","S897","16/07/2023","15:00-18:00");
+		Acti1 = new Activity(1.1,"sports","Football",25,"Open","S897","01/08/2023","15:00-17:00");
+		Acti2 = new Activity(2.1,"uniformGroup","NCC SEA",60,"Open","S897","15/08/2023","14:00-17:00");
+		Acti3 = new Activity(3.1,"performanceArts","Chinese Orchestra",45,"Close","S897","16/07/2023","15:00-18:00");
 		apply1 = new Applications(1, 01, "S555");
 		apply2 = new Applications(2, 01, "S890");
 		apply3 = new Applications(3, 02, "S555"); //test whether if all can be shown instead of just under one activity ID
