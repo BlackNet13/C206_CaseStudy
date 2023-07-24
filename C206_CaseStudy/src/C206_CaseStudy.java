@@ -109,8 +109,9 @@ public class C206_CaseStudy {
 		boolean login = false; 
 		int options = 123;
 		int role = 0;
+		String userID ="";
 		
-		login(userList, roleList, activityList, applicationList, attendanceList ,login, options, role);
+		login(userList, roleList, activityList, applicationList, attendanceList ,login, options, role, userID);
 		
 		System.out.println("\nProgram Exited");
 		
@@ -118,9 +119,10 @@ public class C206_CaseStudy {
 
 	//code done by Shou Kang and Yvonne
 	public static void login(ArrayList<Users> userList, ArrayList<Roles> roleList, ArrayList<Activity> activityList, ArrayList<Applications> applicationList,ArrayList<Attendance> attendanceList, boolean login, int options,
-			int role) {
+			int role, String userID) {
+		
 		while(options != -9) {
-				String userID;
+				
 			
 			if(login == false) {
 				loginMenu();
@@ -207,7 +209,7 @@ public class C206_CaseStudy {
 					case 2: //add activities(that they owned)code here, Aliyah
 						//show activities that they owned first
 						//<<Insert code here:>>
-						//showOwnActivties(userID, activityList);							
+						showOwnActivties(userID, activityList);							
 						
 						//<<end of code for case 2>>
 						System.out.print("teach2");
