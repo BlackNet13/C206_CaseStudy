@@ -188,7 +188,7 @@ public class C206_CaseStudy {
 					
 				}else if(role == 2) {
 					switch(options) { //teacher
-					case 1: //Browse activities code here, Edry
+					case 1: //Browse activities code here, Alex,Edry
 						//<<Insert code here:>>
 						
 						
@@ -240,7 +240,7 @@ public class C206_CaseStudy {
 						//<<end of code for case 6>>
 						System.out.print("teach6");
 						break;
-					case 7: //Delete attendance code here, Shou Kang
+					case 7: //Delete attendance code here, Shou Kang/Edry
 						//<<Insert code here:>>
 						
 						
