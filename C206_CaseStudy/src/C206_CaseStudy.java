@@ -206,7 +206,7 @@ public class C206_CaseStudy {
 					case 2: //add activities(that they owned)code here, Aliyah
 						//show activities that they owned first
 						//<<Insert code here:>>
-						showOwnActivties(userList, activityList);							
+						//showOwnActivties(userID, activityList);							
 						
 						//<<end of code for case 2>>
 						System.out.print("teach2");
@@ -524,7 +524,7 @@ public class C206_CaseStudy {
 	}
 	
 	//Aliyah code, show all owned activities
-	public static void showOwnActivties(ArrayList<Users> userList, ArrayList<Activity> activityList) {
+	public static void showOwnActivties(String userID, ArrayList<Activity> activityList) {
 		System.out.println() ;
 		Helper.line(45, "=");
 		System.out.println("=======       OWN ACTIVITY LIST       =======");
@@ -543,12 +543,10 @@ public class C206_CaseStudy {
 		System.out.println(table) ;
 		Helper.line(120, "-");
 		
-		for (int i = 0; i < userList.size(); i++) {
-			Users t = userList.get(i) ;
 			for (int j = 0; j < activityList.size(); j++) {
 				Activity a = activityList.get(j) ;
 				
-				if (t.getID() == a.getTeacherID()) {
+				if (userID == a.getTeacherID()) {
 
 					String output = String.format("%-12s %4s", a.getActivityID(), "") ;
 					output += String.format("%-20s %4s", a.getName(), "") ;
@@ -563,6 +561,6 @@ public class C206_CaseStudy {
 				}
 			}
 		}
-	}
+	
 	
 }
