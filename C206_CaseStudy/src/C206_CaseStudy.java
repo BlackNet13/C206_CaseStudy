@@ -37,9 +37,9 @@ public class C206_CaseStudy {
 		/*java class:
 		 * 1.users(Shou Kang) : userid(Str), pw(Str), name(Str), roleid(int)
 		 * 2.roles(Aliyah) : roleid(int),rolename(str)
-		 * 3.activity(Edry) : activityid(int), type(string), name(String) totalCCAdays(int), maxPax(int), status(String, open/closed),teacherid(str), date(str), time(str)
-		 * 4.applications(Marcus) : applicationid(int), activityid(int),studentid(Str), status(string,start as pending, filled with approved/rejected/pending) 
-		 * 5.attendance(Alex) :  attendanceid(int), studentid(string), activityid(int),attended(int, days attended)
+		 * 3.activity(Edry) : activityid(double), type(string), name(String) totalCCAdays(int), maxPax(int), status(String, open/closed),teacherid(str), date(str), time(str)
+		 * 4.applications(Marcus) : applicationid(int), activityid(double),studentid(Str), status(string,start as pending, filled with approved/rejected/pending) 
+		 * 5.attendance(Alex) :  attendanceid(int), studentid(string), activityid(double),attended(String, Y or N)
 		 * 
 		 * arraylist: 
 		 * 1.userList (all users indexed with same fields)~
