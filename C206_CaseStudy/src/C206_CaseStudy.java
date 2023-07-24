@@ -221,7 +221,7 @@ public class C206_CaseStudy {
 						//<<end of code for case 4>>
 						System.out.print("teach4");
 						break;
-					case 5: //Remove attendance code here
+					case 5: //Remove applications code here, Shou Kang 
 						//<<Insert code here:>>
 						
 					
@@ -240,7 +240,7 @@ public class C206_CaseStudy {
 						//<<end of code for case 6>>
 						System.out.print("teach6");
 						break;
-					case 7: //Delete attendance code here, 
+					case 7: //Delete attendance code here, Shou Kang
 						//<<Insert code here:>>
 						
 						
