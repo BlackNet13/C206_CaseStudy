@@ -104,6 +104,18 @@ public class C206_CaseStudyTest { //Edry will be supervisor of junit test cases 
 	
 	
 	@Test
+	public void testAddActivities(){
+		
+		
+	}
+	
+	@Test
+	public void testdeleteActivities(){
+		
+	}
+	
+	
+	@Test
 	public void testViewAllActivities() { //Alex, Edry
 		//refer to resource centre test retrieveallCamcorder but might be more complex
 	}
