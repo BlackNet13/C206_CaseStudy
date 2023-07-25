@@ -93,22 +93,11 @@ public class C206_CaseStudyTest { //Edry will be supervisor of junit test cases 
 	}
 	
 	@Test
-	public void testRemoveAdmin() { //Marcus,Edry
+	public void testRemoveUser() { //Marcus,Edry
 		//hope edry can guide on this
 		
 	}
 	
-	@Test
-	public void testRemoveTeacher() { //Marcus,Edry
-		
-		
-	}
-	
-	@Test
-	public void testRemoveStudent() { //Marcus,Edry
-		
-		
-	}
 	
 	@Test
 	public void testViewAllActivities() { //Alex, Edry
