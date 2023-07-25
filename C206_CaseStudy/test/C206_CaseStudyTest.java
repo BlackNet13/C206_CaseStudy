@@ -76,14 +76,15 @@ public class C206_CaseStudyTest { //Edry will be supervisor of junit test cases 
 		String newName = Admin1.getName();
 		String newPassword = Admin1.getPassword();
 		
-		
 		// Add an admin
 		C206_CaseStudy.addUser(userList, newUserRole, newID, newName, newPassword);
 		assertEquals("Test that the userlist size is now 1.", 1, userList.size());
 		
 		//Add a teacher
 		
+		
 		//Add a student
+		
 		
 	}
 	
