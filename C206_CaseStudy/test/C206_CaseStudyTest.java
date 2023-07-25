@@ -114,7 +114,7 @@ public class C206_CaseStudyTest { //Edry will be supervisor of junit test cases 
 	}
 	
 	@Test
-	public void testAcceptApplication() { //Alex, Edry
+	public void testAcceptApplication() { //marcus, Shou Kang
 		
 	}
 	
