@@ -477,7 +477,7 @@ public class C206_CaseStudy {
 	}
 	 //Shou Kang code
 
-	private static void addUser(ArrayList<Users> userList , int newUserRole, String newID, String newName, String newPassword) {
+	public static void addUser(ArrayList<Users> userList , int newUserRole, String newID, String newName, String newPassword) {
 		String nameRegex = "[a-zA-Z]+";
 		String passwordChecker = "[0-9]+";
 		
