@@ -79,8 +79,8 @@ public class C206_CaseStudyTest { //Edry will be supervisor of junit test cases 
 		
 		// Add an item
 		C206_CaseStudy.addUser(userList, newUserRole, newID, newName, newPassword);
-		assertEquals("Test that the attendanceList size is now 1.", 1, attendanceList.size());
-		assertSame("Test that attendance is added to the end of the list.", attendance2, attendanceList.get(1));
+		assertEquals("Test that the attendanceList size is now 1.", 1, userList.size());
+		assertSame("Test that attendance is added to the end of the list.", Admin1, userList.get(1));
 		
 	}
 	
