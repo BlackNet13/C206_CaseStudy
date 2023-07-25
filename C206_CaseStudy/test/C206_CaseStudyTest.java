@@ -85,6 +85,9 @@ public class C206_CaseStudyTest { //Edry will be supervisor of junit test cases 
 		
 		//Add a student
 		
+		//error, wrong role test
+		
+		
 		
 	}
 	
