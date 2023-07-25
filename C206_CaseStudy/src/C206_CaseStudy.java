@@ -179,11 +179,17 @@ public class C206_CaseStudy {
 						break;
 					case 3: //remove users code here,Marcus
 						//<<Insert code here:>>
-						
-						
+						boolean userfound = true;
+						displayAllUsers(roleList, userList) ;
+						System.out.println();
+						userfound = removeUser(userList);
+						if(!userfound) {
+							System.out.println("Invalid userId!");
+							
+						}
 						
 						//<<end of code for case 3>>
-						System.out.print("admin3"); //<--this is just to test that it can reach this lvl before you start coding
+//						System.out.print("admin3"); //<--this is just to test that it can reach this lvl before you start coding
 						break;
 						
 					default: 
@@ -524,6 +530,27 @@ public class C206_CaseStudy {
 		else {
 			System.out.println("\nInvalid role was entered");
 		}
+	}
+	
+	//Marcus code, remove user
+	
+	public static boolean removeUser(ArrayList<Users>userList) {
+		boolean userfound = false;
+		String idInput = Helper.readString("Enter User ID to be deleted > ");
+		for (int i = 0; i< userList.size(); i++) {
+			if (userList.get(i).getID().equalsIgnoreCase(idInput)) {
+				userList.remove(i);
+				System.out.println("Successfully deleted User with User ID " + idInput);
+				userfound = true;
+			}
+			else {
+				
+				userfound = false;
+			}
+		}
+		return userfound;
+		
+		
 	}
 	
 	//Aliyah code, show all owned activities
