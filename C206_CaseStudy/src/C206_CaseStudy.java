@@ -533,7 +533,6 @@ public class C206_CaseStudy {
 	}
 	
 	//Marcus code, remove user
-	
 	public static boolean removeUser(ArrayList<Users>userList) {
 		boolean userfound = false;
 		String idInput = Helper.readString("Enter User ID to be deleted > ");
