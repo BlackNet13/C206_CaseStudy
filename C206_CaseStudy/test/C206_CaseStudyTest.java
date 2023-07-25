@@ -70,28 +70,20 @@ public class C206_CaseStudyTest { //Edry will be supervisor of junit test cases 
 	}
 	
 	@Test
-	public void testAddAdmin() { //Shou Kang
+	public void testAddUser() { //Shou Kang
 		int newUserRole = Admin1.getRoleIndex();
 		String newID = Admin1.getID();
 		String newName = Admin1.getName();
 		String newPassword = Admin1.getPassword();
 		
 		
-		// Add an item
+		// Add an admin
 		C206_CaseStudy.addUser(userList, newUserRole, newID, newName, newPassword);
 		assertEquals("Test that the userlist size is now 1.", 1, userList.size());
 		
-	}
-	
-	@Test
-	public void testAddTeacher() { //Shou Kang
-		//refer to resource centre test in testAddChromebook
+		//Add a teacher
 		
-	}
-	
-	@Test
-	public void testAddStudent() { //Shou Kang
-		//refer to resource centre test in testAddChromebook
+		//Add a student
 		
 	}
 	
