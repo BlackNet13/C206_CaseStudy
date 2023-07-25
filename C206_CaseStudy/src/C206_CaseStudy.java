@@ -110,7 +110,7 @@ public class C206_CaseStudy {
 		int options = 123;
 		int role = 0;
 		String userID ="";
-		
+			
 		login(userList, roleList, activityList, applicationList, attendanceList ,login, options, role, userID);
 		
 		System.out.println("\nProgram Exited");
@@ -120,6 +120,12 @@ public class C206_CaseStudy {
 	//code done by Shou Kang and Yvonne
 	public static void login(ArrayList<Users> userList, ArrayList<Roles> roleList, ArrayList<Activity> activityList, ArrayList<Applications> applicationList,ArrayList<Attendance> attendanceList, boolean login, int options,
 			int role, String userID) {
+		
+		//for initializing of variable of new user, for junitTesting workaround
+				int newUserRole = 0;
+				String newID = "-";
+				String newName = "-";
+				String newPassword = "-";
 		
 		while(options != -9) {
 				
@@ -173,7 +179,7 @@ public class C206_CaseStudy {
 						break;
 					case 2: //add users code here, Shou Kang, Done//
 						//<<Insert code here:>>
-						addUser(userList,userID);
+						addUser(userList,newUserRole, newID, newName, newPassword);
 
 						//<<end of code for case 2>>
 						break;
@@ -471,17 +477,21 @@ public class C206_CaseStudy {
 	}
 	 //Shou Kang code
 
-	private static void addUser(ArrayList<Users> userList, String userID) {
+	private static void addUser(ArrayList<Users> userList , int newUserRole, String newID, String newName, String newPassword) {
 		String nameRegex = "[a-zA-Z]+";
 		String passwordChecker = "[0-9]+";
 		
-		if(userID!="") {}
-		int newUserRole = Helper.readInt("Enter new user role > ");
+		if(newUserRole == 0) {
+			newUserRole = Helper.readInt("Enter new user role > ");
+		}
+		
 		
 		String regex = regexReturn(newUserRole);
 		
 		if(!regex.equals("")) {
-			String newID = Helper.readString("Enter new users id > ");
+			if(newID == "-") {
+				newID = Helper.readString("Enter new users id > ");
+			}
 			newID = newID.toUpperCase();
 			
 			if(newID.length() == 4) {
@@ -489,12 +499,16 @@ public class C206_CaseStudy {
 				if(idChecker(userList, newID) == false) {
 													
 					if(newID.matches(regex)) {
-						String newName = Helper.readString("Enter the new user's name > ");
+						if(newName == "-") {
+							newName = Helper.readString("Enter the new user's name > ");
+						}
 						String nameChecker = newName.replace(" ", "");
 					
 						if(nameChecker.matches(nameRegex)) {
-							String newPassword = Helper.readString("Enter the new user's password > ");
-						
+							if(newPassword == "-") {
+								newPassword = Helper.readString("Enter the new user's password > ");
+							}
+							
 							if(newPassword.length() >= 4) {
 							
 								if(newPassword.matches(passwordChecker)) {
