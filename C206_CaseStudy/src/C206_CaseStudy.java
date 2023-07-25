@@ -489,7 +489,7 @@ public class C206_CaseStudy {
 		String regex = regexReturn(newUserRole);
 		
 		if(!regex.equals("")) {
-			if(newID == "-") {
+			if(newID.equals("-")) {
 				newID = Helper.readString("Enter new users id > ");
 			}
 			newID = newID.toUpperCase();
@@ -499,13 +499,13 @@ public class C206_CaseStudy {
 				if(idChecker(userList, newID) == false) {
 													
 					if(newID.matches(regex)) {
-						if(newName == "-") {
+						if(newName.equals("-")) {
 							newName = Helper.readString("Enter the new user's name > ");
 						}
 						String nameChecker = newName.replace(" ", "");
 					
 						if(nameChecker.matches(nameRegex)) {
-							if(newPassword == "-") {
+							if(newPassword.equals("-")) {
 								newPassword = Helper.readString("Enter the new user's password > ");
 							}
 							

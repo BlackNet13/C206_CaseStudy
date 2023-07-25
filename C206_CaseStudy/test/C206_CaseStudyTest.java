@@ -81,14 +81,85 @@ public class C206_CaseStudyTest { //Edry will be supervisor of junit test cases 
 		assertEquals("Test that the userlist size is now 1.", 1, userList.size());
 		
 		//Add a teacher
+		newUserRole = Teacher1.getRoleIndex();
+		newID = Teacher1.getID();
+		newName = Teacher1.getName();
+		newPassword = Teacher1.getPassword();
 		
+		C206_CaseStudy.addUser(userList, newUserRole, newID, newName, newPassword);
+		assertEquals("Test that the userlist size is now 2.", 2, userList.size());
 		
 		//Add a student
+		newUserRole = Student1.getRoleIndex();
+		newID = Student1.getID();
+		newName = Student1.getName();
+		newPassword = Student1.getPassword();
+		
+		C206_CaseStudy.addUser(userList, newUserRole, newID, newName, newPassword);
+		assertEquals("Test that the userlist size is now 3.", 3, userList.size());
 		
 		//error, wrong role test
+		newUserRole = Admin2.getRoleIndex();
+		newID = Student2.getID();
+		newName = Student2.getName();
+		newPassword = Student2.getPassword();
 		
+		C206_CaseStudy.addUser(userList, newUserRole, newID, newName, newPassword);
+		assertEquals("Test that the userlist size is still 3.", 3, userList.size());
 		
+		//error, Invalid role
+		newUserRole = 4; //non-existent role
+		newID = Student2.getID();
+		newName = Student2.getName();
+		newPassword = Student2.getPassword();
 		
+		C206_CaseStudy.addUser(userList, newUserRole, newID, newName, newPassword);
+		assertEquals("Test that the userlist size is still 3.", 3, userList.size());
+		
+		//error, duplicate entry
+		newUserRole = Student1.getRoleIndex();
+		newID = Student1.getID();
+		newName = Student1.getName();
+		newPassword = Student1.getPassword();
+		
+		C206_CaseStudy.addUser(userList, newUserRole, newID, newName, newPassword);
+		assertEquals("Test that the userlist size is still 3.", 3, userList.size());
+		
+		//error, ID not up to standard
+		newUserRole = Student2.getRoleIndex();
+		newID = "S12"; //ID must be 4 characters 
+		newName = Student2.getName();
+		newPassword = Student2.getPassword();
+		
+		C206_CaseStudy.addUser(userList, newUserRole, newID, newName, newPassword);
+		assertEquals("Test that the userlist size is still 3.", 3, userList.size());
+		
+		//error, Invalid name
+		newUserRole = Student2.getRoleIndex();
+		newID = Student2.getID(); 
+		newName = "Mayr12312"; //name can only contain alphabets
+		newPassword = Student2.getPassword();
+		
+		C206_CaseStudy.addUser(userList, newUserRole, newID, newName, newPassword);
+		assertEquals("Test that the userlist size is still 3.", 3, userList.size());
+		
+		//error, password not up to standard
+		newUserRole = Student2.getRoleIndex();
+		newID = Student2.getID(); 
+		newName = Student2.getName(); 
+		newPassword = "123"; //password minimum is 4 characters
+		
+		C206_CaseStudy.addUser(userList, newUserRole, newID, newName, newPassword);
+		assertEquals("Test that the userlist size is still 3.", 3, userList.size());
+		
+		//error, invalid password
+		newUserRole = Student2.getRoleIndex();
+		newID = Student2.getID(); 
+		newName = Student2.getName(); 
+		newPassword = "S12312"; //password can only contain numbers
+		
+		C206_CaseStudy.addUser(userList, newUserRole, newID, newName, newPassword);
+		assertEquals("Test that the userlist size is still 3.", 3, userList.size());
 	}
 	
 	@Test
