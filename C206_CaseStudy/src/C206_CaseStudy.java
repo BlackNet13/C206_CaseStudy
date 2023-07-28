@@ -221,8 +221,9 @@ public class C206_CaseStudy {
 					case 2: //add activities(that they owned)code here, Aliyah
 						//show activities that they owned first
 						//<<Insert code here:>>
-						showOwnActivties(userID, activityList);							
+						showOwnActivties(userID, activityList) ;							
 						
+						addNewActivity(userID, activityList) ;
 						//<<end of code for case 2>>
 						System.out.print("teach2");
 						break;
@@ -605,5 +606,40 @@ public class C206_CaseStudy {
 			}
 		}
 	
+	//Aliyah code, adding new activity
+	public static void addNewActivity(String userID, ArrayList<Activity> activityList) {
+		for (int i = 0; i < activityList.size(); i++) {
+			Activity a = activityList.get(i) ;
+			Double newID = Helper.readDouble("\nEnter new activity ID > ") ;
+			if (!newID.equals(a.getActivityID())) {
+				String newType = Helper.readString("Enter new activity type > ") ;
+				if ((newType.equalsIgnoreCase("sports")) || (newType.equalsIgnoreCase("uniformGroup")) || (newType.equalsIgnoreCase("performanceArts"))) {
+					String newName = Helper.readString("Enter new activity name > ") ;
+					if (!newName.equalsIgnoreCase(a.getName())) {
+						int newMaxPax = Helper.readInt("Enter max pax for new activity > ") ;
+						if ((newMaxPax >= 20) && (newMaxPax <=60)) {
+							String newDate = Helper.readString("Enter new activity date (DD/MM/YYYY) > ") ;
+							String newTimeSlot = Helper.readString("Enter new activity time start (HH:MM-HH:MM) > ") ;
+														
+							activityList.add(new Activity(newID, newType, newName, newMaxPax, "Open", userID, newDate, newTimeSlot));
+							break ;
+						}
+						else {
+							System.out.println("Please enter a valid activtiy ID.") ;
+						}
+					}
+					else {
+						System.out.println("Please enter a valid new activtiy name.") ;
+					}
+				}
+				else {
+					System.out.println("Please enter a valid activtiy type.") ;
+				}
+			}
+			else {
+				System.out.println("Please enter a valid activtiy ID.") ;
+			}
+		}
+	}
 	
 }
