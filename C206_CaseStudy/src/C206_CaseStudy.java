@@ -252,7 +252,7 @@ public class C206_CaseStudy {
 						//<<Insert code here:>>
 						showAppliactionsForteach(userID, applicationList, activityList, userList);
 						int appIdToRemove = Helper.readInt("Please enter the application ID to remove > ");
-					
+						removeApplication(userID, appIdToRemove, activityList, applicationList);
 						
 						//<<end of code for case 5>>
 						System.out.print("");
@@ -694,4 +694,42 @@ public class C206_CaseStudy {
 		}
 	}
 	
+	//Shou Kang code, removes the applications that have already been approved/disapproved by the teacher 
+	public static void removeApplication(String userId, int appId, ArrayList<Activity> activityList, ArrayList<Applications> applicationList) {
+		boolean removed = false;
+		for(int i = 0 ; i < applicationList.size(); i++) {
+			int applicationListStudID = applicationList.get(i).getAppId();
+			String status = applicationList.get(i).getStatus();
+			if(appId == applicationListStudID) {
+				double applicationListActID = applicationList.get(i).getActivityId();
+				
+				for(int y = 0; y < activityList.size(); y++) {
+					double activityListActID = activityList.get(y).getActivityID();
+					
+					if(applicationListActID == activityListActID) {
+						String cherID = activityList.get(y).getTeacherID();
+						
+						if(userId.equals(cherID)) {
+							if(status.equals("Pending")) {
+								System.out.println("Cannot delete application because it hasn't been disapporved/approved");
+							}
+							else {
+							applicationList.remove(i);
+							System.out.println("Application removed");
+							removed = true;
+							}
+
+						}
+					}
+				}
+			}
+		}
+		if(removed) {
+			System.out.println("Application removed");
+		}
+		else {
+			System.out.println("Please enter a valid application");
+		}
+		
+	}
 }
