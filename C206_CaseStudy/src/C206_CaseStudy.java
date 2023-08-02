@@ -102,8 +102,8 @@ public class C206_CaseStudy {
 		//initialize applicationList, done by Marcus
 		ArrayList<Applications> applicationList = new ArrayList<Applications>();
 		
-		applicationList.add(new Applications(1, 01, "S111"));
-		applicationList.add(new Applications(2, 03, "S908"));
+		applicationList.add(new Applications(1, 1.1, "S111"));
+		applicationList.add(new Applications(2, 1.2, "S908"));
 		
 		
 		boolean login = false; 
@@ -246,7 +246,7 @@ public class C206_CaseStudy {
 						break;
 					case 5: //Remove applications code here, Shou Kang 
 						//<<Insert code here:>>
-						
+						showAppliactionsForteach(userID, applicationList, activityList, userList);
 					
 						
 						//<<end of code for case 5>>
@@ -641,6 +641,26 @@ public class C206_CaseStudy {
 				System.out.println("Please enter a valid activtiy ID.") ;
 			}
 		}
+	}
+	//Shou kang code,
+	public static void showAppliactionsForteach(String userId, ArrayList<Applications> applicationList, ArrayList<Activity> activityList, ArrayList<Users> userList) {
+			int applicationID = 0;
+			double actvityID = 0;
+			String studentName = "";
+			String studentID = "";
+			String activityName = "";
+			String applicationStatus = "";
+			
+			for(int i = 0; i < applicationList.size(); i++) {
+				applicationID = applicationList.get(i).getAppId();
+				studentID = applicationList.get(i).getStudentId();
+				applicationStatus = applicationList.get(i).getStatus();
+				
+			}
+			
+			
+			
+			
 	}
 	
 }
