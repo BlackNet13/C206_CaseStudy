@@ -183,7 +183,7 @@ public class C206_CaseStudy {
 
 						//<<end of code for case 2>>
 						break;
-					case 3: //remove users code here,Marcus
+					case 3: //remove users code here,Marcus, done//
 						//<<Insert code here:>>
 						boolean userfound = true;
 						displayAllUsers(roleList, userList) ;
