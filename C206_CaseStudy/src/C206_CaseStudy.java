@@ -237,7 +237,8 @@ public class C206_CaseStudy {
 						break;
 					case 4: //manage student applications code here, Yvonne
 						//<<Insert code here:>>
-						
+						System.out.println(String.format("\n******Student Applications******\n\n%-8s%-16s%-6s%-6s","Index","Activity Name","Student ID","Student Name","Status"));
+						System.out.println(String.format("%-8s%-16s%-6s%-6s","-----","----","---","---","-----------"));
 						
 						
 						//<<end of code for case 4>>
