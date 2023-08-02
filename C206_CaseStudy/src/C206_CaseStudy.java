@@ -103,7 +103,11 @@ public class C206_CaseStudy {
 		ArrayList<Applications> applicationList = new ArrayList<Applications>();
 		
 		applicationList.add(new Applications(1, 1.1, "S111"));
+<<<<<<< HEAD
 		applicationList.add(new Applications(2, 2.1, "S908"));
+=======
+		applicationList.add(new Applications(2, 1.2, "S908"));
+>>>>>>> branch 'master' of https://github.com/BlackNet13/C206_CaseStudy
 		
 		
 		boolean login = false; 
@@ -246,7 +250,7 @@ public class C206_CaseStudy {
 						break;
 					case 5: //Remove applications code here, Shou Kang 
 						//<<Insert code here:>>
-						
+						showAppliactionsForteach(userID, applicationList, activityList, userList);
 					
 						
 						//<<end of code for case 5>>
@@ -643,10 +647,30 @@ public class C206_CaseStudy {
 			}
 		}
 	}
+
 	//Marcus and Shou Kang, Mark attendance
 	public static void markAttendance(String userID, ArrayList<Activity> activityList) {
 		String activityID = Helper.readString("Enter activity ID >");
 		
+	//Shou kang code,
+	public static void showAppliactionsForteach(String userId, ArrayList<Applications> applicationList, ArrayList<Activity> activityList, ArrayList<Users> userList) {
+			int applicationID = 0;
+			double actvityID = 0;
+			String studentName = "";
+			String studentID = "";
+			String activityName = "";
+			String applicationStatus = "";
+			
+			for(int i = 0; i < applicationList.size(); i++) {
+				applicationID = applicationList.get(i).getAppId();
+				studentID = applicationList.get(i).getStudentId();
+				applicationStatus = applicationList.get(i).getStatus();
+				
+			}
+			
+			
+			
+			
 	}
 	
 }
