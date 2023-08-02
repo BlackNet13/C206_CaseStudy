@@ -114,8 +114,9 @@ public class C206_CaseStudy {
 		int options = 123;
 		int role = 0;
 		String userID ="";
+		String password ="";
 			
-		login(userList, roleList, activityList, applicationList, attendanceList ,login, options, role, userID);
+		login(userList, roleList, activityList, applicationList, attendanceList ,login, options, role, userID, password);
 		
 		System.out.println("\nProgram Exited");
 		
@@ -123,7 +124,7 @@ public class C206_CaseStudy {
 
 	//code done by Shou Kang and Yvonne
 	public static void login(ArrayList<Users> userList, ArrayList<Roles> roleList, ArrayList<Activity> activityList, ArrayList<Applications> applicationList,ArrayList<Attendance> attendanceList, boolean login, int options,
-			int role, String userID) {
+			int role, String userID, String password) {
 		
 		//for initializing of variable of new user, for junitTesting workaround
 				int newUserRole = 0;
@@ -141,25 +142,7 @@ public class C206_CaseStudy {
 				
 				if(options == 1) {
 					
-					userID = Helper.readString("Enter user ID > ");
-					String password = Helper.readString("Enter password > ");
-					
-				
-						//Yvonne
-						for(int i = 0; i<userList.size(); i++) {
-							if(userID.equals(userList.get(i).getID())&&password.equals(userList.get(i).getPassword())) {
-								System.out.println("\nlogin successful");
-								role = userList.get(i).getRoleIndex();
-								login = true;
-								//break;
-							}
-						}
-						if(!login) {
-							options =123;
-							role =0;
-							System.out.println("\nInvalid username or password");
-						}
-					
+					doLogin(userID,password,login,options,role,userList);
 					
 					
 				}else if(options!= -9){
