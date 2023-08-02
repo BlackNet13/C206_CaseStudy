@@ -256,8 +256,6 @@ public class C206_CaseStudy {
 						removeApplication(userID, appIdToRemove, activityList, applicationList);
 
 						
-
-						
 						//<<end of code for case 5>>
 						System.out.print("");
 						break;
@@ -729,7 +727,6 @@ public class C206_CaseStudy {
 		
 	}
 
-
 	public static int doLogin(String userID, String password,Boolean login, int options, int role, ArrayList<Users> userList) {
 		
 		if(userID=="") {
@@ -753,5 +750,5 @@ public class C206_CaseStudy {
 			}
 			return role;
 		}
-	
+
 }
