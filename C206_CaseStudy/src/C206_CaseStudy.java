@@ -102,8 +102,8 @@ public class C206_CaseStudy {
 		//initialize applicationList, done by Marcus
 		ArrayList<Applications> applicationList = new ArrayList<Applications>();
 		
-		applicationList.add(new Applications(1, 01, "S111"));
-		applicationList.add(new Applications(2, 03, "S908"));
+		applicationList.add(new Applications(1, 1.1, "S111"));
+		applicationList.add(new Applications(2, 2.1, "S908"));
 		
 		
 		boolean login = false; 
@@ -259,6 +259,7 @@ public class C206_CaseStudy {
 						//-show list of activities own by the teacher
 						//-ask what activity id the user wants
 						//-shows list of students
+						showOwnActivties(userID, activityList) ;	
 						
 						//<<end of code for case 6>>
 						System.out.print("teach6");
@@ -641,6 +642,11 @@ public class C206_CaseStudy {
 				System.out.println("Please enter a valid activtiy ID.") ;
 			}
 		}
+	}
+	//Marcus and Shou Kang, Mark attendance
+	public static void markAttendance(String userID, ArrayList<Activity> activityList) {
+		String activityID = Helper.readString("Enter activity ID >");
+		
 	}
 	
 }
