@@ -115,7 +115,7 @@ public class C206_CaseStudy {
 		String password ="";
 		
 			
-		login(userList, roleList, activityList, applicationList, attendanceList ,login, options, role, userID);
+		login(userList, roleList, activityList, applicationList, attendanceList ,login, options, role, userID,password);
 		
 		System.out.println("\nProgram Exited");
 		
@@ -141,7 +141,7 @@ public class C206_CaseStudy {
 				
 				if(options == 1) {
 					
-					doLogin(userID,password,login,options,role, userList); //Yvonne edited to adapt for Junit testing
+					role = doLogin(userID,password,login,options,role, userList); //Yvonne edited to adapt for Junit testing
 					
 					
 				}else if(options!= -9){
@@ -679,9 +679,9 @@ public class C206_CaseStudy {
 			
 	}
 	
-	public static void doLogin(String userID, String password,Boolean login, int options, int role, ArrayList<Users> userList) {
+	public static int doLogin(String userID, String password,Boolean login, int options, int role, ArrayList<Users> userList) {
 		
-		if(userID!="") {
+		if(userID=="") {
 		userID = Helper.readString("Enter user ID > ");
 		password = Helper.readString("Enter password > ");
 		}
@@ -700,6 +700,7 @@ public class C206_CaseStudy {
 				role =0;
 				System.out.println("\nInvalid username or password");
 			}
+			return role;
 		}
 	
 }
