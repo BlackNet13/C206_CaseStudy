@@ -729,7 +729,6 @@ public class C206_CaseStudy {
 		
 	}
 
-
 	public static int doLogin(String userID, String password,Boolean login, int options, int role, ArrayList<Users> userList) {
 		
 		if(userID=="") {
