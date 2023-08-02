@@ -651,7 +651,7 @@ public class C206_CaseStudy {
 	//Marcus and Shou Kang, Mark attendance
 	public static void markAttendance(String userID, ArrayList<Activity> activityList) {
 		String activityID = Helper.readString("Enter activity ID >");
-		
+	}
 	//Shou kang code,
 	public static void showAppliactionsForteach(String userId, ArrayList<Applications> applicationList, ArrayList<Activity> activityList, ArrayList<Users> userList) {
 			int applicationID = 0;
