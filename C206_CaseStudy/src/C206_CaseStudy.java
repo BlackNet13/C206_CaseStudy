@@ -700,7 +700,6 @@ public class C206_CaseStudy {
 	
 	//Shou Kang code, removes the applications that have already been approved/disapproved by the teacher 
 	public static void removeApplication(String userId, int appId, ArrayList<Activity> activityList, ArrayList<Applications> applicationList) {
-		boolean removed = false;
 		for(int i = 0 ; i < applicationList.size(); i++) {
 			int applicationListStudID = applicationList.get(i).getAppId();
 			String status = applicationList.get(i).getStatus();
@@ -714,13 +713,12 @@ public class C206_CaseStudy {
 						String cherID = activityList.get(y).getTeacherID();
 						
 						if(userId.equals(cherID)) {
-							if(status.equals("Pending")) {
+							if(status.equalsIgnoreCase("Pending")) {
 								System.out.println("Cannot delete application because it hasn't been disapporved/approved");
 							}
 							else {
 							applicationList.remove(i);
-							System.out.println("Application removed");
-							removed = true;
+							System.out.println("Application deleted successfully");
 							}
 
 						}
