@@ -103,11 +103,8 @@ public class C206_CaseStudy {
 		ArrayList<Applications> applicationList = new ArrayList<Applications>();
 		
 		applicationList.add(new Applications(1, 1.1, "S111"));
-<<<<<<< HEAD
 		applicationList.add(new Applications(2, 2.1, "S908"));
-=======
 		applicationList.add(new Applications(2, 1.2, "S908"));
->>>>>>> branch 'master' of https://github.com/BlackNet13/C206_CaseStudy
 		
 		
 		boolean login = false; 
