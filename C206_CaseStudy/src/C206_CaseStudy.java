@@ -142,7 +142,7 @@ public class C206_CaseStudy {
 				
 				if(options == 1) {
 					
-					doLogin(userID,password,login,options,role,userList);
+					role =doLogin(userID,password,login,options,role,userList);
 					
 					
 				}else if(options!= -9){
