@@ -246,7 +246,8 @@ public class C206_CaseStudy {
 						break;
 					case 5: //Remove applications code here, Shou Kang 
 						//<<Insert code here:>>
-						showAppliactionsForteach(userID, applicationList, activityList, userList);
+						int[] applicationArray = showAppliactionsForteach(userID, applicationList, activityList, userList);
+						
 					
 						
 						//<<end of code for case 5>>
@@ -643,22 +644,45 @@ public class C206_CaseStudy {
 		}
 	}
 	//Shou kang code,
-	public static void showAppliactionsForteach(String userId, ArrayList<Applications> applicationList, ArrayList<Activity> activityList, ArrayList<Users> userList) {
+	public static int[] showAppliactionsForteach(String userId, ArrayList<Applications> applicationList, ArrayList<Activity> activityList, ArrayList<Users> userList) {
 			int applicationID = 0;
+			double applicationListActID = 0; 
+			double activityListActID = 0; 
 			double actvityID = 0;
 			String studentName = "";
 			String studentID = "";
 			String activityName = "";
 			String applicationStatus = "";
+			String activityListCherID = "";
+			String userListStudID = "";
+			int[] applicationArray = new int[applicationList.size()];
 			
 			for(int i = 0; i < applicationList.size(); i++) {
 				applicationID = applicationList.get(i).getAppId();
 				studentID = applicationList.get(i).getStudentId();
 				applicationStatus = applicationList.get(i).getStatus();
+				applicationListActID = applicationList.get(i).getActivityId();
 				
+				for(int x = 0; x < activityList.size(); x++) {
+					activityListActID = activityList.get(x).getActivityID();
+					activityListCherID = activityList.get(x).getTeacherID();
+					
+					if(activityListCherID == userId) {
+						applicationArray[i] = applicationID;
+						
+						for(int y = 0; y < userList.size(); y++) {
+							userListStudID = userList.get(y).getID();
+							
+							if(userListStudID.equals(studentID)) {
+								studentName = userList.get(y).getName();
+							}
+						}
+					}
+				}
+				System.out.format("%d %s %s %s\n", applicationID, studentID, studentName, applicationStatus);
 			}
 			
-			
+			return applicationArray;
 			
 			
 	}
