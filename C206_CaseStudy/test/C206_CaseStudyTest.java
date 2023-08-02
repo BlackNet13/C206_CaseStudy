@@ -167,6 +167,11 @@ public class C206_CaseStudyTest { //Edry will be supervisor of junit test cases 
 	@Test
 	public void testViewAllUsers() { //Aliyah
 		//refer to resource centre test retrieveallCamcorder
+		//Test if User List is not null but empty -boundary
+		assertNotNull("Test if there is valid User arraylist to retrieve users", userList) ;
+		
+		//Test if the list of User retrieved from the SourceCentre is empty -boundary
+		//String allUsers = C206_CaseStudy.displayAllUsers(roleList, userList) ;
 	}
 	
 	@Test
