@@ -65,8 +65,10 @@ public class C206_CaseStudyTest { //Edry will be supervisor of junit test cases 
 	
 	@Test
 	public void testLogin() { //Edry
-		//boolean test similiar to resource centre test in testDoLoan
-		
+		//boolean test similiar to resource centre test in testDoLoan]
+		assertNotNull("test if there is valid user arrayList to login from",userList);
+		C206_CaseStudy.login(userList,roleList,activityList,applicationList,attendanceList,false,123,0,"");
+	
 	}
 	
 	@Test
