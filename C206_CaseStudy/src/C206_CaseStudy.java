@@ -255,16 +255,6 @@ public class C206_CaseStudy {
 						int appIdToRemove = Helper.readInt("Please enter the application ID to remove > ");
 						removeApplication(userID, appIdToRemove, activityList, applicationList);
 
-<<<<<<< HEAD
-						int[] applicationArray = showAppliactionsForteach(userID, applicationList, activityList, userList);
-=======
->>>>>>> branch 'master' of https://github.com/BlackNet13/C206_CaseStudy
-						
-<<<<<<< HEAD
-					
-=======
-
->>>>>>> branch 'master' of https://github.com/BlackNet13/C206_CaseStudy
 						
 						//<<end of code for case 5>>
 						System.out.print("");
@@ -738,10 +728,7 @@ public class C206_CaseStudy {
 		}
 		
 	}
-<<<<<<< HEAD
-=======
 
->>>>>>> branch 'master' of https://github.com/BlackNet13/C206_CaseStudy
 
 	public static int doLogin(String userID, String password,Boolean login, int options, int role, ArrayList<Users> userList) {
 		
@@ -766,10 +753,5 @@ public class C206_CaseStudy {
 			}
 			return role;
 		}
-<<<<<<< HEAD
-	
 
-=======
-	
->>>>>>> branch 'master' of https://github.com/BlackNet13/C206_CaseStudy
 }
