@@ -88,7 +88,7 @@ public class C206_CaseStudy {
 		//teacher id must be from existing userid that have teacher's role
 		
 		
-		//initialize roleList, done by Aliyah /done
+		//initialize roleList, done by Aliyah /done//
 		ArrayList<Roles> roleList = new ArrayList<Roles>() ;
 		
 		roleList.add(new Roles(1, "Admin")) ;
@@ -97,12 +97,14 @@ public class C206_CaseStudy {
 		
 		//initialize attendanceList, done by Alex
 		ArrayList<Attendance> attendanceList = new ArrayList<Attendance>() ;
-
+		
 		
 		//initialize applicationList, done by Marcus
 		ArrayList<Applications> applicationList = new ArrayList<Applications>();
 		
+		
 		applicationList.add(new Applications(1, 1.1, "S111"));
+		applicationList.add(new Applications(2, 2.1, "S908"));
 		applicationList.add(new Applications(2, 1.2, "S908"));
 		
 		
@@ -246,7 +248,8 @@ public class C206_CaseStudy {
 						break;
 					case 5: //Remove applications code here, Shou Kang 
 						//<<Insert code here:>>
-						showAppliactionsForteach(userID, applicationList, activityList, userList);
+						int[] applicationArray = showAppliactionsForteach(userID, applicationList, activityList, userList);
+						
 					
 						
 						//<<end of code for case 5>>
@@ -259,6 +262,7 @@ public class C206_CaseStudy {
 						//-show list of activities own by the teacher
 						//-ask what activity id the user wants
 						//-shows list of students
+						showOwnActivties(userID, activityList) ;	
 						
 						//<<end of code for case 6>>
 						System.out.print("teach6");
@@ -642,23 +646,51 @@ public class C206_CaseStudy {
 			}
 		}
 	}
+
+	//Marcus and Shou Kang, Mark attendance
+	public static void markAttendance(String userID, ArrayList<Activity> activityList) {
+		String activityID = Helper.readString("Enter activity ID >");
+	}
 	//Shou kang code,
-	public static void showAppliactionsForteach(String userId, ArrayList<Applications> applicationList, ArrayList<Activity> activityList, ArrayList<Users> userList) {
+	public static int[] showAppliactionsForteach(String userId, ArrayList<Applications> applicationList, ArrayList<Activity> activityList, ArrayList<Users> userList) {
 			int applicationID = 0;
+			double applicationListActID = 0; 
+			double activityListActID = 0; 
 			double actvityID = 0;
 			String studentName = "";
 			String studentID = "";
 			String activityName = "";
 			String applicationStatus = "";
+			String activityListCherID = "";
+			String userListStudID = "";
+			int[] applicationArray = new int[applicationList.size()];
 			
 			for(int i = 0; i < applicationList.size(); i++) {
 				applicationID = applicationList.get(i).getAppId();
 				studentID = applicationList.get(i).getStudentId();
 				applicationStatus = applicationList.get(i).getStatus();
+				applicationListActID = applicationList.get(i).getActivityId();
 				
+				for(int x = 0; x < activityList.size(); x++) {
+					activityListActID = activityList.get(x).getActivityID();
+					activityListCherID = activityList.get(x).getTeacherID();
+					
+					if(activityListCherID == userId) {
+						applicationArray[i] = applicationID;
+						
+						for(int y = 0; y < userList.size(); y++) {
+							userListStudID = userList.get(y).getID();
+							
+							if(userListStudID.equals(studentID)) {
+								studentName = userList.get(y).getName();
+							}
+						}
+					}
+				}
+				System.out.format("%d %s %s %s\n", applicationID, studentID, studentName, applicationStatus);
 			}
 			
-			
+			return applicationArray;
 			
 			
 	}
