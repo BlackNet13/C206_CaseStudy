@@ -653,7 +653,7 @@ public class C206_CaseStudy {
 	public static void markAttendance(String userID, ArrayList<Activity> activityList) {
 		String activityID = Helper.readString("Enter activity ID >");
 	}
-	//Shou kang code, shows all applications under the teacher
+	//Shou kang code, shows all applications under the teacher//
 	public static void showAppliactionsForteach(String userId, ArrayList<Applications> applicationList, ArrayList<Activity> activityList, ArrayList<Users> userList) {
 		String studentID = "";
 		String teacherID = "";
