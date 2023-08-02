@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class C206_CaseStudy {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub//
 		
 		//commenting
 		
@@ -72,6 +72,7 @@ public class C206_CaseStudy {
 		userList.add(new Users("A345", "2345", "Helen", 1)); //admin
 		userList.add(new Users("T567", "6543", "Jake", 2)); //teacher
 		userList.add(new Users("S908", "3232", "Kate", 3)); //student
+		userList.add(new Users("S121", "1234", "Shale", 3));
 
 		
 		//initialize the activityList, done by Edry, add date, time
@@ -105,17 +106,16 @@ public class C206_CaseStudy {
 		
 		applicationList.add(new Applications(1, 1.1, "S111"));
 		applicationList.add(new Applications(2, 2.1, "S908"));
-		applicationList.add(new Applications(2, 1.2, "S908"));
+		applicationList.add(new Applications(3, 1.2, "S908"));
+		applicationList.add(new Applications(4, 3.1, "S121"));
 		
 		
 		boolean login = false; 
 		int options = 123;
 		int role = 0;
 		String userID ="";
-		String password ="";
-		
 			
-		login(userList, roleList, activityList, applicationList, attendanceList ,login, options, role, userID,password);
+		login(userList, roleList, activityList, applicationList, attendanceList ,login, options, role, userID);
 		
 		System.out.println("\nProgram Exited");
 		
@@ -123,7 +123,7 @@ public class C206_CaseStudy {
 
 	//code done by Shou Kang and Yvonne
 	public static void login(ArrayList<Users> userList, ArrayList<Roles> roleList, ArrayList<Activity> activityList, ArrayList<Applications> applicationList,ArrayList<Attendance> attendanceList, boolean login, int options,
-			int role, String userID, String password) {
+			int role, String userID) {
 		
 		//for initializing of variable of new user, for junitTesting workaround
 				int newUserRole = 0;
@@ -141,7 +141,25 @@ public class C206_CaseStudy {
 				
 				if(options == 1) {
 					
-					role = doLogin(userID,password,login,options,role, userList); //Yvonne edited to adapt for Junit testing
+					userID = Helper.readString("Enter user ID > ");
+					String password = Helper.readString("Enter password > ");
+					
+				
+						//Yvonne
+						for(int i = 0; i<userList.size(); i++) {
+							if(userID.equals(userList.get(i).getID())&&password.equals(userList.get(i).getPassword())) {
+								System.out.println("\nlogin successful");
+								role = userList.get(i).getRoleIndex();
+								login = true;
+								//break;
+							}
+						}
+						if(!login) {
+							options =123;
+							role =0;
+							System.out.println("\nInvalid username or password");
+						}
+					
 					
 					
 				}else if(options!= -9){
@@ -237,12 +255,19 @@ public class C206_CaseStudy {
 						int appIdToRemove = Helper.readInt("Please enter the application ID to remove > ");
 						removeApplication(userID, appIdToRemove, activityList, applicationList);
 
+<<<<<<< HEAD
 						int[] applicationArray = showAppliactionsForteach(userID, applicationList, activityList, userList);
+=======
+>>>>>>> branch 'master' of https://github.com/BlackNet13/C206_CaseStudy
 						
+<<<<<<< HEAD
 					
+=======
+
+>>>>>>> branch 'master' of https://github.com/BlackNet13/C206_CaseStudy
 						
 						//<<end of code for case 5>>
-						System.out.print("teach5");
+						System.out.print("");
 						break;
 						
 					case 6: //Mark attendance code here, Marcus,Shou Kang
@@ -640,48 +665,45 @@ public class C206_CaseStudy {
 	public static void markAttendance(String userID, ArrayList<Activity> activityList) {
 		String activityID = Helper.readString("Enter activity ID >");
 	}
-	//Shou kang code,
-	public static int[] showAppliactionsForteach(String userId, ArrayList<Applications> applicationList, ArrayList<Activity> activityList, ArrayList<Users> userList) {
-			int applicationID = 0;
-			double applicationListActID = 0; 
-			double activityListActID = 0; 
-			double actvityID = 0;
-			String studentName = "";
-			String studentID = "";
-			String activityName = "";
-			String applicationStatus = "";
-			String activityListCherID = "";
-			String userListStudID = "";
-			int[] applicationArray = new int[applicationList.size()];
+	//Shou kang code, shows all applications under the teacher//
+	public static void showAppliactionsForteach(String userId, ArrayList<Applications> applicationList, ArrayList<Activity> activityList, ArrayList<Users> userList) {
+		String studentID = "";
+		String teacherID = "";
+		String userListID = "";
+		String studentName = "";
+		String status = "";
+		int applicationID = 0;
+		double activityListActID = 0;
+		double applicationListActID = 0;
+		
+		System.out.format("\n%-20s %-15s %-15s %-15s %-15s\n", "Application ID", "Activity ID", "Student ID", "Student name", "Application status");
+		
+		for(int i = 0; i < applicationList.size(); i++) {
 			
-			for(int i = 0; i < applicationList.size(); i++) {
-				applicationID = applicationList.get(i).getAppId();
-				studentID = applicationList.get(i).getStudentId();
-				applicationStatus = applicationList.get(i).getStatus();
-				applicationListActID = applicationList.get(i).getActivityId();
+			studentID = applicationList.get(i).getStudentId();
+			applicationID = applicationList.get(i).getAppId();
+			applicationListActID = applicationList.get(i).getActivityId();
+			status = applicationList.get(i).getStatus();	
+			
+			for(int y = 0; y < activityList.size(); y++) {
+				activityListActID = activityList.get(y).getActivityID();
 				
-				for(int x = 0; x < activityList.size(); x++) {
-					activityListActID = activityList.get(x).getActivityID();
-					activityListCherID = activityList.get(x).getTeacherID();
+				if(applicationListActID == activityListActID) {
+					teacherID = activityList.get(y).getTeacherID();
 					
-					if(activityListCherID == userId) {
-						applicationArray[i] = applicationID;
+					if(teacherID.equals(userId)) {
 						
-						for(int y = 0; y < userList.size(); y++) {
-							userListStudID = userList.get(y).getID();
-							
-							if(userListStudID.equals(studentID)) {
-								studentName = userList.get(y).getName();
+						for(int x = 0; x < userList.size(); x++) {
+							userListID = userList.get(x).getID();
+							if(userListID.equals(studentID)) {
+								studentName = userList.get(x).getName();
+								System.out.format("%-20d %-15.1f %-15s %-15s %-15s\n", applicationID, activityListActID,studentID, studentName, status);
 							}
 						}
 					}
 				}
-				System.out.format("%d %s %s %s\n", applicationID, studentID, studentName, applicationStatus);
 			}
-			
-			return applicationArray;
-			
-			
+		}
 	}
 	
 	//Shou Kang code, removes the applications that have already been approved/disapproved by the teacher 
@@ -714,14 +736,12 @@ public class C206_CaseStudy {
 				}
 			}
 		}
-		if(removed) {
-			System.out.println("Application removed");
-		}
-		else {
-			System.out.println("Please enter a valid application");
-		}
 		
 	}
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/BlackNet13/C206_CaseStudy
 
 	public static int doLogin(String userID, String password,Boolean login, int options, int role, ArrayList<Users> userList) {
 		
@@ -746,6 +766,10 @@ public class C206_CaseStudy {
 			}
 			return role;
 		}
+<<<<<<< HEAD
 	
 
+=======
+	
+>>>>>>> branch 'master' of https://github.com/BlackNet13/C206_CaseStudy
 }
