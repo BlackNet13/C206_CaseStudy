@@ -10,10 +10,13 @@ public class C206_CaseStudyTest { //Edry will be supervisor of junit test cases 
 	//prepare test data - Yvonne
 	private Users Admin1;
 	private Users Admin2;
+	private Users Admin3;
 	private Users Teacher1;
 	private Users Teacher2;
+	private Users Teacher3;
 	private Users Student1;
 	private Users Student2;
+	private Users Student3;
 	
 	private Activity Acti1;
 	private Activity Acti2;
@@ -56,6 +59,10 @@ public class C206_CaseStudyTest { //Edry will be supervisor of junit test cases 
 		attendance3 = new Attendance(3, "S555", 2.1, "Y");
 		
 		userList = new ArrayList<Users>(); 
+		Admin3 = new Users("A345", "2345", "Helen", 1); userList.add(Admin3);
+		Teacher3 = new Users("T897","4562","Mark",2); userList.add(Teacher3);
+		Student3 = new Users("S908", "3232", "Kate", 3); userList.add(Student3);
+		
 		activityList = new ArrayList<Activity>(); 
 		roleList = new ArrayList<Roles>() ;
 		attendanceList = new ArrayList<Attendance>() ;
@@ -64,15 +71,39 @@ public class C206_CaseStudyTest { //Edry will be supervisor of junit test cases 
 	}
 	
 	@Test
-	public void testLogin() { //Edry//
-		//boolean test similiar to resource centre test in testDoLoan]
-		assertNotNull("test if there is valid user arrayList to login from",userList);
-		C206_CaseStudy.login(userList,roleList,activityList,applicationList,attendanceList,false,123,0,"");
+	public void testLogin() { //Edry
+		assertNotNull("test if there is an existing user arrayList to login from",userList);
+		
+		String userID = Admin3.getID();
+		String password = Admin3.getPassword();
+		Boolean login = false; //always false, dont change but it's not needed here, as the role number will reflect if login success, check if role is 0
+		int options = 123; //does not change
+		int role = Admin3.getRoleIndex();
+		
+		//Admin login
+		int Admintest = C206_CaseStudy.doLogin(userID,password,login,options,role,userList);
+		assertNotEquals(Admintest,0); //test if successfully logged in
+		assertEquals(Admintest,1); //test if succesfully logged in as Admin
+		
+		//Teacher login
+		userID = ""; //replace with the teacher 3 follow admin login 
+		password = ""; //same as above
+		role = 0 ; //replace with the respective code.
+		int Teachertest = C206_CaseStudy.doLogin(userID,password,login,options,role,userList);
+		//write the asserts
+		
+		
+		//Student login
+		
+		
+		//error login, try to login with non existing userID and password.
+		
+		
 		
 	}
 	
 	@Test
-	public void testAddUser() { //Shou Kang
+	public void testAddUser() { //Shou Kang, done//
 		int newUserRole = Admin1.getRoleIndex();
 		String newID = Admin1.getID();
 		String newName = Admin1.getName();

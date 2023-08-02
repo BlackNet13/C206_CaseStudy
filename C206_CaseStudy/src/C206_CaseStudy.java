@@ -3,9 +3,6 @@ import java.util.ArrayList;
 public class C206_CaseStudy {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
-		//commenting
 		
 		/*flow:
 		 * 1.login -> show different menu choices
@@ -72,7 +69,7 @@ public class C206_CaseStudy {
 		userList.add(new Users("A345", "2345", "Helen", 1)); //admin
 		userList.add(new Users("T567", "6543", "Jake", 2)); //teacher
 		userList.add(new Users("S908", "3232", "Kate", 3)); //student
-		userList.add(new Users("S121", "1234", "Shale", 3));
+		userList.add(new Users("S121", "1234", "Shale", 3)); //student
 
 		
 		//initialize the activityList, done by Edry, add date, time
