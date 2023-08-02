@@ -97,10 +97,11 @@ public class C206_CaseStudy {
 		
 		//initialize attendanceList, done by Alex
 		ArrayList<Attendance> attendanceList = new ArrayList<Attendance>() ;
-
+		
 		
 		//initialize applicationList, done by Marcus
 		ArrayList<Applications> applicationList = new ArrayList<Applications>();
+		
 		
 		applicationList.add(new Applications(1, 1.1, "S111"));
 		applicationList.add(new Applications(2, 2.1, "S908"));
