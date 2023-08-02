@@ -88,7 +88,7 @@ public class C206_CaseStudy {
 		//teacher id must be from existing userid that have teacher's role
 		
 		
-		//initialize roleList, done by Aliyah /done
+		//initialize roleList, done by Aliyah /done//
 		ArrayList<Roles> roleList = new ArrayList<Roles>() ;
 		
 		roleList.add(new Roles(1, "Admin")) ;
