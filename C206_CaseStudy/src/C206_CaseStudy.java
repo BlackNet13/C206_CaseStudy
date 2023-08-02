@@ -708,10 +708,6 @@ public class C206_CaseStudy {
 		}
 		
 	}
-<<<<<<< HEAD
-
-=======
->>>>>>> branch 'master' of https://github.com/BlackNet13/C206_CaseStudy
 
 	public static int doLogin(String userID, String password,Boolean login, int options, int role, ArrayList<Users> userList) {
 		
