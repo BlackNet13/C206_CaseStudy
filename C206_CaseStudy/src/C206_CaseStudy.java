@@ -250,9 +250,13 @@ public class C206_CaseStudy {
 						break;
 					case 5: //Remove applications code here, Shou Kang 
 						//<<Insert code here:>>
+
 						showAppliactionsForteach(userID, applicationList, activityList, userList);
 						int appIdToRemove = Helper.readInt("Please enter the application ID to remove > ");
 						removeApplication(userID, appIdToRemove, activityList, applicationList);
+
+						
+
 						
 						//<<end of code for case 5>>
 						System.out.print("");
@@ -726,4 +730,30 @@ public class C206_CaseStudy {
 		}
 		
 	}
+
+
+	public static int doLogin(String userID, String password,Boolean login, int options, int role, ArrayList<Users> userList) {
+		
+		if(userID=="") {
+		userID = Helper.readString("Enter user ID > ");
+		password = Helper.readString("Enter password > ");
+		}
+	
+			//Yvonne
+			for(int i = 0; i<userList.size(); i++) {
+				if(userID.equals(userList.get(i).getID())&&password.equals(userList.get(i).getPassword())) {
+					System.out.println("\nlogin successful");
+					role = userList.get(i).getRoleIndex();
+					login = true;
+					//break;
+				}
+			}
+			if(!login) {
+				options =123;
+				role =0;
+				System.out.println("\nInvalid username or password");
+			}
+			return role;
+		}
+	
 }
