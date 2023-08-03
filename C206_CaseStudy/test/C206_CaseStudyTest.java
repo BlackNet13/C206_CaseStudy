@@ -6,7 +6,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class C206_CaseStudyTest { //Edry will be supervisor of junit test cases as he has more experience in this, he will check, help and prune
+public class C206_CaseStudyTest { 
 	//prepare test data - Yvonne
 	private Users Admin1;
 	private Users Admin2;
