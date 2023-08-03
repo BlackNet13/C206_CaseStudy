@@ -105,7 +105,13 @@ public class C206_CaseStudyTest { //Edry will be supervisor of junit test cases 
 		
 		//error login, try to login with non existing userID and password.
 		
-		
+		userID = "sdssdfs"; //replace with the teacher 3 follow admin login 
+		password = "s,jbfj dsjfds"; //same as above
+		role = Teacher3.getRoleIndex() ; //replace with the respective code.
+		Teachertest = C206_CaseStudy.doLogin(userID,password,login,options,role,userList);
+		//write the asserts
+		assertNotEquals(Teachertest,0);
+		assertNotEquals(Teachertest,1);
 		
 	}
 	
