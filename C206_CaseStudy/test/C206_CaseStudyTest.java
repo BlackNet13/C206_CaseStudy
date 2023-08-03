@@ -86,15 +86,22 @@ public class C206_CaseStudyTest { //Edry will be supervisor of junit test cases 
 		assertEquals(Admintest,1); //test if succesfully logged in as Admin
 		
 		//Teacher login
-		userID = ""; //replace with the teacher 3 follow admin login 
-		password = ""; //same as above
-		role = 0 ; //replace with the respective code.
+		userID = Teacher3.getID(); //replace with the teacher 3 follow admin login 
+		password = Teacher3.getPassword(); //same as above
+		role = Teacher3.getRoleIndex() ; //replace with the respective code.
 		int Teachertest = C206_CaseStudy.doLogin(userID,password,login,options,role,userList);
 		//write the asserts
-		
+		assertNotEquals(Teachertest,0);
+		assertEquals(Teachertest,1);
 		
 		//Student login
-		
+		userID = Student3.getID(); //replace with the teacher 3 follow admin login 
+		password = Student3.getPassword(); //same as above
+		role = Student3.getRoleIndex() ; //replace with the respective code.
+		int StudentTest = C206_CaseStudy.doLogin(userID,password,login,options,role,userList);
+		//write the asserts
+		assertNotEquals(StudentTest,0);
+		assertEquals(StudentTest,1);
 		
 		//error login, try to login with non existing userID and password.
 		
