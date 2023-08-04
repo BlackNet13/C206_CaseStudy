@@ -71,6 +71,10 @@ public class C206_CaseStudy {
 		userList.add(new Users("T567", "6543", "Jake", 2)); //teacher
 		userList.add(new Users("S908", "3232", "Kate", 3)); //student
 		userList.add(new Users("S121", "1234", "Shale", 3)); //student
+		userList.add(new Users("S123", "1234", "Arnold", 3)); //student
+		userList.add(new Users("S432", "1234", "Rika", 3)); //student
+		userList.add(new Users("S324", "1234", "Marty", 3)); //student
+		userList.add(new Users("S897", "1234", "Abigail", 3)); //student
 
 		
 		//initialize the activityList, done by Edry, add date, time
@@ -96,6 +100,11 @@ public class C206_CaseStudy {
 		
 		//initialize attendanceList, done by Alex
 		ArrayList<Attendance> attendanceList = new ArrayList<Attendance>() ;
+		attendanceList.add(new Attendance(1, "S123", 1.1));
+		attendanceList.add(new Attendance(2, "S432", 1.2));
+		attendanceList.add(new Attendance(3, "S324", 2.1));
+		attendanceList.add(new Attendance(4, "S897", 3.1));
+		
 		
 		
 		//initialize applicationList, done by Marcus
@@ -239,7 +248,7 @@ public class C206_CaseStudy {
 						showAppliactionsForteach(userID, applicationList, activityList, userList);
 						int appIdToRemove = Helper.readInt("Please enter the application ID to remove > ");
 						removeApplication(userID, appIdToRemove, activityList, applicationList);
-
+						
 						//<<end of code for case 5>>
 						System.out.print("");
 						break;
@@ -252,9 +261,12 @@ public class C206_CaseStudy {
 						//-shows list of students
 						showOwnActivties(userID, activityList) ;	
 						double activityID = Helper.readDouble("Enter activity code > ");
-						
+						showAllStudentInActivity(userID, activityID, attendanceList, activityList, userList);
+						int attendanceId = Helper.readInt("Enter attendance id > ");
+						markAttendance(userID, attendanceId, attendanceList, activityList);		
+								
 						//<<end of code for case 6>>
-						System.out.print("teach6");
+						System.out.print("");
 						break;
 					case 7: //Delete attendance code here, Shou Kang
 						//<<Insert code here:>>
@@ -736,6 +748,39 @@ public class C206_CaseStudy {
 	
 	//Shou kang code
 	public static void showAllStudentInActivity(String userID, double actIdInp, ArrayList<Attendance> attendanceList, ArrayList<Activity> activityList, ArrayList<Users> userList) {
+		
+		System.out.format("\n%-20s %-20s %-20s %-20s", "Attendance ID", "Student ID", "Student Name", "Attendance status");
+		
+		for(int i = 0; i < activityList.size(); i++) {
+			String activityListCherId = activityList.get(i).getTeacherID();
+			double activityListActId = activityList.get(i).getActivityID();
+			
+			if(activityListCherId.equals(userID)) {
+				if(activityListActId == actIdInp) {
+					for(int x = 0; x < attendanceList.size(); x++) {
+						double attendanceListActId = attendanceList.get(x).getActivityId();
+						String attendanceListStudId = attendanceList.get(x).getStudentId();
+						int attendanceId = attendanceList.get(x).getAttendanceId();
+						String status = attendanceList.get(x).getAttended();
+						
+						if(attendanceListActId == activityListActId) {
+							for(int y = 0; y < userList.size(); y++) {
+								String userListId = userList.get(y) .getID();
+							
+								if(userListId.equals(attendanceListStudId)) {
+									String studentName = userList.get(y).getName();
+								
+									System.out.format("\n%-20d %-20s %-20s %-20s\n", attendanceId, userListId, studentName, status);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	public static void markAttendance(String userID, int attendanceID,  ArrayList<Attendance> attendanceList, ArrayList<Activity> activityList) {
 		
 	}
 }

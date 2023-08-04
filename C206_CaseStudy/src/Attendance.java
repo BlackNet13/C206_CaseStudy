@@ -6,32 +6,32 @@ private double activityId;
 private String attended;
 
 
-public Attendance(int attendanceId,String studentId, double activityId) {
+public Attendance(int attendanceId, String studentId, double activityId) {
 	this.attendanceId=attendanceId;
 	this.studentId=studentId;
 	this.activityId = activityId;
 	this.attended = "not attended";
 }
 
-public Attendance(int attendanceId,String studentId, double activityId, String attended ) {
+public Attendance(int attendanceId, String studentId, double activityId, String attended ) {
 	this.attendanceId=attendanceId;
 	this.studentId=studentId;
 	this.activityId = activityId;
 	this.attended = attended;
 	
 }
-public int getattendanceId(){
+public int getAttendanceId(){
 	return attendanceId;
 }
-public double getactivityId() {
+public double getActivityId() {
 	return activityId;
 }
 
-public String getstudentId() {
+public String getStudentId() {
 	return studentId;
 }
 
-public String attended() {
+public String getAttended() {
 	return attended;
 }
 public void setAttendanceId(int attendanceId) {
