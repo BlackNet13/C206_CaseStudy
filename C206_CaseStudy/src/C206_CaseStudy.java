@@ -139,9 +139,12 @@ public class C206_CaseStudy {
 				
 				if(options == 1) {
 					
+					userID = Helper.readString("Enter user ID > ");
+					password = Helper.readString("Enter password > ");
+					
 					role =doLogin(userID,password,login,options,role,userList);
 					
-					
+
 				}else if(options!= -9){
 					System.out.println("\nPlease enter a correct option");
 				}else{				
@@ -708,11 +711,7 @@ public class C206_CaseStudy {
 
 	public static int doLogin(String userID, String password,Boolean login, int options, int role, ArrayList<Users> userList) {
 		
-		if(userID=="") {
-		userID = Helper.readString("Enter user ID > ");
-		password = Helper.readString("Enter password > ");
-		}
-	
+
 			//Yvonne
 			for(int i = 0; i<userList.size(); i++) {
 				if(userID.equals(userList.get(i).getID())&&password.equals(userList.get(i).getPassword())) {
