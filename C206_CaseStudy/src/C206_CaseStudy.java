@@ -227,7 +227,9 @@ public class C206_CaseStudy {
 						break;
 					case 3: //remove activities that they owned code here, Alex,Edry
 						//<<Insert code here:>>
+						showOwnActivties(userID, activityList) ;
 						
+						removeActivity(userID,activityList);
 						
 						
 						//<<end of code for case 3>>
@@ -781,6 +783,24 @@ public class C206_CaseStudy {
 	}
 	
 	public static void markAttendance(String userID, int attendanceID,  ArrayList<Attendance> attendanceList, ArrayList<Activity> activityList) {
+		
+	}
+	public static boolean removeActivity(String userID,ArrayList<Activity> activityList) {
+		boolean activityfound = false;
+		double activityInput = Helper.readDouble("Enter activity to be deleted > ");
+		for (int i = 0; i< activityList.size(); i++) {
+			if (activityList.get(i).getActivityID()==activityInput) {
+				activityList.remove(i);
+				System.out.println("Successfully deleted a with  " + activityInput);
+				activityfound = true;
+			}
+			else {
+				
+				activityfound = false;
+			}
+		}
+		return activityfound;
+		
 		
 	}
 }
