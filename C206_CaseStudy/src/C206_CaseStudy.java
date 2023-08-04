@@ -251,6 +251,7 @@ public class C206_CaseStudy {
 						//-ask what activity id the user wants
 						//-shows list of students
 						showOwnActivties(userID, activityList) ;	
+						double activityID = Helper.readDouble("Enter activity code > ");
 						
 						//<<end of code for case 6>>
 						System.out.print("teach6");
@@ -636,8 +637,8 @@ public class C206_CaseStudy {
 	}
 
 	//Marcus and Shou Kang, Mark attendance
-	public static void markAttendance(String userID, ArrayList<Activity> activityList) {
-		String activityID = Helper.readString("Enter activity ID >");
+	public static void markAttendance(String userID, ArrayList<Activity> activityList, ArrayList<Attendance> attendanceList) {
+		String activityID = Helper.readString("Enter activity ID > ");
 	}
 	//Shou kang code, shows all applications under the teacher//
 	public static void showAppliactionsForteach(String userId, ArrayList<Applications> applicationList, ArrayList<Activity> activityList, ArrayList<Users> userList) {
@@ -732,4 +733,9 @@ public class C206_CaseStudy {
 			}
 			return new AbstractMap.SimpleEntry<>(role,login);
 		}
+	
+	//Shou kang code
+	public static void showAllStudentInActivity(String userID, double actIdInp, ArrayList<Attendance> attendanceList, ArrayList<Activity> activityList, ArrayList<Users> userList) {
+		
+	}
 }
