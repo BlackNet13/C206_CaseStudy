@@ -245,6 +245,11 @@ public class C206_CaseStudyTest {
 	@Test
 	public void testViewAllActivities() { //Alex, Edry
 		//refer to resource centre test retrieveallCamcorder but might be more complex
+		assertNotNull("Test if thereius valid Activity arrayList to retreive activities", activityList);
+		assertNotEquals("Test that the Activity arrayList is not empty,",0,activityList.size());
+		assertEquals("Test that activity arraylist size is 4", 4, activityList.size());
+		//String allActivities = C206_CaseStudy.showAllActivities(activityList);
+		
 	}
 	
 	@Test
