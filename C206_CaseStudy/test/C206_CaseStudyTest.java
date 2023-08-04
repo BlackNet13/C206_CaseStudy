@@ -1,5 +1,6 @@
 import static org.junit.Assert.*;
 
+import java.util.AbstractMap;
 import java.util.ArrayList;
 
 import org.junit.After;
@@ -79,38 +80,43 @@ public class C206_CaseStudyTest {
 		Boolean login = false; 
 		int options = 123;
 		int role = Admin3.getRoleIndex();
+		int roleCheck = 0;
 		
 		//Admin login
-		int Admintest = C206_CaseStudy.doLogin(userID,password,login,options,role,userList);
-		assertNotEquals(Admintest,0); 
-		assertEquals(Admintest,1); 
+		AbstractMap.SimpleEntry<Integer,Boolean> Admintest = C206_CaseStudy.doLogin(userID,password,login,options,role,userList);
+		roleCheck = Admintest.getKey();
+		assertNotEquals(roleCheck,0); 
+		assertEquals(roleCheck,1); 
 		
 		//Teacher login
 		userID = Teacher3.getID();
 		password = Teacher3.getPassword(); 
 		role = Teacher3.getRoleIndex() ; 
-		int Teachertest = C206_CaseStudy.doLogin(userID,password,login,options,role,userList);
+		AbstractMap.SimpleEntry<Integer,Boolean>Teachertest = C206_CaseStudy.doLogin(userID,password,login,options,role,userList);
 		//write the asserts
-		assertNotEquals(Teachertest,0);
-		assertEquals(Teachertest,2);
+		roleCheck = Teachertest.getKey();
+		assertNotEquals(roleCheck,0);
+		assertEquals(roleCheck,2);
 		
 		//Student login
 		userID = Student3.getID(); 
 		password = Student3.getPassword(); 
 		role = Student3.getRoleIndex() ; 
-		int StudentTest = C206_CaseStudy.doLogin(userID,password,login,options,role,userList);
+		AbstractMap.SimpleEntry<Integer,Boolean>StudentTest = C206_CaseStudy.doLogin(userID,password,login,options,role,userList);
 		//write the asserts
-		assertNotEquals(StudentTest,0);
-		assertEquals(StudentTest,3);
+		roleCheck = StudentTest.getKey();
+		assertNotEquals(roleCheck,0);
+		assertEquals(roleCheck,3);
 		
 		//error login, try to login with non existing userID and password.
 		userID = "sdssdfs"; //replace with the teacher 3 follow admin login 
 		password = "s,jbfj dsjfds"; //same as above
 		role = Teacher3.getRoleIndex() ; //replace with the respective code.
-		Teachertest = C206_CaseStudy.doLogin(userID,password,login,options,role,userList);
+		AbstractMap.SimpleEntry<Integer,Boolean>Teachertest2 = C206_CaseStudy.doLogin(userID,password,login,options,role,userList);
+		roleCheck = Teachertest2.getKey();
 		//write the asserts
-		assertEquals(Teachertest,0);
-		assertNotEquals(Teachertest,2);
+		assertEquals(roleCheck,0);
+		assertNotEquals(roleCheck,2);
 		
 	}
 	

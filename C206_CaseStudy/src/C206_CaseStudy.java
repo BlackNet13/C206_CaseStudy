@@ -1,3 +1,4 @@
+import java.util.AbstractMap;
 import java.util.ArrayList;
 
 public class C206_CaseStudy {
@@ -111,7 +112,7 @@ public class C206_CaseStudy {
 		int options = 123;
 		int role = 0;
 		String userID ="";
-		String password ="";
+		String password =""; 
 			
 		login(userList, roleList, activityList, applicationList, attendanceList ,login, options, role, userID, password);
 		
@@ -142,8 +143,9 @@ public class C206_CaseStudy {
 					userID = Helper.readString("Enter user ID > ");
 					password = Helper.readString("Enter password > ");
 					
-					role =doLogin(userID,password,login,options,role,userList);
-					
+					AbstractMap.SimpleEntry<Integer,Boolean> pair =doLogin(userID,password,login,options,role,userList);
+					role = pair.getKey();
+					login = pair.getValue();
 
 				}else if(options!= -9){
 					System.out.println("\nPlease enter a correct option");
@@ -711,7 +713,7 @@ public class C206_CaseStudy {
 		
 	}
 
-	public static int doLogin(String userID, String password,Boolean login, int options, int role, ArrayList<Users> userList) {
+	public static AbstractMap.SimpleEntry<Integer, Boolean> doLogin(String userID, String password,Boolean login, int options, int role, ArrayList<Users> userList) {
 		
 
 			//Yvonne
@@ -728,6 +730,6 @@ public class C206_CaseStudy {
 				role =0;
 				System.out.println("\nInvalid username or password");
 			}
-			return role;
+			return new AbstractMap.SimpleEntry<>(role,login);
 		}
 }
