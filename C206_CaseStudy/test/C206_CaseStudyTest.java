@@ -76,42 +76,41 @@ public class C206_CaseStudyTest {
 		
 		String userID = Admin3.getID();
 		String password = Admin3.getPassword();
-		Boolean login = false; //always false, dont change but it's not needed here, as the role number will reflect if login success, check if role is 0
-		int options = 123; //does not change
+		Boolean login = false; 
+		int options = 123;
 		int role = Admin3.getRoleIndex();
 		
 		//Admin login
 		int Admintest = C206_CaseStudy.doLogin(userID,password,login,options,role,userList);
-		assertNotEquals(Admintest,0); //test if successfully logged in
-		assertEquals(Admintest,1); //test if succesfully logged in as Admin
+		assertNotEquals(Admintest,0); 
+		assertEquals(Admintest,1); 
 		
 		//Teacher login
-		userID = Teacher3.getID(); //replace with the teacher 3 follow admin login 
-		password = Teacher3.getPassword(); //same as above
-		role = Teacher3.getRoleIndex() ; //replace with the respective code.
+		userID = Teacher3.getID();
+		password = Teacher3.getPassword(); 
+		role = Teacher3.getRoleIndex() ; 
 		int Teachertest = C206_CaseStudy.doLogin(userID,password,login,options,role,userList);
 		//write the asserts
 		assertNotEquals(Teachertest,0);
-		assertEquals(Teachertest,1);
+		assertEquals(Teachertest,2);
 		
 		//Student login
-		userID = Student3.getID(); //replace with the teacher 3 follow admin login 
-		password = Student3.getPassword(); //same as above
-		role = Student3.getRoleIndex() ; //replace with the respective code.
+		userID = Student3.getID(); 
+		password = Student3.getPassword(); 
+		role = Student3.getRoleIndex() ; 
 		int StudentTest = C206_CaseStudy.doLogin(userID,password,login,options,role,userList);
 		//write the asserts
 		assertNotEquals(StudentTest,0);
-		assertEquals(StudentTest,1);
+		assertEquals(StudentTest,3);
 		
 		//error login, try to login with non existing userID and password.
-		
 		userID = "sdssdfs"; //replace with the teacher 3 follow admin login 
 		password = "s,jbfj dsjfds"; //same as above
 		role = Teacher3.getRoleIndex() ; //replace with the respective code.
 		Teachertest = C206_CaseStudy.doLogin(userID,password,login,options,role,userList);
 		//write the asserts
-		assertNotEquals(Teachertest,0);
-		assertNotEquals(Teachertest,1);
+		assertEquals(Teachertest,0);
+		assertNotEquals(Teachertest,2);
 		
 	}
 	
@@ -226,13 +225,13 @@ public class C206_CaseStudyTest {
 	
 	
 	@Test
-	public void testAddActivities(){
+	public void testAddActivities(){ //Shou Kang
 		
 		
 	}
 	
 	@Test
-	public void testdeleteActivities(){
+	public void testdeleteActivities(){ //Shou Kang
 		
 	}
 	
