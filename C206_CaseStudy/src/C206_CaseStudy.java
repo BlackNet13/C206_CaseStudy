@@ -210,7 +210,7 @@ public class C206_CaseStudy {
 					switch(options) { //teacher
 					case 1: //Browse activities code here, Alex,Edry
 						//<<Insert code here:>>
-						
+						showAllActivities(activityList);
 						
 						
 						//<<end of code for case 1>>
@@ -572,6 +572,45 @@ public class C206_CaseStudy {
 		}
 		return userfound;
 		
+		
+	}
+	// Edry Code, show all Activities
+	
+	public static void showAllActivities( ArrayList<Activity> activityList) {
+		System.out.println() ;
+		Helper.line(45, "=");
+		System.out.println("=======     ALL ACTIVITY LIST     =======");
+		Helper.line(45, "=");
+		System.out.println() ;
+		
+		String table = String.format("%s %5s", "Activity ID", " ") ;
+		table += String.format("%s %11s", "Activity Name", " ") ;
+		table += String.format("%s %11s", "Category", " ") ;
+		table += String.format("%s %5s", "Max Pax", " ") ;
+		table += String.format("%s %5s", "Status", " ") ;
+		table += String.format("%s %10s", "Date", " ") ;
+		table += String.format("%s %8s", "Time Slot", " ") ;
+		table += String.format("%s", "Teacher ID") ;
+		
+		System.out.println(table);
+		Helper.line(120, "-");
+		
+		for (int j = 0; j < activityList.size(); j++) {
+			Activity a = activityList.get(j);
+			
+			
+			String output = String.format("%-12s %4s", a.getActivityID(), "") ;
+			output += String.format("%-20s %4s", a.getName(), "") ;
+			output += String.format("%-15s %4s", a.getType(), "") ;
+			output += String.format("%-8s %4s", a.getMaxPax(), "") ;
+			output += String.format("%-7s %4s", a.getStatus(), "") ;
+			output += String.format("%-10s %4s", a.getDate(), "") ;
+			output += String.format("%-13s %4s", a.getTimeSlot(), "") ;
+			output += String.format("%s", a.getTeacherID()) ;
+			
+			System.out.println(output) ;
+
+		}
 		
 	}
 	
