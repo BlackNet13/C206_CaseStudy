@@ -223,7 +223,8 @@ public class C206_CaseStudy {
 					case 2: //add activities(that they owned)code here, Aliyah, error in addNewActivity
 						//show activities that they owned first
 						//<<Insert code here:>>
-						showOwnActivties(userID, activityList) ;							
+						showAllActivities(activityList);							
+						showOwnActivties(userID, activityList) ;
 						
 						addNewActivity(userID, activityList) ;
 						//<<end of code for case 2>>
