@@ -266,7 +266,7 @@ public class C206_CaseStudyTest {
 	}*/
 	
 	@Test
-	public void testViewApplicationStatus() { //Aliyah,Edry
+	public void testViewApplicationStatus() { //Yvonne
 		
 	}
 	
