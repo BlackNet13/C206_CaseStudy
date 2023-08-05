@@ -705,13 +705,16 @@ public class C206_CaseStudy {
 		double activityListActID = 0;
 		double applicationListActID = 0;
 		
-		System.out.format("\n%-20s %-15s %-15s %-15s %-15s\n", "Application ID", "Activity ID", "Student ID", "Student name", "Application status");
+		System.out.println(String.format("\n******Student Applications******\n\n%-18s%-15s%-15s%-17s%-10s","Application ID","Activity Name","Student ID","Student Name","Status"));
+		System.out.println(String.format("%-18s%-15s%-15s%-17s%-15s","--------------","-------------","----------","------------","------"));
+		
+		//System.out.format("\n%-16s %-15s %-15s %-15s %-15s\n", "Application ID", "Activity ID", "Student ID", "Student name", "Application status");
 		
 		for(int i = 0; i < applicationList.size(); i++) {
 			
-			studentID = applicationList.get(i).getStudentId();
 			applicationID = applicationList.get(i).getAppId();
 			applicationListActID = applicationList.get(i).getActivityId();
+			studentID = applicationList.get(i).getStudentId();
 			status = applicationList.get(i).getStatus();	
 			
 			for(int y = 0; y < activityList.size(); y++) {
@@ -726,7 +729,7 @@ public class C206_CaseStudy {
 							userListID = userList.get(x).getID();
 							if(userListID.equals(studentID)) {
 								studentName = userList.get(x).getName();
-								System.out.format("%-20d %-15.1f %-15s %-15s %-15s\n", applicationID, activityListActID,studentID, studentName, status);
+								System.out.format("%-18d %-15.1f %-15s %-17s %-15s\n", applicationID, activityListActID,studentID, studentName, status);
 							}
 						}
 					}
