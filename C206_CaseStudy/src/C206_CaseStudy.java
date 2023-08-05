@@ -208,24 +208,23 @@ public class C206_CaseStudy {
 					
 				}else if(role == 2) {
 					switch(options) { //teacher
-					case 1: //Browse activities code here, Alex,Edry
+					case 1: //Browse activities code here, Edry, Alex , done//
 						//<<Insert code here:>>
 						showAllActivities(activityList);
-						
-						
+					
 						//<<end of code for case 1>>
-						System.out.print("teach1");
+						//System.out.print("teach1");
 						break;
-					case 2: //add activities(that they owned)code here, Aliyah
+					case 2: //add activities(that they owned)code here, Aliyah, error in addNewActivity
 						//show activities that they owned first
 						//<<Insert code here:>>
 						showOwnActivties(userID, activityList) ;							
 						
 						addNewActivity(userID, activityList) ;
 						//<<end of code for case 2>>
-						System.out.print("teach2");
+						//System.out.print("teach2");
 						break;
-					case 3: //remove activities that they owned code here, Alex,Edry
+					case 3: //remove activities that they owned code here, Alex,Edry, done//
 						//<<Insert code here:>>
 						showOwnActivties(userID, activityList) ;
 						
@@ -233,16 +232,16 @@ public class C206_CaseStudy {
 						
 						
 						//<<end of code for case 3>>
-						System.out.print("teach3");
+						//System.out.print("teach3");
 						break;
 					case 4: //manage student applications code here, Yvonne
 						//<<Insert code here:>>
-						System.out.println(String.format("\n******Student Applications******\n\n%-8s%-16s%-6s%-6s","Index","Activity Name","Student ID","Student Name","Status"));
-						System.out.println(String.format("%-8s%-16s%-6s%-6s","-----","----","---","---","-----------"));
+						System.out.println(String.format("\n******Student Applications******\n\n%-8s%-16s%-14s%-17s%-10s","Index","Activity Name","Student ID","Student Name","Status"));
+						System.out.println(String.format("%-8s%-16s%-14s%-17s%-10s","-----","-------------","----------","------------","------"));
 						
 						
 						//<<end of code for case 4>>
-						System.out.print("teach4");
+						//System.out.print("teach4");
 						break;
 					case 5: //Remove applications code here, Shou Kang 
 						//<<Insert code here:>>
@@ -593,7 +592,7 @@ public class C206_CaseStudy {
 		table += String.format("%s", "Teacher ID") ;
 		
 		System.out.println(table);
-		Helper.line(120, "-");
+		Helper.line(130, "-");
 		
 		for (int j = 0; j < activityList.size(); j++) {
 			Activity a = activityList.get(j);
@@ -632,7 +631,7 @@ public class C206_CaseStudy {
 		table += String.format("%s", "Teacher ID") ;
 		
 		System.out.println(table) ;
-		Helper.line(120, "-");
+		Helper.line(130, "-");
 		
 			for (int j = 0; j < activityList.size(); j++) {
 				Activity a = activityList.get(j) ;
