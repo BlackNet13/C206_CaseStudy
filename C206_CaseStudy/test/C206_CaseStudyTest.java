@@ -223,41 +223,14 @@ public class C206_CaseStudyTest {
 		//String allUsers = C206_CaseStudy.displayAllUsers(roleList, userList) ;
 	}
 	
-/*	@Test
-	public boolean testRemoveUser() { //Marcus,Edry
-		//hope edry can guide on this
-		
-		int newUserRole = Admin1.getRoleIndex();
-		String newID = Admin1.getID();
-		String newName = Admin1.getName();
-		String newPassword = Admin1.getPassword();
-		
-		// Add an admin
-		C206_CaseStudy.addUser(userList, newUserRole, newID, newName, newPassword);
-		
-		newUserRole = Teacher1.getRoleIndex();
-		newID = Teacher1.getID();
-		newName = Teacher1.getName();
-		newPassword = Teacher1.getPassword();
-		
-		C206_CaseStudy.addUser(userList, newUserRole, newID, newName, newPassword);
-		assertEquals("Test that the userlist size is now 2.", 2, userList.size());
+	@Test
+	public void testRemoveUser() { //Marcus,Edry
+		String userID = Student3.getID(); 
+
+		boolean userFound = C206_CaseStudy.removeUser(userList, userID); 
 		
 		
-		
-		boolean userFound = C206_CaseStudy.removeUser(userList, "Student2"); 
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	}*/////
+	}
 	
 	
 	@Test
