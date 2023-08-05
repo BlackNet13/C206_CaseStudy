@@ -292,21 +292,21 @@ public class C206_CaseStudyTest {
 
 		
 		assertEquals("Test that the attendanceList is 1", 1, attendanceList.size());
+		
+		//Test if attendance is marked
 		int attendanceID = attendance1.getAttendanceId();
 		double activityID = attendance1.getActivityId();
-		
-		
-		/*for(int i = 0; i<attendanceList.size(); i++) {
-			System.out.println(attendanceList.get(i).getAttendanceId());
-		}*/
-		
-		
+			
 		boolean test1 = C206_CaseStudy.markAttendance(userID,attendanceID,activityID, attendanceList, activityList, userList); 
 		assertTrue("Test if the attendance has been marked",test1);
 		
 
-		// Mark a non existent attendance
-		//C206_CaseStudy.addMethodName(attendanceList, attendance2);
+		// Test if reject a non existent attendance marking
+		attendanceID = attendance2.getAttendanceId();
+		activityID = attendance2.getActivityId();
+		
+		boolean test2 = C206_CaseStudy.markAttendance(userID,attendanceID,activityID, attendanceList, activityList, userList); 
+		assertFalse("Test if the attendance has been marked",test2);
 
 	}
 	
