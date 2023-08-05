@@ -705,10 +705,8 @@ public class C206_CaseStudy {
 		double activityListActID = 0;
 		double applicationListActID = 0;
 		
-		System.out.println(String.format("\n******Student Applications******\n\n%-18s%-15s%-15s%-17s%-10s","Application ID","Activity Name","Student ID","Student Name","Status"));
-		System.out.println(String.format("%-18s%-15s%-15s%-17s%-15s","--------------","-------------","----------","------------","------"));
-		
-		//System.out.format("\n%-16s %-15s %-15s %-15s %-15s\n", "Application ID", "Activity ID", "Student ID", "Student name", "Application status");
+		System.out.println(String.format("\n******Student Applications******\n\n%-18s%-15s%-15s%-15s%-17s%-10s","Application ID","Activity ID","Activity Name","Student ID","Student Name","Status"));
+		System.out.println(String.format("%-18s%-15s%-15s%-15s%-17s%-15s","--------------","-------------","-------------","----------","------------","------"));
 		
 		for(int i = 0; i < applicationList.size(); i++) {
 			
@@ -719,7 +717,7 @@ public class C206_CaseStudy {
 			
 			for(int y = 0; y < activityList.size(); y++) {
 				activityListActID = activityList.get(y).getActivityID();
-				
+				String activityListName = activityList.get(y).getName();				
 				if(applicationListActID == activityListActID) {
 					teacherID = activityList.get(y).getTeacherID();
 					
@@ -729,7 +727,7 @@ public class C206_CaseStudy {
 							userListID = userList.get(x).getID();
 							if(userListID.equals(studentID)) {
 								studentName = userList.get(x).getName();
-								System.out.format("%-18d %-15.1f %-15s %-17s %-15s\n", applicationID, activityListActID,studentID, studentName, status);
+								System.out.format("%-18d%-15s%-15s %-15s %-15s %-15s\n", applicationID, activityListActID ,activityListName,studentID, studentName, status);
 							}
 						}
 					}
