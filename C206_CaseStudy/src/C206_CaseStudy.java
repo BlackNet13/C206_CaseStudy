@@ -109,10 +109,10 @@ public class C206_CaseStudy {
 		
 		//initialize applicationList, done by Marcus
 		ArrayList<Applications> applicationList = new ArrayList<Applications>();
-		applicationList.add(new Applications(1,1.1 ,"S123"));
-		applicationList.add(new Applications(2,1.2,"S432"));
-		applicationList.add(new Applications(3,2.1,"S324"));
-		applicationList.add(new Applications(4,3.1,"S897"));
+		applicationList.add(new Applications(1,1.1 ,"S123","Approved"));
+		applicationList.add(new Applications(2,1.2,"S432","Approved"));
+		applicationList.add(new Applications(3,2.1,"S324","Approved"));
+		applicationList.add(new Applications(4,3.1,"S897","Approved"));
 		applicationList.add(new Applications(5, 1.1, "S111"));
 		applicationList.add(new Applications(6, 2.1, "S908"));
 		applicationList.add(new Applications(7, 1.2, "S908"));
@@ -239,7 +239,7 @@ public class C206_CaseStudy {
 						//<<end of code for case 3>>
 						//System.out.print("teach3");
 						break;
-					case 4: //manage student applications code here, Yvonne//
+					case 4: //manage student applications code here, Yvonne, done//
 						//<<Insert code here:>>
 						showApplications4Teach(userID, applicationList, activityList, userList);
 						
@@ -261,12 +261,9 @@ public class C206_CaseStudy {
 						System.out.print("");
 						break;
 						
-					case 6: //Mark attendance code here, Marcus,Shou Kang
+					case 6: //Mark attendance code here, Marcus,Shou Kang,done//
 						//<<Insert code here:>>
 						
-						//-show list of activities own by the teacher
-						//-ask what activity id the user wants
-						//-shows list of students
 						showOwnActivties(userID, activityList) ;	
 						double activityID = Helper.readDouble("Enter activity code > ");
 						showAllStudentInActivity(userID, activityID, attendanceList, activityList, userList);
@@ -302,14 +299,15 @@ public class C206_CaseStudy {
 						//<<end of code for case 1>>
 						System.out.print("student1");
 						break;
-					case 2: //apply for activities code here,Yvonne, Aliyah//
+					case 2: //apply for activities code here,Yvonne//
 						//<<Insert code here:>>
 						showAllActivities(activityList);
-						//-ask what activity id they want, then we search the activityList if the activity id exist
-						//-show confirmation screen
 						
+						extracted(activityList, applicationList, userID);
+						
+						System.out.println("");
 						//<<end of code for case 2>>
-						System.out.print("student2");
+						//System.out.print("student2");
 						break;
 					case 3: //view application status code here,Yvonne
 						//<<Insert code here:>>
@@ -317,7 +315,7 @@ public class C206_CaseStudy {
 						
 						
 						//<<end of code for case 3>>
- 						System.out.print("student3");
+ 						//System.out.print("student3");
 						break;
 					case 4: //view attendance record code here,Aliyah
 						//<<Insert code here:>>
@@ -340,6 +338,25 @@ public class C206_CaseStudy {
 				}
 				
 
+		}
+	}
+
+	public static void extracted(ArrayList<Activity> activityList, ArrayList<Applications> applicationList,
+			String userID) {
+		double activityIDinpt = Helper.readDouble("Enter activity ID to apply >");
+		
+		for(int i = 0; i<activityList.size(); i++) {
+			if(activityList.get(i).getActivityID() == activityIDinpt && activityList.get(i).getStatus().equals("Open")) {
+				String activityName = activityList.get(i).getName();
+				String confirm = Helper.readString("Confirm, Applying for " + activityIDinpt + " " + activityName + " ? (Y/N)").toUpperCase();
+				if(confirm.equals("Y")) {
+					applicationList.add(new Applications(applicationList.size(),activityIDinpt ,userID));
+					System.out.println("\nYour application to " + activityIDinpt + " " + activityName + "has been submitted\n\nPlease wait for your teacher to approve");
+				}else if(confirm.equals("N")) {
+					System.out.println("Your application process has been cancelled");
+				}
+				
+			}
 		}
 	}
 	
@@ -834,6 +851,7 @@ public class C206_CaseStudy {
 		
 	}
 
+	//Yvonne, doLogin modifier adapted for Junit testing
 	public static AbstractMap.SimpleEntry<Integer, Boolean> doLogin(String userID, String password,Boolean login, int options, int role, ArrayList<Users> userList) {
 		
 
