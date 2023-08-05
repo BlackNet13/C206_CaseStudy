@@ -245,7 +245,7 @@ public class C206_CaseStudyTest {
 		
 		
 		
-		boolean userFound = C206_CaseStudy.removeUser(userList, "Student2"); */
+		boolean userFound = C206_CaseStudy.removeUser(userList, "Student2"); 
 		
 		
 		
@@ -257,7 +257,7 @@ public class C206_CaseStudyTest {
 		
 		
 		
-	}
+	}*/
 	
 	
 	@Test
