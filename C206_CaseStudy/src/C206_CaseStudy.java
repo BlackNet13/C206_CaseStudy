@@ -311,8 +311,6 @@ public class C206_CaseStudy {
 						
 						showApplications4Student(userID, applicationList, activityList, userList);
 						
-						
-						
 						//<<end of code for case 3>>
  						//System.out.print("student3");
 						break;
