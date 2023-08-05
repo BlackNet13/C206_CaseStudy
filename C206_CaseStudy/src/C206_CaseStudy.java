@@ -236,7 +236,7 @@ public class C206_CaseStudy {
 						//<<end of code for case 3>>
 						//System.out.print("teach3");
 						break;
-					case 4: //manage student applications code here, Yvonne
+					case 4: //manage student applications code here, Yvonne//
 						//<<Insert code here:>>
 						showAppliactionsForteach(userID, applicationList, activityList, userList);
 						
