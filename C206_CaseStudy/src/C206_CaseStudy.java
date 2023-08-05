@@ -820,6 +820,7 @@ public class C206_CaseStudy {
 		
 		String studentName = "";
 		boolean marked = false; 
+		boolean markedAlr = false;
 		for(int i = 0; i < activityList.size(); i++) {
 			
 			String activityListCherId = activityList.get(i).getTeacherID();
@@ -834,17 +835,22 @@ public class C206_CaseStudy {
 						String attendanceListStudId = attendanceList.get(x).getStudentId();
 						double attendanceListActId = attendanceList.get(x).getActivityId();
 						int attendanceId = attendanceList.get(x).getAttendanceId();
+						String status = attendanceList.get(x).getAttended();
 						
 						if(attendanceListActId == activityListActId) {
 							if(attendanceId == attendanceID) {
 								
-								attendanceList.get(x).setAttended("Attended");
-
-								for(int y = 0; y < userList.size(); y++) {
-									String userListId = userList.get(y) .getID();
-									if(userListId == attendanceListStudId) {
-										studentName = userList.get(y).getName();
-										marked = true;
+								if(status.equalsIgnoreCase("Attended")) {
+									markedAlr = true;
+								}
+								else {
+									attendanceList.get(x).setAttended("Attended");
+									for(int y = 0; y < userList.size(); y++) {
+										String userListId = userList.get(y) .getID();
+										if(userListId == attendanceListStudId) {
+											studentName = userList.get(y).getName();
+											marked = true;
+										}
 									}
 								}
 							}
@@ -853,7 +859,10 @@ public class C206_CaseStudy {
 				}
 			}
 		}
-		if(marked) {
+		if(markedAlr) {
+			System.out.println("This attendance has already been marked");
+		}
+		else if(marked) {
 			System.out.println("Student " + studentName + " has been marked as present");
 		}
 		else {

@@ -10,7 +10,7 @@ public Attendance(int attendanceId, String studentId, double activityId) {
 	this.attendanceId=attendanceId;
 	this.studentId=studentId;
 	this.activityId = activityId;
-	this.attended = "not attended";
+	this.attended = "Not Attended";
 }
 
 public Attendance(int attendanceId, String studentId, double activityId, String attended ) {
