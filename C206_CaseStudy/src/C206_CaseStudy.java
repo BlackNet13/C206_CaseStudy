@@ -292,7 +292,7 @@ public class C206_CaseStudy {
 					case 1: //Browse activities code here, Alex
 						//<<Insert code here:>>
 						
-						
+						//just copy and paste: showAllAactivities(activityList);
 						
 						//<<end of code for case 1>>
 						System.out.print("student1");
@@ -301,13 +301,15 @@ public class C206_CaseStudy {
 						//<<Insert code here:>>
 						showAllActivities(activityList);
 						
-						extracted(activityList, applicationList, userID);
+						apply4Activity(activityList, applicationList, userID);
 						
 						//<<end of code for case 2>>
 						//System.out.print("student2");
 						break;
 					case 3: //view application status code here,Yvonne
 						//<<Insert code here:>>
+						
+						showApplications4Student(userID, applicationList, activityList, userList);
 						
 						
 						
@@ -338,7 +340,8 @@ public class C206_CaseStudy {
 		}
 	}
 
-	public static void extracted(ArrayList<Activity> activityList, ArrayList<Applications> applicationList,
+	//Yvonne, apply for activity method for students
+	public static void apply4Activity (ArrayList<Activity> activityList, ArrayList<Applications> applicationList,
 			String userID) {
 		double activityIDinpt = Helper.readDouble("Enter activity ID to apply >");
 		
@@ -740,6 +743,54 @@ public class C206_CaseStudy {
 					teacherID = activityList.get(y).getTeacherID();
 					
 					if(teacherID.equals(userId)) {
+						
+						for(int x = 0; x < userList.size(); x++) {
+							userListID = userList.get(x).getID();
+							if(userListID.equals(studentID)) {
+								studentName = userList.get(x).getName();
+								System.out.format("%-18d%-15s%-15s %-15s %-15s %-15s\n", applicationID, activityListActID ,activityListName,studentID, studentName, status);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	//Yvonne, student's view of all application
+	public static void showApplications4Student(String userID, ArrayList<Applications> applicationList, ArrayList<Activity> activityList, ArrayList<Users> userList) {
+		
+		String studentID = "";
+		String userListID = "";
+		String studentName = "";
+		String status = "";
+		int applicationID = 0;
+		double activityListActID = 0;
+		double applicationListActID = 0;
+		
+		String studName = "";
+		for(int i = 0; i<userList.size(); i++ ) {
+			if(userList.get(i).getID().equals(userID)) {
+				studName = userList.get(i).getName();
+			}
+		}
+		
+		System.out.println(String.format("\n******"+ studName +"'s Activity Applications******\n\n%-18s%-15s%-15s%-15s%-17s%-10s","Application ID","Activity ID","Activity Name","Student ID","Student Name","Status"));
+		System.out.println(String.format("%-18s%-15s%-15s%-15s%-17s%-15s","--------------","-------------","-------------","----------","------------","------"));
+		
+		for(int i = 0; i < applicationList.size(); i++) {
+			
+			applicationID = applicationList.get(i).getAppId();
+			applicationListActID = applicationList.get(i).getActivityId();
+			studentID = applicationList.get(i).getStudentId();
+			status = applicationList.get(i).getStatus();	
+			
+			for(int y = 0; y < activityList.size(); y++) {
+				activityListActID = activityList.get(y).getActivityID();
+				String activityListName = activityList.get(y).getName();				
+				if(applicationListActID == activityListActID) {
+					
+					if(studentID.equals(userID)) {
 						
 						for(int x = 0; x < userList.size(); x++) {
 							userListID = userList.get(x).getID();
