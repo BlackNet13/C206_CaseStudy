@@ -121,9 +121,10 @@ public class C206_CaseStudy {
 		int options = 123;
 		int role = 0;
 		String userID ="";
-		String password =""; 
+		String password ="";
+		String idInpt = "0";
 			
-		login(userList, roleList, activityList, applicationList, attendanceList ,login, options, role, userID, password);
+		login(userList, roleList, activityList, applicationList, attendanceList ,login, options, role, userID, password, idInpt);
 		
 		System.out.println("\nProgram Exited");
 		
@@ -131,7 +132,7 @@ public class C206_CaseStudy {
 
 	//code done by Shou Kang and Yvonne
 	public static void login(ArrayList<Users> userList, ArrayList<Roles> roleList, ArrayList<Activity> activityList, ArrayList<Applications> applicationList,ArrayList<Attendance> attendanceList, boolean login, int options,
-			int role, String userID, String password) {
+			int role, String userID, String password, String idInpt) {
 		
 		//for initializing of variable of new user, for junitTesting workaround
 				int newUserRole = 0;
@@ -186,7 +187,10 @@ public class C206_CaseStudy {
 						boolean userfound = true;
 						displayAllUsers(roleList, userList) ;
 						System.out.println();
-						userfound = removeUser(userList);
+						//AbstractMap.SimpleEntry<Integer,Boolean> pair =doLogin(userID,password,login,options,role,userList);
+						//role = pair.getKey();
+						
+						userfound = removeUser(userList,idInpt);
 						if(!userfound) {
 							System.out.println("Invalid userId!");
 							
@@ -555,9 +559,11 @@ public class C206_CaseStudy {
 	}
 	
 	//Marcus code, remove user
-	public static boolean removeUser(ArrayList<Users>userList) {
+	public static boolean removeUser(ArrayList<Users>userList, String idInput) {
 		boolean userfound = false;
-		String idInput = Helper.readString("Enter User ID to be deleted > ");
+		if(idInput == "0") {
+			idInput = Helper.readString("Enter User ID to be deleted > ");
+		}
 		for (int i = 0; i< userList.size(); i++) {
 			if (userList.get(i).getID().equalsIgnoreCase(idInput)) {
 				userList.remove(i);
