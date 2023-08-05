@@ -214,7 +214,7 @@ public class C206_CaseStudyTest {
 	}
 	
 	@Test
-	public void testViewAllUsers() { //Aliyah
+	public void testViewAllUsers() { //Aliyah,Edry
 		//refer to resource centre test retrieveallCamcorder
 		//Test if User List is not null but empty -boundary
 		assertNotNull("Test if there is valid User arraylist to retrieve users", userList) ;
@@ -266,7 +266,7 @@ public class C206_CaseStudyTest {
 	}*/
 	
 	@Test
-	public void testViewApplicationStatus() { //Aliyah
+	public void testViewApplicationStatus() { //Aliyah,Edry
 		
 	}
 	
