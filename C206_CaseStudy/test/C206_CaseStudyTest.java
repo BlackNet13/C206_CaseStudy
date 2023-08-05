@@ -54,14 +54,14 @@ public class C206_CaseStudyTest {
 		Student3 = new Users("S908", "3232", "Kate", 3); userList.add(Student3);
 		
 		activityList = new ArrayList<Activity>(); 
-		Acti1 = new Activity(1.1,"sports","Football",25,"Open","T789","01/08/2023","15:00-17:00");
+		Acti1 = new Activity(1.1,"sports","Football",25,"Open","T789","01/08/2023","15:00-17:00"); 
 		Acti2 = new Activity(2.1,"uniformGroup","NCC SEA",60,"Open","T789","15/08/2023","14:00-17:00");
 		Acti3 = new Activity(3.1,"performanceArts","Chinese Orchestra",45,"Close","T789","16/07/2023","15:00-18:00");
 		
 		roleList = new ArrayList<Roles>() ;
 		
 		attendanceList = new ArrayList<Attendance>() ;
-		attendance1 = new Attendance(1,"S555",1.1); attendanceList.add(attendance1);
+		attendance1 = new Attendance(1,"S555",1.1); 
 		attendance2 = new Attendance(2,"S890",1.1,"Attended");
 		attendance3 = new Attendance(3, "S555", 2.1);
 		
@@ -285,13 +285,20 @@ public class C206_CaseStudyTest {
 	public void testMarkAttendance() { //Yvonne
 		assertNotNull("Test if valid attendancelist to add to exist", attendanceList);
 		String userID = Teacher1.getID();
+		activityList.add(Acti1);
+		userList.add(Teacher1);
+		userList.add(Student1);
+		attendanceList.add(attendance1);
+
+		
 		assertEquals("Test that the attendanceList is 1", 1, attendanceList.size());
 		int attendanceID = attendance1.getAttendanceId();
 		double activityID = attendance1.getActivityId();
 		
-		for(int i = 0; i<attendanceList.size(); i++) {
+		
+		/*for(int i = 0; i<attendanceList.size(); i++) {
 			System.out.println(attendanceList.get(i).getAttendanceId());
-		}
+		}*/
 		
 		
 		boolean test1 = C206_CaseStudy.markAttendance(userID,attendanceID,activityID, attendanceList, activityList, userList); 
