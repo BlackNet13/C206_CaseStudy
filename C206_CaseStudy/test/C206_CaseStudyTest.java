@@ -61,7 +61,7 @@ public class C206_CaseStudyTest {
 		roleList = new ArrayList<Roles>() ;
 		
 		attendanceList = new ArrayList<Attendance>() ;
-		attendance1 = new Attendance(1,"S555",1.1); 
+		attendance1 = new Attendance(1,"S555",1.1); attendanceList.add(attendance1);
 		attendance2 = new Attendance(2,"S890",1.1,"Attended");
 		attendance3 = new Attendance(3, "S555", 2.1);
 		
@@ -285,12 +285,16 @@ public class C206_CaseStudyTest {
 	public void testMarkAttendance() { //Yvonne
 		assertNotNull("Test if valid attendancelist to add to exist", attendanceList);
 		String userID = Teacher1.getID();
-		attendanceList.add(attendance1);
 		assertEquals("Test that the attendanceList is 1", 1, attendanceList.size());
-		int attendanceId = 1;
+		int attendanceID = attendance1.getAttendanceId();
 		double activityID = attendance1.getActivityId();
 		
-		boolean test1 = C206_CaseStudy.markAttendance(userID, attendanceId, activityID, attendanceList, activityList, userList); 
+		for(int i = 0; i<attendanceList.size(); i++) {
+			System.out.println(attendanceList.get(i).getAttendanceId());
+		}
+		
+		
+		boolean test1 = C206_CaseStudy.markAttendance(userID,attendanceID,activityID, attendanceList, activityList, userList); 
 		assertTrue("Test if the attendance has been marked",test1);
 		
 
