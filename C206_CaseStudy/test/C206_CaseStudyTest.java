@@ -72,7 +72,7 @@ public class C206_CaseStudyTest {
 	}
 	
 	@Test
-	public void testLogin() { //Edry
+	public void testLogin() { //Edry, done//
 		assertNotNull("test if there is an existing user arrayList to login from",userList);
 		
 		String userID = Admin3.getID();
