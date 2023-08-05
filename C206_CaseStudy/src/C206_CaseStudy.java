@@ -258,7 +258,6 @@ public class C206_CaseStudy {
 						removeApplication(userID, appIdToRemove, activityList, applicationList);
 						
 						//<<end of code for case 5>>
-						System.out.print("");
 						break;
 						
 					case 6: //Mark attendance code here, Marcus,Shou Kang,done//
@@ -271,7 +270,6 @@ public class C206_CaseStudy {
 						markAttendance(userID, attendanceId, activityID,attendanceList, activityList, userList);		
 								
 						//<<end of code for case 6>>
-						System.out.print("");
 						break;
 					case 7: //Delete attendance code here, Shou Kang
 						//<<Insert code here:>>
@@ -305,7 +303,6 @@ public class C206_CaseStudy {
 						
 						extracted(activityList, applicationList, userID);
 						
-						System.out.println("");
 						//<<end of code for case 2>>
 						//System.out.print("student2");
 						break;
