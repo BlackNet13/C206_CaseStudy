@@ -224,7 +224,7 @@ public class C206_CaseStudyTest {
 	}
 	
 	@Test
-	public void testRemoveUser() { //Marcus,Edry
+	public void testRemoveUser() { //Marcus,Edry//
 		String userID = Student3.getID(); 
 
 		boolean userFound = C206_CaseStudy.removeUser(userList, userID); 
