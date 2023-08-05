@@ -121,7 +121,7 @@ public class C206_CaseStudyTest {
 	}
 	
 	@Test
-	public void testAddUser() { //Shou Kang, done//
+	public void testAddUser() { //Shou Kang, done--//
 		int newUserRole = Admin1.getRoleIndex();
 		String newID = Admin1.getID();
 		String newName = Admin1.getName();
