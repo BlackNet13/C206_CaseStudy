@@ -737,7 +737,8 @@ public class C206_CaseStudy {
 	}
 	
 	//Yvonne, change the application status under manage applications
-	public static void chgAppliStatus(String userId, int appId, ArrayList<Activity> activityList, ArrayList<Applications> applicationList) {
+	public static void chgAppliStatus(String userId, int appId, ArrayList<Activity> activityList, ArrayList<Applications> applicationList, ArrayList<Users> userList) {
+		
 		
 		for(int i = 0 ; i < applicationList.size(); i++) {
 			int applicationListStudID = applicationList.get(i).getAppId();
@@ -752,12 +753,28 @@ public class C206_CaseStudy {
 						
 						String statusChg = "";
 						while(statusChg!="C" || statusChg!="Y" || statusChg!="N") {
+							String name = "";
 							if(userId.equals(cherID)) {
 								statusChg = Helper.readString("Approve Application? (Y/N) or enter C to cancel").toUpperCase();
 								if(statusChg == "Y") {
 									applicationList.get(i).setStatus("Approved");
+									String stuID = applicationList.get(i).getStudentId();
+									for(int a = 0; a<userList.size(); a++) {
+										if(userList.get(a).getID()==stuID) {
+											name = userList.get(a).getName();
+										}
+									}
+									
+									System.out.println("Student " + name + "'s application has been approved");
 								}else if(statusChg == "N") {
 									applicationList.get(i).setStatus("Rejected");
+									String stuID = applicationList.get(i).getStudentId();
+									for(int a = 0; a<userList.size(); a++) {
+										if(userList.get(a).getID()==stuID) {
+											name = userList.get(a).getName();
+										}
+									}
+									System.out.println("Student " + name + "'s application has been rejected");
 								}else if(statusChg == "C"){
 									System.out.println("Changing of application status for student has been cancelled");
 									break;
