@@ -235,7 +235,7 @@ public class C206_CaseStudyTest {
 	
 	
 	@Test
-	public void testAddActivities(){ //Shou Kang
+	public void testAddActivities(){ //Shou Kang-
 		
 		
 	}
