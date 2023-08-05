@@ -109,8 +109,6 @@ public class C206_CaseStudy {
 		
 		//initialize applicationList, done by Marcus
 		ArrayList<Applications> applicationList = new ArrayList<Applications>();
-		
-		
 		applicationList.add(new Applications(1, 1.1, "S111"));
 		applicationList.add(new Applications(2, 2.1, "S908"));
 		applicationList.add(new Applications(3, 1.2, "S908"));
@@ -238,10 +236,10 @@ public class C206_CaseStudy {
 						break;
 					case 4: //manage student applications code here, Yvonne//
 						//<<Insert code here:>>
-						showAppliactionsForteach(userID, applicationList, activityList, userList);
+						showApplications4Teach(userID, applicationList, activityList, userList);
 						
 						int appIdToChg = Helper.readInt("Please enter the application ID to change status > ");
-						chgAppliStatus(userID, appIdToChg,activityList,applicationList,userList);
+						chgAppliStatus(userID, appIdToChg,activityList,applicationList,userList,attendanceList);
 						
 						
 						//<<end of code for case 4>>
@@ -250,7 +248,7 @@ public class C206_CaseStudy {
 					case 5: //Remove applications code here, Shou Kang 
 						//<<Insert code here:>>
 
-						showAppliactionsForteach(userID, applicationList, activityList, userList);
+						showApplications4Teach(userID, applicationList, activityList, userList);
 						int appIdToRemove = Helper.readInt("Please enter the application ID to remove > ");
 						removeApplication(userID, appIdToRemove, activityList, applicationList);
 						
@@ -695,7 +693,7 @@ public class C206_CaseStudy {
 	}
 
 	//Shou kang code, shows all applications under the teacher//
-	public static void showAppliactionsForteach(String userId, ArrayList<Applications> applicationList, ArrayList<Activity> activityList, ArrayList<Users> userList) {
+	public static void showApplications4Teach(String userId, ArrayList<Applications> applicationList, ArrayList<Activity> activityList, ArrayList<Users> userList) {
 		String studentID = "";
 		String teacherID = "";
 		String userListID = "";
@@ -737,7 +735,7 @@ public class C206_CaseStudy {
 	}
 	
 	//Yvonne, change the application status under manage applications
-	public static void chgAppliStatus(String userId, int appId, ArrayList<Activity> activityList, ArrayList<Applications> applicationList, ArrayList<Users> userList) {
+	public static void chgAppliStatus(String userId, int appId, ArrayList<Activity> activityList, ArrayList<Applications> applicationList, ArrayList<Users> userList, ArrayList<Attendance> attendanceList) {
 		
 		
 		for(int i = 0 ; i < applicationList.size(); i++) {
@@ -765,7 +763,11 @@ public class C206_CaseStudy {
 											}
 										}
 										
+										attendanceList.add(new Attendance(attendanceList.size(), stuID , activityListActID));
+										
 										System.out.println("Student " + name + "'s application has been approved");
+										
+										
 										taskComplete = true;
 									
 									}else if(statusChg.equals("N")) {
