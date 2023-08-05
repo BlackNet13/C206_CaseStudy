@@ -1012,7 +1012,7 @@ public class C206_CaseStudy {
 		return junitIndicator;
 	}
 	
-	
+	//Alex,Edry code
 	public static boolean removeActivity(String userID,ArrayList<Activity> activityList) {
 		boolean activityfound = false;
 		double activityInput = Helper.readDouble("Enter activity to be deleted > ");
