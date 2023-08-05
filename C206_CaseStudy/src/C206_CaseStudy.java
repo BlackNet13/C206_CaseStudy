@@ -298,7 +298,7 @@ public class C206_CaseStudy {
 						//<<end of code for case 1>>
 						System.out.print("student1");
 						break;
-					case 2: //apply for activities code here,Yvonne, Aliyah
+					case 2: //apply for activities code here,Yvonne, Aliyah//
 						//<<Insert code here:>>
 						
 						//-ask what activity id they want, then we search the activityList if the activity id exist
