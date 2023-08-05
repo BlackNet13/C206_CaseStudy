@@ -228,7 +228,7 @@ public class C206_CaseStudyTest {
 		String userID = Student3.getID(); 
 
 		boolean userFound = C206_CaseStudy.removeUser(userList, userID); 
-		assertTrue("Test if user has been deleted",userFound);
+		assertTrue("Test if user has been deleted successfully",userFound);
 		
 		
 	}
