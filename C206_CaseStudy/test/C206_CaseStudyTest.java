@@ -287,7 +287,7 @@ public class C206_CaseStudyTest {
 		String userID = Teacher1.getID();
 		attendanceList.add(attendance1);
 		assertEquals("Test that the attendanceList is 1", 1, attendanceList.size());
-		int attendanceId = attendance1.getAttendanceId();
+		int attendanceId = 1;
 		double activityID = attendance1.getActivityId();
 		
 		boolean test1 = C206_CaseStudy.markAttendance(userID, attendanceId, activityID, attendanceList, activityList, userList); 
