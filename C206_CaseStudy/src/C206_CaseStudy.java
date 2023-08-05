@@ -240,8 +240,8 @@ public class C206_CaseStudy {
 						//<<Insert code here:>>
 						showAppliactionsForteach(userID, applicationList, activityList, userList);
 						
-						int appIdToChg = Helper.readInt("Please enter the application ID to remove > ");
-						chgAppliStatus(userID, appIdToChg,activityList,applicationList);
+						int appIdToChg = Helper.readInt("Please enter the application ID to change status > ");
+						chgAppliStatus(userID, appIdToChg,activityList,applicationList,userList);
 						
 						
 						//<<end of code for case 4>>
@@ -751,38 +751,39 @@ public class C206_CaseStudy {
 					if(applicationListActID == activityListActID) {
 						String cherID = activityList.get(y).getTeacherID();
 						
-						String statusChg = "";
-						while(statusChg!="C" || statusChg!="Y" || statusChg!="N") {
+						boolean taskComplete = false;
 							String name = "";
 							if(userId.equals(cherID)) {
-								statusChg = Helper.readString("Approve Application? (Y/N) or enter C to cancel").toUpperCase();
-								if(statusChg == "Y") {
-									applicationList.get(i).setStatus("Approved");
-									String stuID = applicationList.get(i).getStudentId();
-									for(int a = 0; a<userList.size(); a++) {
-										if(userList.get(a).getID()==stuID) {
-											name = userList.get(a).getName();
+								while(taskComplete == false ) {
+									String statusChg = Helper.readString("Approve Application? (Y/N) or enter C to cancel").toUpperCase();
+									if(statusChg.equals("Y")) {
+										applicationList.get(i).setStatus("Approved");
+										String stuID = applicationList.get(i).getStudentId();
+										for(int a = 0; a<userList.size(); a++) {
+											if(userList.get(a).getID()==stuID) {
+												name = userList.get(a).getName();
+											}
 										}
-									}
+										
+										System.out.println("Student " + name + "'s application has been approved");
+										taskComplete = true;
 									
-									System.out.println("Student " + name + "'s application has been approved");
-								}else if(statusChg == "N") {
-									applicationList.get(i).setStatus("Rejected");
-									String stuID = applicationList.get(i).getStudentId();
-									for(int a = 0; a<userList.size(); a++) {
-										if(userList.get(a).getID()==stuID) {
-											name = userList.get(a).getName();
+									}else if(statusChg.equals("N")) {
+										applicationList.get(i).setStatus("Rejected");
+										String stuID = applicationList.get(i).getStudentId();
+										for(int a = 0; a<userList.size(); a++) {
+											if(userList.get(a).getID()==stuID) {
+												name = userList.get(a).getName();
+											}
 										}
+										System.out.println("Student " + name + "'s application has been rejected");
+										taskComplete = true;
+									}else if(statusChg.equals("C")){
+										System.out.println("Changing of application status for student has been cancelled");
+										taskComplete = true;
 									}
-									System.out.println("Student " + name + "'s application has been rejected");
-								}else if(statusChg == "C"){
-									System.out.println("Changing of application status for student has been cancelled");
-									break;
-								}else {
-									System.out.println("Please enter either Y/N/C");
 								}
 								
-							}
 						}
 						
 					}
