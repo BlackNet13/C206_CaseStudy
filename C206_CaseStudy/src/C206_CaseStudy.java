@@ -187,8 +187,6 @@ public class C206_CaseStudy {
 						boolean userfound = true;
 						displayAllUsers(roleList, userList) ;
 						System.out.println();
-						//AbstractMap.SimpleEntry<Integer,Boolean> pair =doLogin(userID,password,login,options,role,userList);
-						//role = pair.getKey();
 						
 						userfound = removeUser(userList,idInpt);
 						if(!userfound) {
@@ -241,6 +239,7 @@ public class C206_CaseStudy {
 					case 4: //manage student applications code here, Yvonne
 						//<<Insert code here:>>
 						showAppliactionsForteach(userID, applicationList, activityList, userList);
+						
 						
 						
 						//<<end of code for case 4>>
