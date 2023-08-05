@@ -260,7 +260,7 @@ public class C206_CaseStudy {
 						//<<end of code for case 5>>
 						break;
 						
-					case 6: //Mark attendance code here, Marcus,Shou Kang,done//
+					case 6: //Mark attendance code here,Shou Kang,Marcus,done//
 						//<<Insert code here:>>
 						
 						showOwnActivties(userID, activityList) ;	
