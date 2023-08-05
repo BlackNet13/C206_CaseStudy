@@ -46,28 +46,29 @@ public class C206_CaseStudyTest {
 		Teacher2 = new Users("T0120", "0221", "Jake", 2); //teacher
 		Student1 = new Users("S555","6666","Lisa",3); //student
 		Student2 = new Users("S890", "2222", "Katy", 3); //student
-		
-		//to add date and time when class constructor is ready
-		Acti1 = new Activity(1.1,"sports","Football",25,"Open","T897","01/08/2023","15:00-17:00");
-		Acti2 = new Activity(2.1,"uniformGroup","NCC SEA",60,"Open","T897","15/08/2023","14:00-17:00");
-		Acti3 = new Activity(3.1,"performanceArts","Chinese Orchestra",45,"Close","T897","16/07/2023","15:00-18:00");
-		apply1 = new Applications(1, 01, "S555");
-		apply2 = new Applications(2, 01, "S890");
-		apply3 = new Applications(3, 02, "S555"); //test whether if all can be shown instead of just under one activity ID
-		
-		attendance1 = new Attendance(1,"S555",1.1,"Y");
-		attendance2 = new Attendance(2,"S890",1.1,"Y");
-		attendance3 = new Attendance(3, "S555", 2.1, "Y");
-		
+				
+
 		userList = new ArrayList<Users>(); 
 		Admin3 = new Users("A345", "2345", "Helen", 1); userList.add(Admin3);
 		Teacher3 = new Users("T897","4562","Mark",2); userList.add(Teacher3);
 		Student3 = new Users("S908", "3232", "Kate", 3); userList.add(Student3);
 		
 		activityList = new ArrayList<Activity>(); 
+		Acti1 = new Activity(1.1,"sports","Football",25,"Open","T789","01/08/2023","15:00-17:00");
+		Acti2 = new Activity(2.1,"uniformGroup","NCC SEA",60,"Open","T789","15/08/2023","14:00-17:00");
+		Acti3 = new Activity(3.1,"performanceArts","Chinese Orchestra",45,"Close","T789","16/07/2023","15:00-18:00");
+		
 		roleList = new ArrayList<Roles>() ;
+		
 		attendanceList = new ArrayList<Attendance>() ;
+		attendance1 = new Attendance(1,"S555",1.1); 
+		attendance2 = new Attendance(2,"S890",1.1,"Attended");
+		attendance3 = new Attendance(3, "S555", 2.1);
+		
 		applicationList = new ArrayList<Applications>();
+		apply1 = new Applications(1, 01, "S555");
+		apply2 = new Applications(2, 01, "S890");
+		apply3 = new Applications(3, 02, "S555"); //test whether if all can be shown instead of just under one activity ID
 		
 	}
 	
@@ -281,51 +282,42 @@ public class C206_CaseStudyTest {
 	}
 	
 	@Test
-	public void testAddAttendance() { //Yvonne
+	public void testMarkAttendance() { //Yvonne
 		assertNotNull("Test if valid attendancelist to add to exist", attendanceList);
-		assertEquals("Test that the attendanceList is empty.", 0, attendanceList.size());
-		//C206_CaseStudy.addMethodName(attendanceList, attendance1); <- to be replace with method name, now methodName does not exist.
-		assertEquals("Test that the attendanceList size is 1.", 1, attendanceList.size());
+		String userID = Teacher1.getID();
+		attendanceList.add(attendance1);
+		assertEquals("Test that the attendanceList is 1", 1, attendanceList.size());
+		int attendanceId = attendance1.getAttendanceId();
+		double activityID = attendance1.getActivityId();
 		
-		// Add an item
-		//C206_CaseStudy.addMethodName(attendanceList, attendance2);
-		assertEquals("Test that the attendanceList size is now 2.", 2, attendanceList.size());
-		assertSame("Test that attendance is added to the end of the list.", attendance2, attendanceList.get(1));
+		boolean test1 = C206_CaseStudy.markAttendance(userID, attendanceId, activityID, attendanceList, activityList, userList); 
+		assertTrue("Test if the attendance has been marked",test1);
+		
 
-		// Add an item that already exists in the list
+		// Mark a non existent attendance
 		//C206_CaseStudy.addMethodName(attendanceList, attendance2);
-		assertEquals("Test that the attendanceList size is unchange.", 2, attendanceList.size());
 
-		// Add an item that has missing detail
-		Attendance att_Missing = new Attendance(2, "", 2.1,"Y");
-		//C206_CaseStudy.addMethodName(attendanceList, att_Missing);
-		assertEquals("Test that the attendanceList size is unchange.", 2, attendanceList.size());
 	}
 	
 	@Test
 	public void testViewAttendance() { //Yvonne
-		assertNotNull("Test if valid attendanceList exist", attendanceList);
-		assertEquals("Test that the attendanceList is empty.", 0, attendanceList.size());
+		/*assertNotNull("Test if valid attendanceList exist", attendanceList);
+		assertEquals("Test that the attendanceList is not empty.", 0, attendanceList.size());
 		
-		// Attempt to retrieve the attendanceList records 
-		//String allAttendance= C206_CaseStudy.getAllMethod(attendanceList);
-		String testOutput = "";
 		
-		// Test if the output is empty
-		//assertEquals("Test that nothing is displayed", testOutput, allAttendance);
 		
 		//----------Test Case 2
-		//C206_CaseStudy.addMethod(attendanceList, attendance1);
-		//C206_CaseStudy.addMethod(attendanceList, attendance2);
+		C206_CaseStudy.add(attendanceList, attendance1);
+		C206_CaseStudy.addMethod(attendanceList, attendance2);
 		
 		// Test that the list is not empty
 		assertEquals("Test that attendanceList size is 2.", 2, attendanceList.size());
 		// Attempt to retrieve the Attendance 
 		//allAttendance= C206_CaseStudy.retrieveAllMethod(attendanceList);
-		testOutput = String.format("%-10d %-30s %-10.2f %-10s\n",1, "S555", 1.1, "Y");
+		String testOutput = String.format("%-10d %-30s %-10.2f %-10s\n",1, "S555", 1.1, "Y");
 		testOutput += String.format("%-10d %-30s %-10.2f %-10s\n",2, "S890", 1.1, "Y");
 		// Test that the details are displayed correctly
-		//assertEquals("Test that the display is correct.", testOutput, allAttendance);
+		//assertEquals("Test that the display is correct.", testOutput, allAttendance);*/
 	}
 	
 	

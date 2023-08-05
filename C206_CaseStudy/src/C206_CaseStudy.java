@@ -268,7 +268,7 @@ public class C206_CaseStudy {
 						double activityID = Helper.readDouble("Enter activity code > ");
 						showAllStudentInActivity(userID, activityID, attendanceList, activityList, userList);
 						int attendanceId = Helper.readInt("Enter attendance id > ");
-						markAttendance(userID, attendanceId, activityID,attendanceList, activityList, userList);		
+						boolean junitMark = markAttendance(userID, attendanceId, activityID,attendanceList, activityList, userList);		
 								
 						//<<end of code for case 6>>
 						break;
@@ -953,8 +953,9 @@ public class C206_CaseStudy {
 		}
 	}
 	//Marcus and Shou Kang, Mark attendance
-	public static void markAttendance(String userID, int attendanceID, double actId,ArrayList<Attendance> attendanceList, ArrayList<Activity> activityList, ArrayList<Users> userList) {
+	public static boolean markAttendance(String userID, int attendanceID, double actId,ArrayList<Attendance> attendanceList, ArrayList<Activity> activityList, ArrayList<Users> userList) {
 		
+		boolean junitIndicator = false;
 		String studentName = "";
 		boolean marked = false; 
 		boolean markedAlr = false;
@@ -983,10 +984,12 @@ public class C206_CaseStudy {
 								else {
 									attendanceList.get(x).setAttended("Attended");
 									for(int y = 0; y < userList.size(); y++) {
-										String userListId = userList.get(y) .getID();
+										String userListId = userList.get(y).getID();
 										if(userListId == attendanceListStudId) {
 											studentName = userList.get(y).getName();
 											marked = true;
+											junitIndicator = true;
+											
 										}
 									}
 								}
@@ -1005,6 +1008,8 @@ public class C206_CaseStudy {
 		else {
 			System.out.println("Please enter a valid attendance ID");
 		}
+		
+		return junitIndicator;
 	}
 	public static boolean removeActivity(String userID,ArrayList<Activity> activityList) {
 		boolean activityfound = false;
