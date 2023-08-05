@@ -264,7 +264,7 @@ public class C206_CaseStudy {
 						double activityID = Helper.readDouble("Enter activity code > ");
 						showAllStudentInActivity(userID, activityID, attendanceList, activityList, userList);
 						int attendanceId = Helper.readInt("Enter attendance id > ");
-						markAttendance(userID, attendanceId, attendanceList, activityList);		
+						markAttendance(userID, attendanceId, activityID,attendanceList, activityList, userList);		
 								
 						//<<end of code for case 6>>
 						System.out.print("");
@@ -688,10 +688,6 @@ public class C206_CaseStudy {
 		}
 	}
 
-	//Marcus and Shou Kang, Mark attendance
-	public static void markAttendance(String userID, ArrayList<Activity> activityList, ArrayList<Attendance> attendanceList) {
-		String activityID = Helper.readString("Enter activity ID > ");
-	}
 	//Shou kang code, shows all applications under the teacher//
 	public static void showAppliactionsForteach(String userId, ArrayList<Applications> applicationList, ArrayList<Activity> activityList, ArrayList<Users> userList) {
 		String studentID = "";
@@ -819,9 +815,50 @@ public class C206_CaseStudy {
 			}
 		}
 	}
-	
-	public static void markAttendance(String userID, int attendanceID,  ArrayList<Attendance> attendanceList, ArrayList<Activity> activityList) {
+	//Marcus and Shou Kang, Mark attendance
+	public static void markAttendance(String userID, int attendanceID, double actId,ArrayList<Attendance> attendanceList, ArrayList<Activity> activityList, ArrayList<Users> userList) {
 		
+		String studentName = "";
+		boolean marked = false; 
+		for(int i = 0; i < activityList.size(); i++) {
+			
+			String activityListCherId = activityList.get(i).getTeacherID();
+			double activityListActId = activityList.get(i).getActivityID();
+			
+			if(activityListCherId.equals(userID)) {
+				
+				if(activityListActId == actId) {
+					
+					for(int x = 0; x < attendanceList.size(); x++) {
+						
+						String attendanceListStudId = attendanceList.get(x).getStudentId();
+						double attendanceListActId = attendanceList.get(x).getActivityId();
+						int attendanceId = attendanceList.get(x).getAttendanceId();
+						
+						if(attendanceListActId == activityListActId) {
+							if(attendanceId == attendanceID) {
+								
+								attendanceList.get(x).setAttended("Attended");
+
+								for(int y = 0; y < userList.size(); y++) {
+									String userListId = userList.get(y) .getID();
+									if(userListId == attendanceListStudId) {
+										studentName = userList.get(y).getName();
+										marked = true;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		if(marked) {
+			System.out.println("Student " + studentName + " has been marked as present");
+		}
+		else {
+			System.out.println("Please enter a valid attendance ID");
+		}
 	}
 	public static boolean removeActivity(String userID,ArrayList<Activity> activityList) {
 		boolean activityfound = false;
