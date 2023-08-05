@@ -240,6 +240,8 @@ public class C206_CaseStudy {
 						//<<Insert code here:>>
 						showAppliactionsForteach(userID, applicationList, activityList, userList);
 						
+						int appIdToChg = Helper.readInt("Please enter the application ID to remove > ");
+						chgAppliStatus(userID, appIdToChg,activityList,applicationList);
 						
 						
 						//<<end of code for case 4>>
@@ -732,6 +734,45 @@ public class C206_CaseStudy {
 				}
 			}
 		}
+	}
+	
+	//Yvonne, change the application status under manage applications
+	public static void chgAppliStatus(String userId, int appId, ArrayList<Activity> activityList, ArrayList<Applications> applicationList) {
+		
+		for(int i = 0 ; i < applicationList.size(); i++) {
+			int applicationListStudID = applicationList.get(i).getAppId();
+			if(appId == applicationListStudID) {
+				double applicationListActID = applicationList.get(i).getActivityId();
+				
+				for(int y = 0; y < activityList.size(); y++) {
+					double activityListActID = activityList.get(y).getActivityID();
+					
+					if(applicationListActID == activityListActID) {
+						String cherID = activityList.get(y).getTeacherID();
+						
+						String statusChg = "";
+						while(statusChg!="C" || statusChg!="Y" || statusChg!="N") {
+							if(userId.equals(cherID)) {
+								statusChg = Helper.readString("Approve Application? (Y/N) or enter C to cancel").toUpperCase();
+								if(statusChg == "Y") {
+									applicationList.get(i).setStatus("Approved");
+								}else if(statusChg == "N") {
+									applicationList.get(i).setStatus("Rejected");
+								}else if(statusChg == "C"){
+									System.out.println("Changing of application status for student has been cancelled");
+									break;
+								}else {
+									System.out.println("Please enter either Y/N/C");
+								}
+								
+							}
+						}
+						
+					}
+				}
+			}
+		}
+		
 	}
 	
 	//Shou Kang code, removes the applications that have already been approved/disapproved by the teacher 
