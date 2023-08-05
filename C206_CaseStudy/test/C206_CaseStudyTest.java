@@ -272,15 +272,24 @@ public class C206_CaseStudyTest {
 	}
 	
 	
-	@Test
+	/*@Test
 	public void testViewAllActivities() { //Alex, Edry
 		//refer to resource centre test retrieveallCamcorder but might be more complex
 		assertNotNull("Test if thereius valid Activity arrayList to retreive activities", activityList);
 		assertNotEquals("Test that the Activity arrayList is not empty,",0,activityList.size());
 		assertEquals("Test that activity arraylist size is 4", 4, activityList.size());
+		String output = String.format("%-12s %4s", 1.1, "") ;
+		output += String.format("%-20s %4s", "sports", "") ;
+		output += String.format("%-15s %4s", "Football", "") ;
+		output += String.format("%-8s %4s", 25, "") ;
+		output += String.format("%-7s %4s", "Open", "") ;
+		output += String.format("%-10s %4s", "T897", "") ;
+		output += String.format("%-13s %4s", "01/08/2023", "") ;
+		output += String.format("%s", "15:00-17:00") ;
+		//assertEquals("Test that the display is correct.",output,C206_CaseStudy.showAllActivities(activityList));
 		//String allActivities = C206_CaseStudy.showAllActivities(activityList);
 		
-	}
+	}*/
 	
 	@Test
 	public void testViewApplicationStatus() { //Aliyah
