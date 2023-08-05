@@ -109,10 +109,15 @@ public class C206_CaseStudy {
 		
 		//initialize applicationList, done by Marcus
 		ArrayList<Applications> applicationList = new ArrayList<Applications>();
-		applicationList.add(new Applications(1, 1.1, "S111"));
-		applicationList.add(new Applications(2, 2.1, "S908"));
-		applicationList.add(new Applications(3, 1.2, "S908"));
-		applicationList.add(new Applications(4, 3.1, "S121"));
+		applicationList.add(new Applications(1,1.1 ,"S123"));
+		applicationList.add(new Applications(2,1.2,"S432"));
+		applicationList.add(new Applications(3,2.1,"S324"));
+		applicationList.add(new Applications(4,3.1,"S897"));
+		applicationList.add(new Applications(5, 1.1, "S111"));
+		applicationList.add(new Applications(6, 2.1, "S908"));
+		applicationList.add(new Applications(7, 1.2, "S908"));
+		applicationList.add(new Applications(8, 3.1, "S121"));
+		
 		
 		
 		boolean login = false; 
@@ -273,7 +278,8 @@ public class C206_CaseStudy {
 						break;
 					case 7: //Delete attendance code here, Shou Kang
 						//<<Insert code here:>>
-						
+						// it says delete but what we want to do here is just set it back to not attended, so if the status of the attendance is
+						//already not attended , we will just show a message that says attendance have not been marked as attended instead
 						
 						
 						//<<end of code for case 7>>
@@ -298,7 +304,7 @@ public class C206_CaseStudy {
 						break;
 					case 2: //apply for activities code here,Yvonne, Aliyah//
 						//<<Insert code here:>>
-						
+						showAllActivities(activityList);
 						//-ask what activity id they want, then we search the activityList if the activity id exist
 						//-show confirmation screen
 						
@@ -577,8 +583,8 @@ public class C206_CaseStudy {
 		
 		
 	}
-	// Edry Code, show all Activities
 	
+	// Edry Code, show all Activities
 	public static void showAllActivities( ArrayList<Activity> activityList) {
 		System.out.println() ;
 		Helper.line(45, "=");
