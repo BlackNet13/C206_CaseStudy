@@ -301,7 +301,7 @@ public class C206_CaseStudy {
 						break;
 					case 2: //apply for activities code here,Yvonne//
 						//<<Insert code here:>>
-						showAllActivities(activityList);
+						String jOutput3 = showAllActivities(activityList);
 						
 						apply4Activity(activityList, applicationList, userID);
 						
@@ -607,7 +607,8 @@ public class C206_CaseStudy {
 	}
 	
 	// Edry Code, show all Activities
-	public static void showAllActivities( ArrayList<Activity> activityList) {
+	public static String showAllActivities( ArrayList<Activity> activityList) {
+		String jOutput3 = "";
 		System.out.println() ;
 		Helper.line(45, "=");
 		System.out.println("=======     ALL ACTIVITY LIST     =======");
@@ -639,9 +640,11 @@ public class C206_CaseStudy {
 			output += String.format("%-13s %4s", a.getTimeSlot(), "") ;
 			output += String.format("%s", a.getTeacherID()) ;
 			
+			jOutput3 +=output;
 			System.out.println(output) ;
 
 		}
+		return jOutput3;
 		
 	}
 	
