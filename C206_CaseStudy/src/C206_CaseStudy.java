@@ -142,6 +142,11 @@ public class C206_CaseStudy {
 				String newID = "-";
 				String newName = "-";
 				String newPassword = "-";
+				String newType = "";
+				int newMaxPax = 0;
+				String newDate = "";
+				String newTimeSlot ="";
+				
 		
 		while(options != -9) {
 				
