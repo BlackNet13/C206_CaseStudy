@@ -688,33 +688,43 @@ public class C206_CaseStudy {
 	public static void addNewActivity(String userID, ArrayList<Activity> activityList) {
 		for (int i = 0; i < activityList.size(); i++) {
 			Activity a = activityList.get(i) ;
-			Double newID = Helper.readDouble("\nEnter new activity ID > ") ;
-			if (!newID.equals(a.getActivityID())) {
+			double newID = Helper.readDouble("\nEnter new activity ID > ") ;
+			
+			if (newID != a.getActivityID()) {
 				String newType = Helper.readString("Enter new activity type > ") ;
+				
 				if ((newType.equalsIgnoreCase("sports")) || (newType.equalsIgnoreCase("uniformGroup")) || (newType.equalsIgnoreCase("performanceArts"))) {
 					String newName = Helper.readString("Enter new activity name > ") ;
-					if (!newName.equalsIgnoreCase(a.getName())) {
+					
+					if ((!newName.isEmpty()) || (newName.equalsIgnoreCase(a.getName()))) {
 						int newMaxPax = Helper.readInt("Enter max pax for new activity > ") ;
+						
 						if ((newMaxPax >= 20) && (newMaxPax <=60)) {
 							String newDate = Helper.readString("Enter new activity date (DD/MM/YYYY) > ") ;
 							String newTimeSlot = Helper.readString("Enter new activity time start (HH:MM-HH:MM) > ") ;
 														
 							activityList.add(new Activity(newID, newType, newName, newMaxPax, "Open", userID, newDate, newTimeSlot));
+							System.out.println("New Activity added!") ;
+							
+							String output = "Activity ID: " + newID + "\n" ;
+							output += "Activity Type: " + newType + "\n" ;
+							output += "Activity Name: " + newName + "\n" ;
+							output += "Activity MaxPax: " + newMaxPax + "\n" ;
+							output += "Activity Date: " + newDate + "\n" ;
+							output += "Activity TimeSlot: " + newTimeSlot + "\n" ;
+							
+							System.out.println(output) ;
 							break ;
+						} else {
+							System.out.println("Please enter a valid max pax (min: 20, max: 60).") ;
 						}
-						else {
-							System.out.println("Please enter a valid activtiy ID.") ;
-						}
-					}
-					else {
+					} else {
 						System.out.println("Please enter a valid new activtiy name.") ;
 					}
-				}
-				else {
+				} else {
 					System.out.println("Please enter a valid activtiy type.") ;
 				}
-			}
-			else {
+			} else {
 				System.out.println("Please enter a valid activtiy ID.") ;
 			}
 		}
