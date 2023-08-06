@@ -170,11 +170,12 @@ public class C206_CaseStudy {
 				options = userMenus(role);
 				if(options!=-8) {
 				if(role == 1) { //admin
+					
 					switch(options) {
 					case 1: //view all users code here, Aliyah, done//
 						//<<Insert code here:>>
 						
-						displayAllUsers(roleList, userList) ;
+						String jOutput = displayAllUsers(roleList, userList) ;
 						
 						//<<end of code for case 1>>
 						//System.out.print("admin1"); //<--this is just to test that it can reach this lvl before you start coding
@@ -188,7 +189,7 @@ public class C206_CaseStudy {
 					case 3: //remove users code here,Marcus, done//
 						//<<Insert code here:>>
 						boolean userfound = true;
-						displayAllUsers(roleList, userList) ;
+						String jOuput = displayAllUsers(roleList, userList) ;
 						System.out.println();
 						
 						userfound = removeUser(userList,idInpt);
@@ -432,7 +433,9 @@ public class C206_CaseStudy {
 	}
 	
 	//Aliyah code, displays userList
-	public static void displayAllUsers(ArrayList<Roles> roleList, ArrayList<Users> userList) {
+	public static String displayAllUsers(ArrayList<Roles> roleList, ArrayList<Users> userList) {
+		
+		String stringCompare = "";
 		System.out.println() ;
 		Helper.line(45, "=");
 		System.out.println("=======     USER LIST     =======");
@@ -454,15 +457,18 @@ public class C206_CaseStudy {
 				if (u.getRoleIndex() == r.getRoleID()) {					
 					String roleName = r.getRoleName() ;
 					
+					
 					String output = String.format("%-8s %4s", u.getID(), "") ;
 					output += String.format("%-10s %4s", u.getName(), "") ;
 					output += String.format("%s", roleName) ;
 					
+					stringCompare += output;
 					System.out.println(output) ;
 					break ;
 				}
 			}			
 		}
+		return stringCompare;
 		
 	}	
 	

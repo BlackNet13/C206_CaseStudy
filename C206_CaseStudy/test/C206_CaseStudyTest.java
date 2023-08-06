@@ -27,6 +27,10 @@ public class C206_CaseStudyTest {
 	private Applications apply2;
 	private Applications apply3;
 	
+	private Roles Role1;
+	private Roles Role2;
+	private Roles Role3;
+	
 	private Attendance attendance1;
 	private Attendance attendance2;
 	private Attendance attendance3;
@@ -59,6 +63,9 @@ public class C206_CaseStudyTest {
 		Acti3 = new Activity(3.1,"performanceArts","Chinese Orchestra",45,"Close","T789","16/07/2023","15:00-18:00");
 		
 		roleList = new ArrayList<Roles>() ;
+		Role1 = new Roles(1, "Admin") ; roleList.add(Role1);
+		Role2 = new Roles(2, "Teacher") ; roleList.add(Role2);
+		Role3 = new Roles(3, "Student") ; roleList.add(Role3);
 		
 		attendanceList = new ArrayList<Attendance>() ;
 		attendance1 = new Attendance(1,"S555",1.1); 
@@ -216,28 +223,17 @@ public class C206_CaseStudyTest {
 			
 	@Test
     public void testViewAllUsers() { //Aliyah, Edry
-    /*    //refer to resource centre test retrieveallCamcorder
         //Test if User List is not null but empty -boundary
         assertNotNull("Test if there is valid User arraylist to retrieve users", userList) ;
-        
-        //test if the list of camcorders retrieved from the SourceCentre is empty - boundary
+              
         String allUsers= C206_CaseStudy.displayAllUsers(roleList, userList);
         String testOutput = "";
-        assertEquals("Check that ViewAllCamcorderlist", testOutput, allUsers);
-         
-        //test if the expected output string same as the list of camcorders retrieved from the SourceCentre    
-        //allUsers= C206_CaseStudy.displayAllUsers(roleList,userList);
-              
         testOutput += String.format("%-8s %4s %-10s %4s %s", "A345","","Helen","","Admin");
-        testOutput += String.format("%-8s %4s %-10s %4s %s", "A345","","Mark","","Teacher");
-        testOutput += String.format("%-8s %4s %-10s %4s %s", "A345","","Kate","","Student");
-
-        assertEquals("Test that ViewAllCamcorderlist", testOutput, allUsers);
+        testOutput += String.format("%-8s %4s %-10s %4s %s", "T897","","Mark","","Teacher");
+        testOutput += String.format("%-8s %4s %-10s %4s %s", "S908","","Kate","","Student");
+        assertEquals("Check that ViewAllUsers", testOutput, allUsers);
+         
         
-        //Test if the list of User retrieved from the SourceCentre is empty -boundary
-        
-        //String allUsers = C206_CaseStudy.displayAllUsers(roleList, userList) ;
-        */
     } 
 	
 	@Test
