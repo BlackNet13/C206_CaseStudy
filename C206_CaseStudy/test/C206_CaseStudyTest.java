@@ -281,6 +281,7 @@ public class C206_CaseStudyTest {
 	@Test
 	public void testViewApplicationStatus() { //Yvonne
 		
+		
 	}
 	
 	@Test
@@ -324,17 +325,9 @@ public class C206_CaseStudyTest {
 	
 	@Test
 	public void testViewAttendance() { //Yvonne
-		/*assertNotNull("Test if valid attendanceList exist", attendanceList);
-		assertEquals("Test that the attendanceList is not empty.", 0, attendanceList.size());
-		
-		
-		
-		//----------Test Case 2
-		C206_CaseStudy.add(attendanceList, attendance1);
-		C206_CaseStudy.addMethod(attendanceList, attendance2);
-		
-		// Test that the list is not empty
-		assertEquals("Test that attendanceList size is 2.", 2, attendanceList.size());
+		assertNotNull("Test if valid attendanceList exist", attendanceList);
+		assertEquals("Test that the attendanceList is not empty.", 1, attendanceList.size());
+	
 		// Attempt to retrieve the Attendance 
 		//allAttendance= C206_CaseStudy.retrieveAllMethod(attendanceList);
 		String testOutput = String.format("%-10d %-30s %-10.2f %-10s\n",1, "S555", 1.1, "Y");
