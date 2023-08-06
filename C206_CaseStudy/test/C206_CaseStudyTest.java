@@ -227,13 +227,22 @@ public class C206_CaseStudyTest {
         assertNotNull("Test if there is valid User arraylist to retrieve users", userList) ;
               
         String allUsers= C206_CaseStudy.displayAllUsers(roleList, userList);
-        String testOutput = "";
-        testOutput += String.format("%-8s %4s %-10s %4s %s", "A345","","Helen","","Admin");
-        testOutput += String.format("%-8s %4s %-10s %4s %s", "T897","","Mark","","Teacher");
-        testOutput += String.format("%-8s %4s %-10s %4s %s", "S908","","Kate","","Student");
+        
+        String testOutput = String.format("%-8s %4s","A345", "") ;
+		testOutput += String.format("%-10s %4s","Helen", "") ;
+		testOutput += String.format("%s", "Admin") ;
+		
+		testOutput += String.format("%-8s %4s","T897", "") ;
+		testOutput += String.format("%-10s %4s","Mark", "") ;
+		testOutput += String.format("%s", "Teacher") ;
+		
+		testOutput += String.format("%-8s %4s","S908", "") ;
+		testOutput += String.format("%-10s %4s","Kate", "") ;
+		testOutput += String.format("%s", "Student") ;
+        
         assertEquals("Check that ViewAllUsers", testOutput, allUsers);
          
-        
+
     } 
 	
 	@Test
