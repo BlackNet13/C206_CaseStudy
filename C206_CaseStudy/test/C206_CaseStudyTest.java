@@ -249,12 +249,14 @@ public class C206_CaseStudyTest {
 	
 	@Test
 	public void testAddActivities(){ //Yvonne
-		
+		assertNotNull("Test if there is valid Activity arrayList to retrieve activities", activityList);
+		addNewActivity(userID, activityList) ;
 		
 	}
 	
 	@Test
 	public void testdeleteActivities(){ //Yvonne
+		assertNotNull("Test if there is valid Activity arrayList to retrieve activities", activityList);
 		
 	}
 	
@@ -278,7 +280,7 @@ public class C206_CaseStudyTest {
 	
 	@Test
 	public void testViewApplicationStatus() { //Yvonne
-		
+		assertNotNull("Test if valid attendancelist to add to exist", applicationList);
 		
 	}
 	

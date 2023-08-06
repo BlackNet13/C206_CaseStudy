@@ -227,7 +227,7 @@ public class C206_CaseStudy {
 						showAllActivities(activityList);							
 						showOwnActivties(userID, activityList) ;
 						
-						addNewActivity(userID, activityList) ;
+						addNewActivity(userID,activityList,newID,newType,newName,newMaxPax,newDate,newTimeSlot);
 						//<<end of code for case 2>>
 						//System.out.print("teach2");
 						break;
@@ -301,7 +301,7 @@ public class C206_CaseStudy {
 						break;
 					case 2: //apply for activities code here,Yvonne, done//
 						//<<Insert code here:>>
-						String jOutput3 = showAllActivities(activityList);
+						jOutput3 = showAllActivities(activityList);
 						
 						apply4Activity(activityList, applicationList, userID);
 						
@@ -688,24 +688,34 @@ public class C206_CaseStudy {
 		}
 	
 	//Aliyah code, adding new activity
-	public static void addNewActivity(String userID, ArrayList<Activity> activityList) {
+	public static void addNewActivity(String userID, ArrayList<Activity> activityList,double newID, String newType, String newName, int newMaxPax, String newDate, String newTimeSlot) {
 		for (int i = 0; i < activityList.size(); i++) {
 			Activity a = activityList.get(i) ;
-			double newID = Helper.readDouble("\nEnter new activity ID > ") ;
+			if(newID == 0.0) {
+				newID = Helper.readDouble("\nEnter new activity ID > ") ;
+			}
 			
 			if (newID != a.getActivityID()) {
-				String newType = Helper.readString("Enter new activity type > ") ;
+				if(newType == "") {
+					newType = Helper.readString("Enter new activity type > ") ;
+				}
 				
 				if ((newType.equals("sports")) || (newType.equals("uniformGroup")) || (newType.equals("performanceArts"))) {
-					String newName = Helper.readString("Enter new activity name > ") ;
-					
+					if(newName == "") {
+						newName = Helper.readString("Enter new activity name > ") ;
+					} 
 					if ((newName.isEmpty() == false) || (newName.equalsIgnoreCase(a.getName()))) {
-						int newMaxPax = Helper.readInt("Enter max pax for new activity > ") ;
+						if(newMaxPax == 0) {
+							newMaxPax = Helper.readInt("Enter max pax for new activity > ") ;
+						}
 						
 						if ((newMaxPax >= 20) && (newMaxPax <=60)) {
-							String newDate = Helper.readString("Enter new activity date (DD/MM/YYYY) > ") ;
-							String newTimeSlot = Helper.readString("Enter new activity time start (HH:MM-HH:MM) > ") ;
-														
+							
+							if(newDate == "") {
+								newDate = Helper.readString("Enter new activity date (DD/MM/YYYY) > ") ;
+								newTimeSlot = Helper.readString("Enter new activity time start (HH:MM-HH:MM) > ") ;
+							}
+											
 							activityList.add(new Activity(newID, newType, newName, newMaxPax, "Open", userID, newDate, newTimeSlot));
 							System.out.println("\nNew Activity added!\n") ;
 							
