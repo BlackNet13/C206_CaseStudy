@@ -329,15 +329,16 @@ public class C206_CaseStudyTest {
 	public void testViewAttendance() { //Yvonne
 		assertNotNull("Test if valid attendanceList exist", attendanceList);
 		assertEquals("Test that the attendanceList is not empty.", 1, attendanceList.size());
+		String userID = "";
 		
 		// Attempt to retrieve the Attendance 
 		String allAttendance= C206_CaseStudy.viewAttendanceRecord(userID, attendanceList, userList, activityList);
-		String testOutput = String.format("%s %11s", a.getStudentId(), "") ;
-		testOutput += String.format("%-10s %7s", u.getName(), "") ;
-		testOutput += String.format("%-18s %s", ac.getName(), "") ;
-		testOutput += String.format("%-3s", a.getAttended()) ;
+		String testOutput = String.format("%s %11s", "studentID", "") ;
+		testOutput += String.format("%-10s %7s", "userName", "") ;
+		testOutput += String.format("%-18s %s","activityName", "") ;
+		testOutput += String.format("%-3s", "attendance" );
 		// Test that the details are displayed correctly
-		assertEquals("Test that the display is correct.", testOutput, allAttendance);*/
+		assertEquals("Test that the display is correct.", testOutput, allAttendance);
 	}
 	
 	
