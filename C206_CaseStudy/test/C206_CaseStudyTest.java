@@ -248,9 +248,21 @@ public class C206_CaseStudyTest {
 	
 	
 	@Test
-	public void testAddActivities(){ //Yvonne
+	public void testAddActivities(){ //Yvonne, done
 		assertNotNull("Test if there is valid Activity arrayList to retrieve activities", activityList);
-		addNewActivity(userID, activityList) ;
+		assertEquals("Test that the Activity arrayList is empty,",0,activityList.size());
+		String userID = "T789";
+		double newDID = Acti1.getActivityID();
+		String newType = Acti1.getType();
+		String newName = Acti1.getName();
+		int newMaxPax = Acti1.getMaxPax();
+		String newDate = Acti1.getDate();
+		String newTimeSlot = Acti1.getTimeSlot();
+		
+		C206_CaseStudy.addNewActivity(userID,activityList,newDID,newType,newName,newMaxPax,newDate,newTimeSlot);
+		C206_CaseStudy.showAllActivities(activityList);
+		
+		assertEquals("Test that activity arrayList size is 1", 1, activityList.size());
 		
 	}
 	
@@ -264,9 +276,9 @@ public class C206_CaseStudyTest {
 	@Test
 	public void testViewAllActivities() { //Alex, Edry, error
 		assertNotNull("Test if there is valid Activity arrayList to retrieve activities", activityList);
+		assertEquals("Test that the Activity arrayList is empty,",0,activityList.size());
 		activityList.add(Acti1);
 		activityList.add(Acti2); 
-		assertNotEquals("Test that the Activity arrayList is not empty,",0,activityList.size());
 		assertEquals("Test that activity arrayList size is 2", 2, activityList.size());
 		
 		String testCase = C206_CaseStudy.showAllActivities(activityList);

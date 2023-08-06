@@ -696,34 +696,42 @@ public class C206_CaseStudy {
 	
 	//Aliyah code, adding new activity
 	public static void addNewActivity(String userID, ArrayList<Activity> activityList,double newID, String newType, String newName, int newMaxPax, String newDate, String newTimeSlot) {
-		for (int i = 0; i < activityList.size(); i++) {
-			Activity a = activityList.get(i) ;
-			if(newID == 0.0) {
-				newID = Helper.readDouble("\nEnter new activity ID > ") ;
+		boolean activityExists = false;
+		
+		if( newID == 0.0 ) {
+			newID = Helper.readDouble("\nEnter new activity ID > ") ;
+		}
+		
+			for(Activity a: activityList) {
+				 if (Double.compare(newID, a.getActivityID()) == 0) {
+			            activityExists = true;
+			            break;
+			        }
 			}
 			
-			if (newID != a.getActivityID()) {
+			if(!activityExists) {
+			
 				if(newType == "") {
 					newType = Helper.readString("Enter new activity type > ") ;
 				}
 				
 				if ((newType.equals("sports")) || (newType.equals("uniformGroup")) || (newType.equals("performanceArts"))) {
-					if(newName == "") {
+					if(newName.equals("")) {
 						newName = Helper.readString("Enter new activity name > ") ;
 					} 
-					if ((newName.isEmpty() == false) || (newName.equalsIgnoreCase(a.getName()))) {
 						if(newMaxPax == 0) {
 							newMaxPax = Helper.readInt("Enter max pax for new activity > ") ;
 						}
 						
 						if ((newMaxPax >= 20) && (newMaxPax <=60)) {
 							
-							if(newDate == "") {
+							if(newDate.equals("")) {
 								newDate = Helper.readString("Enter new activity date (DD/MM/YYYY) > ") ;
 								newTimeSlot = Helper.readString("Enter new activity time start (HH:MM-HH:MM) > ") ;
 							}
 											
 							activityList.add(new Activity(newID, newType, newName, newMaxPax, "Open", userID, newDate, newTimeSlot));
+							
 							System.out.println("\nNew Activity added!\n") ;
 							
 							String output = "Activity ID: " + newID + "\n" ;
@@ -734,20 +742,16 @@ public class C206_CaseStudy {
 							output += "Activity TimeSlot: " + newTimeSlot ;
 							
 							System.out.println(output) ;
-							break ;
 						} else {
 							System.out.println("Please enter a valid max pax (min: 20, max: 60).") ;
 						}
-					} else {
-						System.out.println("Please enter a valid new activtiy name.") ;
-					}
 				} else {
 					System.out.println("Please enter a valid activtiy type.") ;
 				}
 			} else {
 				System.out.println("Please enter a valid activtiy ID.") ;
 			}
-		}
+		
 	}
 
 	//Shou kang code, shows all applications under the teacher//
