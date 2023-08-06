@@ -221,7 +221,7 @@ public class C206_CaseStudy {
 						//<<end of code for case 1>>
 						//System.out.print("teach1");
 						break;
-					case 2: //add activities(that they owned)code here, Aliyah, error in addNewActivity
+					case 2: //add activities(that they owned)code here, Aliyah, done//
 						//show activities that they owned first
 						//<<Insert code here:>>
 						showAllActivities(activityList);							
@@ -291,15 +291,15 @@ public class C206_CaseStudy {
 					
 				}else if(role == 3) { //students
 					switch(options) {
-					case 1: //Browse activities code here, Alex
+					case 1: //Browse activities code here, Yvonne, done//
 						//<<Insert code here:>>
 						
-						//just copy and paste: showAllAactivities(activityList);
+						String jOutput3 = showAllActivities(activityList);
 						
 						//<<end of code for case 1>>
 						System.out.print("student1");
 						break;
-					case 2: //apply for activities code here,Yvonne//
+					case 2: //apply for activities code here,Yvonne, done//
 						//<<Insert code here:>>
 						String jOutput3 = showAllActivities(activityList);
 						
@@ -308,7 +308,7 @@ public class C206_CaseStudy {
 						//<<end of code for case 2>>
 						//System.out.print("student2");
 						break;
-					case 3: //view application status code here,Yvonne
+					case 3: //view application status code here,Yvonne, done//
 						//<<Insert code here:>>
 						
 						showApplications4Student(userID, applicationList, activityList, userList);
