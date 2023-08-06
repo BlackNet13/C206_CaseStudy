@@ -248,13 +248,13 @@ public class C206_CaseStudyTest {
 	
 	
 	@Test
-	public void testAddActivities(){ //Shou Kang-
+	public void testAddActivities(){ //Yvonne
 		
 		
 	}
 	
 	@Test
-	public void testdeleteActivities(){ //Shou Kang
+	public void testdeleteActivities(){ //Yvonne
 		
 	}
 	
