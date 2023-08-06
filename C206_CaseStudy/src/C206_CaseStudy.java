@@ -319,10 +319,10 @@ public class C206_CaseStudy {
 					case 4: //view attendance record code here,Aliyah
 						//<<Insert code here:>>
 						
-						
+						viewAttendanceRecord(userID, attendanceList, userList, activityList) ;
 						
 						//<<end of code for case 4>>
-						System.out.print("student4");
+						//System.out.print("student4");
 						break;
 					default: 
 						if(options != -9) {
@@ -1029,22 +1029,57 @@ public class C206_CaseStudy {
 	}
 	
 	//Alex,Edry code
-	public static boolean removeActivity(String userID,ArrayList<Activity> activityList) {
-		boolean activityfound = false;
-		double activityInput = Helper.readDouble("Enter activity to be deleted > ");
+	public static boolean removeActivity(String userID, ArrayList<Activity> activityList) {
+		boolean activityfound = false ;
+		double activityInput = Helper.readDouble("Enter activity to be deleted > ") ;
 		for (int i = 0; i< activityList.size(); i++) {
-			if (activityList.get(i).getActivityID()==activityInput) {
-				activityList.remove(i);
-				System.out.println("Successfully deleted a with  " + activityInput);
-				activityfound = true;
-			}
-			else {
-				
+			if (activityList.get(i).getActivityID()== activityInput) {
+				activityList.remove(i) ;
+				System.out.println("Successfully deleted a with  " + activityInput) ;
+				activityfound = true ;
+			} else {
 				activityfound = false;
 			}
 		}
 		return activityfound;
+	}
+	
+	public static void viewAttendanceRecord(String userID, ArrayList<Attendance> attendanceList, ArrayList<Users> userList, ArrayList<Activity> activityList) {
+		System.out.println() ;
+		Helper.line(65, "=") ;
+		System.out.println("==========              ATTENDANCE RECORD              ==========") ;
+		Helper.line(65, "=") ;
+		System.out.println() ;
 		
+		String table = String.format("%s %5s", "Student ID", " ") ;
+		table += String.format("%s %5s", "Student Name", " ") ;
+		table += String.format("%s %5s", "Activity Name", " ") ;
+		table += String.format("%s", "Attendance") ;
 		
+		System.out.println(table) ;
+		Helper.line(65, "-") ;
+		
+		for (int i = 0; i < attendanceList.size(); i++) {
+			Attendance a = attendanceList.get(i) ;
+			for (int j = 0; j < activityList.size(); j++) {
+				Activity ac = activityList.get(j) ;
+				for (int k = 0; k < userList.size(); k++) {
+					Users u = userList.get(k) ;
+					
+					if (userID.equals(a.getStudentId())) {
+						if ((ac.getActivityID()) == (a.getActivityId())) {
+							String output = String.format("%s %11s", a.getStudentId(), "") ;
+							output += String.format("%-10s %7s", u.getName(), "") ;
+							output += String.format("%-18s %s", ac.getName(), "") ;
+							output += String.format("%-3s", a.getAttended()) ;
+							
+							System.out.println(output) ;
+							break ;
+						}
+						
+					}
+				}				
+			}
+		}
 	}
 }
