@@ -322,7 +322,7 @@ public class C206_CaseStudy {
 						viewAttendanceRecord(userID, attendanceList, userList, activityList) ;
 						
 						//<<end of code for case 4>>
-						//System.out.print("student4");
+						//System.out.print("student4") ;
 						break;
 					default: 
 						if(options != -9) {
