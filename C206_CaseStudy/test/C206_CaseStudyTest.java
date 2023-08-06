@@ -261,23 +261,19 @@ public class C206_CaseStudyTest {
 	
 	@Test
 	public void testViewAllActivities() { //Alex, Edry
-		
-		//String allActivities = C206_CaseStudy.showAllActivities(activityList);
-		//refer to resource centre test retrieveallCamcorder but might be more complex
 		assertNotNull("Test if there is valid Activity arrayList to retrieve activities", activityList);
+		activityList.add(Acti1);
+		activityList.add(Acti2); 
 		assertNotEquals("Test that the Activity arrayList is not empty,",0,activityList.size());
-		assertEquals("Test that activity arrayList size is 4", 4, activityList.size());
+		assertEquals("Test that activity arrayList size is 2", 2, activityList.size());
 		
 		String testCase = C206_CaseStudy.showAllActivities(activityList);
 		
 		String output = "";
 		
-		output += String.format("%-12s %4s %-20s %4s %-15s %4s %-8s %4s %-7s %4s %-10s %4s %-13s %4s %s, 1.1", "","Football", "",  "sports", "" , 25, "", "Open", "","01/08/2023", "" ,"15:00-17:00","","T897");
-		output += String.format("%-12s %4s %-20s %4s %-15s %4s %-8s %4s %-7s %4s %-10s %4s %-13s %4s %s, 1.2", "","Football", "",  "sports", "" , 25, "", "Open", "",  "02/08/2023", "" ,"14:00-16:00","","T897");
-		output += String.format("%-12s %4s %-20s %4s %-15s %4s %-8s %4s %-7s %4s %-10s %4s %-13s %4s %s, 2.1", "","NCC Sea", "",  "uniformGroup", "" , 60, "", "Open", "","15/08/2023", "" ,"14:00-17:00","","T567");
-		output += String.format("%-12s %4s %-20s %4s %-15s %4s %-8s %4s %-7s %4s %-10s %4s %-13s %4s %s, 3.1", "","Chinese Orchestra", "",  "performanceArts", "",  45, "", "Close",  "","16/07/2023", "" ,"15:00-18:00","","T567");
+		output += String.format("%-12s %4s %-20s %4s %-15s %4s %-8s %4s %-7s %4s %-10s %4s %-13s %4s %s", 1.1,"","Football", "","sports","", 25,"","Open","","01/08/2023","","15:00-17:00","","T789");
+		output += String.format("%-12s %4s %-20s %4s %-15s %4s %-8s %4s %-7s %4s %-10s %4s %-13s %4s %s", 2.1,"","NCC SEA","","uniformGroup","", 60,"","Open","","15/08/2023","","14:00-17:00","","T789");
 		assertEquals("Test that the display is correct.",output,testCase);
-		//String allActivities = C206_CaseStudy.showAllActivities(activityList); 
 	}
 	
 	@Test
