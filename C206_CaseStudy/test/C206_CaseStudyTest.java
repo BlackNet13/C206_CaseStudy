@@ -267,8 +267,15 @@ public class C206_CaseStudyTest {
 	}
 	
 	@Test
-	public void testdeleteActivities(){ //Yvonne
+	public void testdeleteActivities(){ //Yvonne, done
 		assertNotNull("Test if there is valid Activity arrayList to retrieve activities", activityList);
+		activityList.add(Acti1);
+		assertEquals("Test that activity arrayList size is 1", 1, activityList.size());
+		double activityInput = Acti1.getActivityID();
+		boolean testDel = C206_CaseStudy.removeActivity(activityList, activityInput);
+		assertTrue("Test that item has been deleted",testDel);
+		assertEquals("Test that activity arrayList size is 0", 0, activityList.size());
+		
 		
 	}
 	

@@ -242,7 +242,9 @@ public class C206_CaseStudy {
 						//<<Insert code here:>>
 						showOwnActivties(userID, activityList) ;
 						
-						removeActivity(userID,activityList);
+						double activityInput = 0.0;
+						
+						removeActivity(activityList, activityInput);
 						
 						
 						//<<end of code for case 3>>
@@ -1053,9 +1055,11 @@ public class C206_CaseStudy {
 	}
 	
 	//Alex,Edry code
-	public static boolean removeActivity(String userID, ArrayList<Activity> activityList) {
+	public static boolean removeActivity(ArrayList<Activity> activityList, double activityInput) {
 		boolean activityfound = false ;
-		double activityInput = Helper.readDouble("Enter activity to be deleted > ") ;
+		if(activityInput == 0.0) {
+			activityInput = Helper.readDouble("Enter activity to be deleted > ") ;
+		}
 		for (int i = 0; i< activityList.size(); i++) {
 			if (activityList.get(i).getActivityID()== activityInput) {
 				activityList.remove(i) ;
