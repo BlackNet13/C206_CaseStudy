@@ -693,10 +693,10 @@ public class C206_CaseStudy {
 			if (newID != a.getActivityID()) {
 				String newType = Helper.readString("Enter new activity type > ") ;
 				
-				if ((newType.equalsIgnoreCase("sports")) || (newType.equalsIgnoreCase("uniformGroup")) || (newType.equalsIgnoreCase("performanceArts"))) {
+				if ((newType.equals("sports")) || (newType.equals("uniformGroup")) || (newType.equals("performanceArts"))) {
 					String newName = Helper.readString("Enter new activity name > ") ;
 					
-					if ((!newName.isEmpty()) || (newName.equalsIgnoreCase(a.getName()))) {
+					if ((newName.isEmpty() == false) || (newName.equalsIgnoreCase(a.getName()))) {
 						int newMaxPax = Helper.readInt("Enter max pax for new activity > ") ;
 						
 						if ((newMaxPax >= 20) && (newMaxPax <=60)) {
@@ -704,14 +704,14 @@ public class C206_CaseStudy {
 							String newTimeSlot = Helper.readString("Enter new activity time start (HH:MM-HH:MM) > ") ;
 														
 							activityList.add(new Activity(newID, newType, newName, newMaxPax, "Open", userID, newDate, newTimeSlot));
-							System.out.println("New Activity added!") ;
+							System.out.println("\nNew Activity added!\n") ;
 							
 							String output = "Activity ID: " + newID + "\n" ;
 							output += "Activity Type: " + newType + "\n" ;
 							output += "Activity Name: " + newName + "\n" ;
 							output += "Activity MaxPax: " + newMaxPax + "\n" ;
 							output += "Activity Date: " + newDate + "\n" ;
-							output += "Activity TimeSlot: " + newTimeSlot + "\n" ;
+							output += "Activity TimeSlot: " + newTimeSlot ;
 							
 							System.out.println(output) ;
 							break ;
