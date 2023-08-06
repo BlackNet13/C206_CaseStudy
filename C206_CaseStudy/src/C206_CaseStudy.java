@@ -143,6 +143,7 @@ public class C206_CaseStudy {
 				String newName = "-";
 				String newPassword = "-";
 				String newType = "";
+				double newDID = 0.0;
 				int newMaxPax = 0;
 				String newDate = "";
 				String newTimeSlot ="";
@@ -232,7 +233,8 @@ public class C206_CaseStudy {
 						showAllActivities(activityList);							
 						showOwnActivties(userID, activityList) ;
 						
-						addNewActivity(userID,activityList,newID,newType,newName,newMaxPax,newDate,newTimeSlot);
+						
+						addNewActivity(userID,activityList,newDID,newType,newName,newMaxPax,newDate,newTimeSlot);
 						//<<end of code for case 2>>
 						//System.out.print("teach2");
 						break;
