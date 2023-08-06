@@ -281,7 +281,7 @@ public class C206_CaseStudyTest {
 	
 	
 	@Test
-	public void testViewAllActivities() { //Alex, Edry, error
+	public void testViewAllActivities() { //Alex, Edry,done
 		assertNotNull("Test if there is valid Activity arrayList to retrieve activities", activityList);
 		assertEquals("Test that the Activity arrayList is empty,",0,activityList.size());
 		activityList.add(Acti1);
@@ -292,8 +292,24 @@ public class C206_CaseStudyTest {
 		
 		String output = "";
 		
-		output += String.format("%-12s %4s %-20s %4s %-15s %4s %-8s %4s %-7s %4s %-10s %4s %-13s %4s %s", 1.1,"","Football", "","sports","", 25,"","Open","","01/08/2023","","15:00-17:00","","T789");
-		output += String.format("%-12s %4s %-20s %4s %-15s %4s %-8s %4s %-7s %4s %-10s %4s %-13s %4s %s", 2.1,"","NCC SEA","","uniformGroup","", 60,"","Open","","15/08/2023","","14:00-17:00","","T789");
+		output = String.format("%-12s %4s",1.1,"") ;
+		output += String.format("%-20s %4s","Football","") ;
+		output += String.format("%-15s %4s","sports","") ;
+		output += String.format("%-8s %4s",25,"") ;
+		output += String.format("%-7s %4s","Open","") ;
+		output += String.format("%-10s %4s","01/08/2023","") ;
+		output += String.format("%-13s %4s","15:00-17:00","") ;
+		output += String.format("%s","T789") ;
+		
+		output += String.format("%-12s %4s",2.1, "") ;
+		output += String.format("%-20s %4s","NCC SEA", "") ;
+		output += String.format("%-15s %4s","uniformGroup", "") ;
+		output += String.format("%-8s %4s",60, "") ;
+		output += String.format("%-7s %4s","Open","") ;
+		output += String.format("%-10s %4s","15/08/2023","") ;
+		output += String.format("%-13s %4s","14:00-17:00","") ;
+		output += String.format("%s","T789") ;
+		
 		assertEquals("Test that the display is correct.",output,testCase);
 	}
 	
