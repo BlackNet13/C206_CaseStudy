@@ -2,7 +2,6 @@ import java.util.AbstractMap;
 import java.util.ArrayList;
 
 public class C206_CaseStudy {
-
 	public static void main(String[] args) {
 		
 		/*flow:
@@ -62,28 +61,28 @@ public class C206_CaseStudy {
 		
 		
 		//initialize the userList, done by Shou Kang
-		ArrayList<Users> userList = new ArrayList<Users>(); 
+		ArrayList<Users> userList = new ArrayList<Users>() ; 
 		
-		userList.add(new Users("A123","1234","Kelly",1)); //admin
-		userList.add(new Users("T897","4562","Mark",2)); //teacher 
-		userList.add(new Users("S111","1111","Kelly",3)); //student
-		userList.add(new Users("A345", "2345", "Helen", 1)); //admin
-		userList.add(new Users("T567", "6543", "Jake", 2)); //teacher
-		userList.add(new Users("S908", "3232", "Kate", 3)); //student
-		userList.add(new Users("S121", "1234", "Shale", 3)); //student
-		userList.add(new Users("S123", "1234", "Arnold", 3)); //student
-		userList.add(new Users("S432", "1234", "Rika", 3)); //student
-		userList.add(new Users("S324", "1234", "Marty", 3)); //student
-		userList.add(new Users("S897", "1234", "Abigail", 3)); //student
+		userList.add(new Users("A123","1234","Kelly",1)) ; //admin
+		userList.add(new Users("T897","4562","Mark",2)) ; //teacher 
+		userList.add(new Users("S111","1111","Kelly",3)) ; //student
+		userList.add(new Users("A345", "2345", "Helen", 1)) ; //admin
+		userList.add(new Users("T567", "6543", "Jake", 2)) ; //teacher
+		userList.add(new Users("S908", "3232", "Kate", 3)) ; //student
+		userList.add(new Users("S121", "1234", "Shale", 3)) ; //student
+		userList.add(new Users("S123", "1234", "Arnold", 3)) ; //student
+		userList.add(new Users("S432", "1234", "Rika", 3)) ; //student
+		userList.add(new Users("S324", "1234", "Marty", 3)) ; //student
+		userList.add(new Users("S897", "1234", "Abigail", 3)) ; //student
 
 		
 		//initialize the activityList, done by Edry, add date, time
-		ArrayList<Activity> activityList = new ArrayList<Activity>(); 
+		ArrayList<Activity> activityList = new ArrayList<Activity>() ; 
 		
-		activityList.add(new Activity(1.1,"sports","Football",25,"Open","T897","01/08/2023","15:00-17:00"));
-		activityList.add(new Activity(1.2,"sports","Football", 25,"Open","T897","02/08/2023","14:00-16:00"));
-		activityList.add(new Activity(2.1,"uniformGroup","NCC SEA",60,"Open","T567","15/08/2023","14:00-17:00"));
-		activityList.add(new Activity(3.1,"performanceArts","Chinese Orchestra",45,"Close","T567","16/07/2023","15:00-18:00"));
+		activityList.add(new Activity(1.1,"sports","Football",25,"Open","T897","01/08/2023","15:00-17:00")) ;
+		activityList.add(new Activity(1.2,"sports","Football", 25,"Open","T897","02/08/2023","14:00-16:00")) ;
+		activityList.add(new Activity(2.1,"uniformGroup","NCC SEA",60,"Open","T567","15/08/2023","14:00-17:00")) ;
+		activityList.add(new Activity(3.1,"performanceArts","Chinese Orchestra",45,"Close","T567","16/07/2023","15:00-18:00")) ;
 
 		//type = sports, uniformGroup, performanceArts
 		//totalDays = total cca days in a month, so if once a week will be 4 as in a month got four weeks. 
@@ -100,355 +99,319 @@ public class C206_CaseStudy {
 		
 		//initialize attendanceList, done by Alex
 		ArrayList<Attendance> attendanceList = new ArrayList<Attendance>() ;
-		attendanceList.add(new Attendance(1, "S123", 1.1));
-		attendanceList.add(new Attendance(2, "S432", 1.2));
-		attendanceList.add(new Attendance(3, "S324", 2.1));
-		attendanceList.add(new Attendance(4, "S897", 3.1));
 		
-		
-		
+		attendanceList.add(new Attendance(1, "S123", 1.1)) ;
+		attendanceList.add(new Attendance(2, "S432", 1.2)) ;
+		attendanceList.add(new Attendance(3, "S324", 2.1)) ;
+		attendanceList.add(new Attendance(4, "S897", 3.1)) ;
+				
 		//initialize applicationList, done by Marcus
-		ArrayList<Applications> applicationList = new ArrayList<Applications>();
-		applicationList.add(new Applications(1,1.1 ,"S123","Approved"));
-		applicationList.add(new Applications(2,1.2,"S432","Approved"));
-		applicationList.add(new Applications(3,2.1,"S324","Approved"));
-		applicationList.add(new Applications(4,3.1,"S897","Approved"));
-		applicationList.add(new Applications(5, 1.1, "S111"));
-		applicationList.add(new Applications(6, 2.1, "S908"));
-		applicationList.add(new Applications(7, 1.2, "S908"));
-		applicationList.add(new Applications(8, 3.1, "S121"));
+		ArrayList<Applications> applicationList = new ArrayList<Applications>() ;
 		
+		applicationList.add(new Applications(1,1.1 ,"S123","Approved")) ;
+		applicationList.add(new Applications(2,1.2,"S432","Approved")) ;
+		applicationList.add(new Applications(3,2.1,"S324","Approved")) ;
+		applicationList.add(new Applications(4,3.1,"S897","Approved")) ;
+		applicationList.add(new Applications(5, 1.1, "S111")) ;
+		applicationList.add(new Applications(6, 2.1, "S908")) ;
+		applicationList.add(new Applications(7, 1.2, "S908")) ;
+		applicationList.add(new Applications(8, 3.1, "S121")) ;	
 		
-		
-		boolean login = false; 
-		int options = 123;
-		int role = 0;
-		String userID ="";
-		String password ="";
-		String idInpt = "0";
+		boolean login = false ; 
+		int options = 123 ;
+		int role = 0 ;
+		String userID = "" ;
+		String password = "" ;
+		String idInpt = "0" ;
 			
-		login(userList, roleList, activityList, applicationList, attendanceList ,login, options, role, userID, password, idInpt);
+		login(userList, roleList, activityList, applicationList, attendanceList, login, options, role, userID, password, idInpt) ;
 		
-		System.out.println("\nProgram Exited");
-		
+		System.out.println("\nProgram Exited") ;		
 	}
 
 	//code done by Shou Kang and Yvonne
-	public static void login(ArrayList<Users> userList, ArrayList<Roles> roleList, ArrayList<Activity> activityList, ArrayList<Applications> applicationList,ArrayList<Attendance> attendanceList, boolean login, int options,
+	public static void login(ArrayList<Users> userList, ArrayList<Roles> roleList, ArrayList<Activity> activityList, ArrayList<Applications> applicationList, ArrayList<Attendance> attendanceList, boolean login, int options,
 			int role, String userID, String password, String idInpt) {
 		
 		//for initializing of variable of new user, for junitTesting workaround
-				int newUserRole = 0;
-				String newID = "-";
-				String newName = "-";
-				String newPassword = "-";
-				String newType = "";
-				double newDID = 0.0;
-				int newMaxPax = 0;
-				String newDate = "";
-				String newTimeSlot ="";
-				
+				int newUserRole = 0 ;
+				String newID = "-" ;
+				String newName = "-" ;
+				String newPassword = "-" ;
+				String newType = "" ;
+				double newDID = 0.0 ;
+				int newMaxPax = 0 ;
+				String newDate = "" ;
+				String newTimeSlot = "" ;				
 		
-		while(options != -9) {
+		while (options != -9) {			
+			if (login == false) {
+				loginMenu() ;				
+				options = Helper.readInt("Enter Menu Option (type -9 to exit program) > ") ;
 				
-			
-			if(login == false) {
-				loginMenu();
-				
-				options = Helper.readInt("Enter Menu Option (type -9 to exit program) > ");
-				
-				if(options == 1) {
+				if (options == 1) {					
+					userID = Helper.readString("Enter user ID > ") ;
+					password = Helper.readString("Enter password > ") ;
 					
-					userID = Helper.readString("Enter user ID > ");
-					password = Helper.readString("Enter password > ");
-					
-					AbstractMap.SimpleEntry<Integer,Boolean> pair =doLogin(userID,password,login,options,role,userList);
-					role = pair.getKey();
-					login = pair.getValue();
+					AbstractMap.SimpleEntry<Integer, Boolean> pair =doLogin(userID, password, login, options, role, userList) ;
+					role = pair.getKey() ;
+					login = pair.getValue() ;
 
-				}else if(options!= -9){
-					System.out.println("\nPlease enter a correct option");
-				}else{				
-					break;
-				}
-				
+				} else if (options!= -9) {
+					System.out.println("\nPlease enter a correct option") ;
+				} else {				
+					break ;
+				}				
 			}   //Yvonne
-				options = userMenus(role);
-				if(options!=-8) {
-				if(role == 1) { //admin
-					
-					switch(options) {
+			options = userMenus(role) ;
+			if (options!=-8) {
+				if (role == 1) { //admin					
+					switch (options) {
 					case 1: //view all users code here, Aliyah, done//
-						//<<Insert code here:>>
-						
-						String jOutput = displayAllUsers(roleList, userList) ;
-						
+						//<<Insert code here:>>						
+						String jOutput = displayAllUsers(roleList, userList) ;						
 						//<<end of code for case 1>>
 						//System.out.print("admin1"); //<--this is just to test that it can reach this lvl before you start coding
-						break;
+						break ;
+						
 					case 2: //add users code here, Shou Kang, Done//
-						//<<Insert code here:>>
+						//<<Insert code here:>>						
 						addUser(userList,newUserRole, newID, newName, newPassword);
-
 						//<<end of code for case 2>>
-						break;
+						break ;
+						
 					case 3: //remove users code here,Marcus, done//
-						//<<Insert code here:>>
-						boolean userfound = true;
+						//<<Insert code here:>>						
+						boolean userfound = true ;
 						String jOuput = displayAllUsers(roleList, userList) ;
-						System.out.println();
+						System.out.println() ;
 						
-						userfound = removeUser(userList,idInpt);
-						if(!userfound) {
-							System.out.println("Invalid userId!");
-							
-						}
-						
+						userfound = removeUser(userList,idInpt) ;
+						if (!userfound) {
+							System.out.println("Invalid userId!") ;						
+						}						
 						//<<end of code for case 3>>
-//						System.out.print("admin3"); //<--this is just to test that it can reach this lvl before you start coding
-						break;
+						//System.out.print("admin3"); //<--this is just to test that it can reach this lvl before you start coding
+						break ;
 						
-					default: 
-						
-						if(options != -9) {
-							System.out.println("\nPlease enter a proper option");
-						}
-						
-						break; 
-					}
-					
-					
-				}else if(role == 2) {
-					switch(options) { //teacher
+					default:						
+						if (options != -9) {
+							System.out.println("\nPlease enter a proper option") ;
+						}						
+						break ; 
+					}					
+				} else if (role == 2) {
+					switch (options) { //teacher
 					case 1: //Browse activities code here, Edry, Alex , done//
-						//<<Insert code here:>>
-						showAllActivities(activityList);
-					
+						//<<Insert code here:>>						
+						showAllActivities(activityList) ;					
 						//<<end of code for case 1>>
 						//System.out.print("teach1");
-						break;
+						break ;
+						
 					case 2: //add activities(that they owned)code here, Aliyah, done//
 						//show activities that they owned first
-						//<<Insert code here:>>
-						showAllActivities(activityList);							
-						showOwnActivties(userID, activityList) ;
+						//<<Insert code here:>>						
+						showAllActivities(activityList) ;							
+						showOwnActivties(userID, activityList) ;						
 						
-						
-						addNewActivity(userID,activityList,newDID,newType,newName,newMaxPax,newDate,newTimeSlot);
+						addNewActivity(userID, activityList, newDID, newType, newName, newMaxPax, newDate, newTimeSlot) ;						
 						//<<end of code for case 2>>
 						//System.out.print("teach2");
-						break;
+						break ;
+						
 					case 3: //remove activities that they owned code here, Alex,Edry, done//
-						//<<Insert code here:>>
+						//<<Insert code here:>>						
 						showOwnActivties(userID, activityList) ;
 						
-						double activityInput = 0.0;
-						
-						removeActivity(activityList, activityInput);
-						
-						
+						double activityInput = 0.0 ;						
+						removeActivity(activityList, activityInput) ;								
 						//<<end of code for case 3>>
 						//System.out.print("teach3");
-						break;
+						break ;
+						
 					case 4: //manage student applications code here, Yvonne, done//
-						//<<Insert code here:>>
-						String jOuput5 = showApplications4Teach(userID, applicationList, activityList, userList);
+						//<<Insert code here:>>						
+						String jOuput5 = showApplications4Teach(userID, applicationList, activityList, userList) ;
 						
-						int appIdToChg = Helper.readInt("Please enter the application ID to change status > ");
-						chgAppliStatus(userID, appIdToChg,activityList,applicationList,userList,attendanceList);
-						
-						
+						int appIdToChg = Helper.readInt("Please enter the application ID to change status > ") ;
+						chgAppliStatus(userID, appIdToChg, activityList, applicationList, userList, attendanceList) ;												
 						//<<end of code for case 4>>
 						//System.out.print("teach4");
-						break;
+						break ;
+						
 					case 5: //Remove applications code here, Shou Kang 
 						//<<Insert code here:>>
-
-						jOuput5 = showApplications4Teach(userID, applicationList, activityList, userList);
-						int appIdToRemove = Helper.readInt("Please enter the application ID to remove > ");
-						removeApplication(userID, appIdToRemove, activityList, applicationList);
-						
+						jOuput5 = showApplications4Teach(userID, applicationList, activityList, userList) ;
+						int appIdToRemove = Helper.readInt("Please enter the application ID to remove > ") ;
+						removeApplication(userID, appIdToRemove, activityList, applicationList) ;						
 						//<<end of code for case 5>>
-						break;
+						break ;
 						
 					case 6: //Mark attendance code here,Shou Kang,Marcus,done//
-						//<<Insert code here:>>
+						//<<Insert code here:>>						
+						showOwnActivties(userID, activityList) ;
 						
-						showOwnActivties(userID, activityList) ;	
-						double activityID = Helper.readDouble("Enter activity code > ");
-						showAllStudentInActivity(userID, activityID, attendanceList, activityList, userList);
-						int attendanceId = Helper.readInt("Enter attendance id > ");
-						boolean junitMark = markAttendance(userID, attendanceId, activityID,attendanceList, activityList, userList);		
-								
+						double activityID = Helper.readDouble("Enter activity code > ") ;
+						showAllStudentInActivity(userID, activityID, attendanceList, activityList, userList) ;
+						
+						int attendanceId = Helper.readInt("Enter attendance id > ") ;
+						boolean junitMark = markAttendance(userID, attendanceId, activityID, attendanceList, activityList, userList) ;									
 						//<<end of code for case 6>>
-						break;
+						break ;
+						
 					case 7: //Delete attendance code here, Shou Kang
 						//<<Insert code here:>>
 						// it says delete but what we want to do here is just set it back to not attended, so if the status of the attendance is
 						//already not attended , we will just show a message that says attendance have not been marked as attended instead
-						
-						
+												
 						//<<end of code for case 7>>
-						System.out.print("teach7");
-						break;
+						System.out.print("teach7") ;
+						break ;
+						
 					default: 
-						if(options != -9) {
-							System.out.println("\nPlease enter a proper option");
+						if (options != -9) {
+							System.out.println("\nPlease enter a proper option") ;
 						}
-						break; 
-					}
-					
-				}else if(role == 3) { //students
-					switch(options) {
+						break ; 
+					}					
+				} else if (role == 3) { //students
+					switch (options) {
 					case 1: //Browse activities code here, Yvonne, done//
-						//<<Insert code here:>>
-						
-						String jOutput3 = showAllActivities(activityList);
-						
+						//<<Insert code here:>>						
+						String jOutput3 = showAllActivities(activityList) ;						
 						//<<end of code for case 1>>
-						System.out.print("student1");
-						break;
+						System.out.print("student1") ;
+						break ;
+						
 					case 2: //apply for activities code here,Yvonne, done//
 						//<<Insert code here:>>
-						jOutput3 = showAllActivities(activityList);
+						jOutput3 = showAllActivities(activityList) ;
 						
-						apply4Activity(activityList, applicationList, userID);
-						
+						apply4Activity(activityList, applicationList, userID) ;						
 						//<<end of code for case 2>>
 						//System.out.print("student2");
-						break;
+						break ;
+						
 					case 3: //view application status code here,Yvonne, done//
-						//<<Insert code here:>>
-						
-						String jOutput6 = showApplications4Student(userID, applicationList, activityList, userList);
-						
+						//<<Insert code here:>>						
+						String jOutput6 = showApplications4Student(userID, applicationList, activityList, userList) ;						
 						//<<end of code for case 3>>
  						//System.out.print("student3");
-						break;
+						break ;
 					case 4: //view attendance record code here,Aliyah
-						//<<Insert code here:>>
-						
-						String jOuput2 =viewAttendanceRecord(userID, attendanceList, userList, activityList) ;
-						
+						//<<Insert code here:>>						
+						String jOuput2 =viewAttendanceRecord(userID, attendanceList, userList, activityList) ;						
 						//<<end of code for case 4>>
 						//System.out.print("student4") ;
-						break;
+						break ;
+						
 					default: 
-						if(options != -9) {
-							System.out.println("\nPlease enter a proper option");
+						if (options != -9) {
+							System.out.println("\nPlease enter a proper option") ;
 						}
-						break; 
+						break ; 
+					}
 				}
-					
-				}}else {
-					login =false;
-					System.out.print("You have log out successfully");
-				}
-				
-
+			} else {
+				login = false ;
+				System.out.print("You have log out successfully") ;
+			}
 		}
 	}
 
 	//Yvonne, apply for activity method for students
-	public static void apply4Activity (ArrayList<Activity> activityList, ArrayList<Applications> applicationList,
-			String userID) {
-		double activityIDinpt = Helper.readDouble("Enter activity ID to apply >");
+	public static void apply4Activity (ArrayList<Activity> activityList, ArrayList<Applications> applicationList, String userID) {
+		double activityIDinpt = Helper.readDouble("Enter activity ID to apply >") ;
 		
-		for(int i = 0; i<activityList.size(); i++) {
-			if(activityList.get(i).getActivityID() == activityIDinpt && activityList.get(i).getStatus().equals("Open")) {
-				String activityName = activityList.get(i).getName();
-				String confirm = Helper.readString("Confirm, Applying for " + activityIDinpt + " " + activityName + " ? (Y/N)").toUpperCase();
-				if(confirm.equals("Y")) {
-					applicationList.add(new Applications(applicationList.size(),activityIDinpt ,userID));
-					System.out.println("\nYour application to " + activityIDinpt + " " + activityName + "has been submitted\n\nPlease wait for your teacher to approve");
-				}else if(confirm.equals("N")) {
-					System.out.println("Your application process has been cancelled");
-				}
+		for (int i = 0; i<activityList.size(); i++) {
+			if (activityList.get(i).getActivityID() == activityIDinpt && activityList.get(i).getStatus().equals("Open")) {
+				String activityName = activityList.get(i).getName() ;
+				String confirm = Helper.readString("Confirm, Applying for " + activityIDinpt + " " + activityName + " ? (Y/N)").toUpperCase() ;
 				
+				if (confirm.equals("Y")) {
+					applicationList.add(new Applications(applicationList.size(), activityIDinpt, userID)) ;
+					System.out.println("\nYour application to " + activityIDinpt + " " + activityName + "has been submitted\n\nPlease wait for your teacher to approve") ;
+				} else if (confirm.equals("N")) {
+					System.out.println("Your application process has been cancelled") ;
+				}
 			}
 		}
 	}
 	
 	// Shou Kang code, login Menu
-	public static void loginMenu(){
-		System.out.println();
-		Helper.line(45,"=");
-		System.out.println("==== LOGIN MENU ====");
-		Helper.line(45,"=");
+	public static void loginMenu() {
+		System.out.println() ;
+		Helper.line(45,"=") ;
+		System.out.println("==== LOGIN MENU ====") ;
+		Helper.line(45,"=") ;
 		
-		System.out.println("1. Login");
-		System.out.println("-9. Exit program");
-		System.out.println();
-	}
-	
+		System.out.println("1. Login") ;
+		System.out.println("-9. Exit program") ;
+		System.out.println() ;
+	}	
 	
 	//Shou Kang code, userMenus
 	public static int userMenus(int roleIndex) {
-		int options = 0;
-		if(roleIndex == 1) {
-			System.out.println();
-			Helper.line(45,"=");
-			System.out.println("==== ADMIN MENU ====");
-			Helper.line(45,"=");
+		int options = 0 ;
+		if (roleIndex == 1) {
+			System.out.println() ;
+			Helper.line(45,"=") ;
+			System.out.println("==== ADMIN MENU ====") ;
+			Helper.line(45,"=") ;
 			
-			System.out.println("1. View all users");
-			System.out.println("2. Add user"); //update was remove
-			System.out.println("3. Remove user");
-			System.out.println("-8. Logout");
-			System.out.println("-9. Exit program");
-			System.out.println();
-			
-			options = Helper.readInt("Enter option number > ");
-			
-			
-		}
-		else if(roleIndex == 2){
-			System.out.println();
-			Helper.line(45,"=");
-			System.out.println("==== TEACHER MENU ====");
-			Helper.line(45,"=");
-			
-			System.out.println("1. Activity overview");
-			System.out.println("2. Add Activities"); //show activities and add as well
-			System.out.println("3. Remove activites");
-			System.out.println("4. Manage Student's Applications");
-			System.out.println("5. Remove Student's Applications");
-			System.out.println("6. Mark Attendance");
-			System.out.println("7. Delete Attendance");
-			System.out.println("-8. Logout");
-			System.out.println("-9. Exit program");
+			System.out.println("1. View all users") ;
+			System.out.println("2. Add user") ; //update was remove
+			System.out.println("3. Remove user") ;
+			System.out.println("-8. Logout") ;
+			System.out.println("-9. Exit program") ;
 			System.out.println();
 			
-			options = Helper.readInt("Enter option number > ");
+			options = Helper.readInt("Enter option number > ") ;		
+		} else if (roleIndex == 2) {
+			System.out.println() ;
+			Helper.line(45,"=") ;
+			System.out.println("==== TEACHER MENU ====") ;
+			Helper.line(45,"=") ;
 			
-		}
-		else if(roleIndex == 3) {
-			System.out.println();
-			Helper.line(45,"=");
-			System.out.println("==== STUDENT MENU ====");
-			Helper.line(45,"=");
+			System.out.println("1. Activity overview") ;
+			System.out.println("2. Add Activities") ; //show activities and add as well
+			System.out.println("3. Remove activites") ;
+			System.out.println("4. Manage Student's Applications") ;
+			System.out.println("5. Remove Student's Applications") ;
+			System.out.println("6. Mark Attendance") ;
+			System.out.println("7. Delete Attendance") ;
+			System.out.println("-8. Logout") ;
+			System.out.println("-9. Exit program") ;
+			System.out.println() ;
 			
-			System.out.println("1. View all activities");
-			System.out.println("2. Register for activity");
+			options = Helper.readInt("Enter option number > ") ;			
+		} else if (roleIndex == 3) {
+			System.out.println() ;
+			Helper.line(45,"=") ;
+			System.out.println("==== STUDENT MENU ====") ;
+			Helper.line(45,"=") ;
+			
+			System.out.println("1. View all activities") ;
+			System.out.println("2. Register for activity") ;
 			System.out.println("3. Application Status");
-			System.out.println("4. View attendance records");
-			System.out.println("-8. Logout");
-			System.out.println("-9. Exit program");
+			System.out.println("4. View attendance records") ;
+			System.out.println("-8. Logout") ;
+			System.out.println("-9. Exit program") ;
 			System.out.println();
 			
-			options = Helper.readInt("Enter option number > ");
+			options = Helper.readInt("Enter option number > ") ;
 		}
-		return options;
+		return options ;
 	}
 	
 	//Aliyah code, displays userList
-	public static String displayAllUsers(ArrayList<Roles> roleList, ArrayList<Users> userList) {
-		
-		String stringCompare = "";
+	public static String displayAllUsers(ArrayList<Roles> roleList, ArrayList<Users> userList) {		
+		String stringCompare = "" ;
 		System.out.println() ;
-		Helper.line(45, "=");
-		System.out.println("=======     USER LIST     =======");
-		Helper.line(45, "=");
+		Helper.line(45, "=") ;
+		System.out.println("=======     USER LIST     =======") ;
+		Helper.line(45, "=") ;
 		System.out.println() ;
 		
 		String table = String.format("%s %5s", "User ID", " ") ;
@@ -456,172 +419,147 @@ public class C206_CaseStudy {
 		table += String.format("%s", "User Role") ;
 		
 		System.out.println(table) ;
-		Helper.line(45, "-");
+		Helper.line(45, "-") ;
 		
 		for (int i = 0; i < userList.size(); i++) {
 			Users u = userList.get(i) ;
 			for (int j = 0; j < roleList.size(); j++) {
 				Roles r = roleList.get(j) ;
-
 				if (u.getRoleIndex() == r.getRoleID()) {					
-					String roleName = r.getRoleName() ;
-					
+					String roleName = r.getRoleName() ;					
 					
 					String output = String.format("%-8s %4s", u.getID(), "") ;
 					output += String.format("%-10s %4s", u.getName(), "") ;
 					output += String.format("%s", roleName) ;
 					
-					stringCompare += output;
+					stringCompare += output ;
 					System.out.println(output) ;
 					break ;
 				}
 			}			
 		}
-		return stringCompare;
-		
+		return stringCompare ;		
 	}	
 	
 	//Shou kang code
 	public static boolean idChecker(ArrayList<Users> userList, String id) {
-		boolean exist = false;
+		boolean exist = false ;
 		
-		for(int i = 0; i < userList.size(); i++) {
-			String userListID = userList.get(i).getID();
-			
+		for (int i = 0; i < userList.size(); i++) {
+			String userListID = userList.get(i).getID() ;			
 			if(id.equals(userListID)) {
-				exist = true;
-				break; 
+				exist = true ;
+				break ; 
 			}
-		}
-		
-		return exist; 
+		}		
+		return exist ; 
 	}
 	
 	//Shou kang code
 	public static String regexReturn(int roleIndex) {
-		String regex = "";
+		String regex = "" ;
 		
-		switch(roleIndex) {
-		
+		switch (roleIndex) {		
 		case 1:
-			regex = "[A][0-9]+";
-			break;	
+			regex = "[A][0-9]+" ;
+			break ;	
 			
 		case 2:
-			regex = "[T][0-9]+";
-			break;
+			regex = "[T][0-9]+" ;
+			break ;
 			
 		case 3:
-			regex = "[S][0-9]+";
-			break;
+			regex = "[S][0-9]+ ";
+			break ;
 			
 		default:	
-			regex = "";
+			regex = "" ;
 		}
-
-		return regex; 
-
+		return regex ;
 	}
-	 //Shou Kang code
-
-	public static void addUser(ArrayList<Users> userList , int newUserRole, String newID, String newName, String newPassword) {
-		String nameRegex = "[a-zA-Z]+";
-		String passwordChecker = "[0-9]+";
+	
+	//Shou Kang code
+	public static void addUser(ArrayList<Users> userList, int newUserRole, String newID, String newName, String newPassword) {
+		String nameRegex = "[a-zA-Z]+" ;
+		String passwordChecker = "[0-9]+" ;
 		
-		if(newUserRole == 0) {
-			newUserRole = Helper.readInt("Enter new user role > ");
+		if (newUserRole == 0) {
+			newUserRole = Helper.readInt("Enter new user role > ") ;
 		}
+		String regex = regexReturn(newUserRole) ;
 		
-		
-		String regex = regexReturn(newUserRole);
-		
-		if(!regex.equals("")) {
-			if(newID.equals("-")) {
-				newID = Helper.readString("Enter new users id > ");
+		if (!regex.equals("")) {
+			if (newID.equals("-")) {
+				newID = Helper.readString("Enter new users id > ") ;
 			}
-			newID = newID.toUpperCase();
+			newID = newID.toUpperCase() ;
 			
-			if(newID.length() == 4) {
-				
-				if(idChecker(userList, newID) == false) {
-													
-					if(newID.matches(regex)) {
-						if(newName.equals("-")) {
-							newName = Helper.readString("Enter the new user's name > ");
+			if (newID.length() == 4) {				
+				if (idChecker(userList, newID) == false) {													
+					if (newID.matches(regex)) {
+						if (newName.equals("-")) {
+							newName = Helper.readString("Enter the new user's name > ") ;
 						}
-						String nameChecker = newName.replace(" ", "");
+						String nameChecker = newName.replace(" ", "") ;
 					
-						if(nameChecker.matches(nameRegex)) {
-							if(newPassword.equals("-")) {
-								newPassword = Helper.readString("Enter the new user's password > ");
-							}
-							
-							if(newPassword.length() >= 4) {
-							
+						if (nameChecker.matches(nameRegex)) {
+							if (newPassword.equals("-")) {
+								newPassword = Helper.readString("Enter the new user's password > ") ;
+							}							
+							if(newPassword.length() >= 4) {							
 								if(newPassword.matches(passwordChecker)) {
-									userList.add(new Users(newID, newPassword, newName, newUserRole));
-									System.out.println("\nNew user has been added");
+									userList.add(new Users(newID, newPassword, newName, newUserRole)) ;
+									System.out.println("\nNew user has been added") ;
+								} else {
+									System.out.println("\nInvalid password") ;
 								}
-								else {
-									System.out.println("\nInvalid password");
-								}
+							} else {
+								System.out.println("\nInvalid password") ;
 							}
-							else {
-								System.out.println("\nInvalid password");
-							}
+						} else {
+							System.out.println("\nPlease enter a proper name") ;
 						}
-						else {
-							System.out.println("\nPlease enter a proper name");
-						}
+					} else {
+						System.out.println("\nInvalid id was entered") ;
 					}
-					else {
-						System.out.println("\nInvalid id was entered");
-					}
-				}
-				else {
-					System.out.println("\nID already exists");
+				} else {
+					System.out.println("\nID already exists") ;
 				}
 
-			}
-			else {
-				System.out.println("\nInvalid id was entered");
+			} else {
+				System.out.println("\nInvalid id was entered") ;
 			}
 			
-		}
-		else {
-			System.out.println("\nInvalid role was entered");
+		} else {
+			System.out.println("\nInvalid role was entered") ;
 		}
 	}
 	
 	//Marcus code, remove user
 	public static boolean removeUser(ArrayList<Users>userList, String idInput) {
-		boolean userfound = false;
-		if(idInput == "0") {
-			idInput = Helper.readString("Enter User ID to be deleted > ");
+		boolean userfound = false ;
+		if (idInput == "0") {
+			idInput = Helper.readString("Enter User ID to be deleted > ") ;
 		}
 		for (int i = 0; i< userList.size(); i++) {
 			if (userList.get(i).getID().equalsIgnoreCase(idInput)) {
-				userList.remove(i);
-				System.out.println("Successfully deleted User with User ID " + idInput);
-				userfound = true;
-			}
-			else {
-				
-				userfound = false;
+				userList.remove(i) ;
+				System.out.println("Successfully deleted User with User ID " + idInput) ;
+				userfound = true ;
+			} else {
+				userfound = false ;
 			}
 		}
-		return userfound;
-		
-		
+		return userfound ;
 	}
 	
 	// Edry Code, show all Activities
 	public static String showAllActivities( ArrayList<Activity> activityList) {
-		String jOutput3 = "";
+		String jOutput3 = "" ;
 		System.out.println() ;
-		Helper.line(45, "=");
-		System.out.println("=======     ALL ACTIVITY LIST     =======");
-		Helper.line(45, "=");
+		Helper.line(45, "=") ;
+		System.out.println("=======     ALL ACTIVITY LIST     =======") ;
+		Helper.line(45, "=") ;
 		System.out.println() ;
 		
 		String table = String.format("%s %5s", "Activity ID", " ") ;
@@ -633,12 +571,11 @@ public class C206_CaseStudy {
 		table += String.format("%s %8s", "Time Slot", " ") ;
 		table += String.format("%s", "Teacher ID") ;
 		
-		System.out.println(table);
-		Helper.line(130, "-");
+		System.out.println(table) ;
+		Helper.line(130, "-") ;
 		
 		for (int j = 0; j < activityList.size(); j++) {
-			Activity a = activityList.get(j);
-			
+			Activity a = activityList.get(j) ;			
 			
 			String output = String.format("%-12s %4s", a.getActivityID(), "") ;
 			output += String.format("%-20s %4s", a.getName(), "") ;
@@ -649,20 +586,18 @@ public class C206_CaseStudy {
 			output += String.format("%-13s %4s", a.getTimeSlot(), "") ;
 			output += String.format("%s", a.getTeacherID()) ;
 			
-			jOutput3 +=output;
+			jOutput3 +=output ;
 			System.out.println(output) ;
-
 		}
-		return jOutput3;
-		
+		return jOutput3 ;		
 	}
 	
 	//Aliyah code, show all owned activities
 	public static void showOwnActivties(String userID, ArrayList<Activity> activityList) {
 		System.out.println() ;
-		Helper.line(45, "=");
-		System.out.println("=======       OWN ACTIVITY LIST       =======");
-		Helper.line(45, "=");
+		Helper.line(45, "=") ;
+		System.out.println("=======       OWN ACTIVITY LIST       =======") ;
+		Helper.line(45, "=") ;
 		System.out.println() ;
 		
 		String table = String.format("%s %5s", "Activity ID", " ") ;
@@ -675,325 +610,290 @@ public class C206_CaseStudy {
 		table += String.format("%s", "Teacher ID") ;
 		
 		System.out.println(table) ;
-		Helper.line(130, "-");
-		
-			for (int j = 0; j < activityList.size(); j++) {
-				Activity a = activityList.get(j) ;
+		Helper.line(130, "-") ;		
+		for (int j = 0; j < activityList.size(); j++) {
+			Activity a = activityList.get(j) ;
 				
-				if (userID.equalsIgnoreCase(a.getTeacherID())) {
-
-					String output = String.format("%-12s %4s", a.getActivityID(), "") ;
-					output += String.format("%-20s %4s", a.getName(), "") ;
-					output += String.format("%-15s %4s", a.getType(), "") ;
-					output += String.format("%-8s %4s", a.getMaxPax(), "") ;
-					output += String.format("%-7s %4s", a.getStatus(), "") ;
-					output += String.format("%-10s %4s", a.getDate(), "") ;
-					output += String.format("%-13s %4s", a.getTimeSlot(), "") ;
-					output += String.format("%s", a.getTeacherID()) ;
+			if (userID.equalsIgnoreCase(a.getTeacherID())) {
+				String output = String.format("%-12s %4s", a.getActivityID(), "") ;
+				output += String.format("%-20s %4s", a.getName(), "") ;
+				output += String.format("%-15s %4s", a.getType(), "") ;
+				output += String.format("%-8s %4s", a.getMaxPax(), "") ;
+				output += String.format("%-7s %4s", a.getStatus(), "") ;
+				output += String.format("%-10s %4s", a.getDate(), "") ;
+				output += String.format("%-13s %4s", a.getTimeSlot(), "") ;
+				output += String.format("%s", a.getTeacherID()) ;
 					
-					System.out.println(output) ;
-				}
+				System.out.println(output) ;
 			}
 		}
+	}
 	
 	//Aliyah code, adding new activity
 	public static void addNewActivity(String userID, ArrayList<Activity> activityList,double newID, String newType, String newName, int newMaxPax, String newDate, String newTimeSlot) {
-		boolean activityExists = false;
+		boolean activityExists = false ;
 		
-		if( newID == 0.0 ) {
+		if ( newID == 0.0 ) {
 			newID = Helper.readDouble("\nEnter new activity ID > ") ;
-		}
-		
-			for(Activity a: activityList) {
-				 if (Double.compare(newID, a.getActivityID()) == 0) {
-			            activityExists = true;
-			            break;
-			        }
-			}
-			
-			if(!activityExists) {
-			
-				if(newType == "") {
-					newType = Helper.readString("Enter new activity type > ") ;
-				}
-				
-				if ((newType.equals("sports")) || (newType.equals("uniformGroup")) || (newType.equals("performanceArts"))) {
-					if(newName.equals("")) {
-						newName = Helper.readString("Enter new activity name > ") ;
-					} 
-						if(newMaxPax == 0) {
-							newMaxPax = Helper.readInt("Enter max pax for new activity > ") ;
-						}
-						
-						if ((newMaxPax >= 20) && (newMaxPax <=60)) {
+		}	
+		for(Activity a: activityList) {
+			 if (Double.compare(newID, a.getActivityID()) == 0) {
+	            activityExists = true ;
+	            break ;
+			 }
+		}		
+		if (!activityExists) {			
+			if (newType == "") {
+				newType = Helper.readString("Enter new activity type > ") ;
+			}			
+			if ((newType.equals("sports")) || (newType.equals("uniformGroup")) || (newType.equals("performanceArts"))) {
+				if (newName.equals("")) {
+					newName = Helper.readString("Enter new activity name > ") ;
+				} 
+				if (newMaxPax == 0) {
+					newMaxPax = Helper.readInt("Enter max pax for new activity > ") ;
+				}						
+				if ((newMaxPax >= 20) && (newMaxPax <=60)) {					
+					if (newDate.equals("")) {
+						newDate = Helper.readString("Enter new activity date (DD/MM/YYYY) > ") ;
+						newTimeSlot = Helper.readString("Enter new activity time start (HH:MM-HH:MM) > ") ;
+					}											
+					activityList.add(new Activity(newID, newType, newName, newMaxPax, "Open", userID, newDate, newTimeSlot)) ;
 							
-							if(newDate.equals("")) {
-								newDate = Helper.readString("Enter new activity date (DD/MM/YYYY) > ") ;
-								newTimeSlot = Helper.readString("Enter new activity time start (HH:MM-HH:MM) > ") ;
-							}
-											
-							activityList.add(new Activity(newID, newType, newName, newMaxPax, "Open", userID, newDate, newTimeSlot));
+					System.out.println("\nNew Activity added!\n") ;
 							
-							System.out.println("\nNew Activity added!\n") ;
+					String output = "Activity ID: " + newID + "\n" ;
+					output += "Activity Type: " + newType + "\n" ;
+					output += "Activity Name: " + newName + "\n" ;
+					output += "Activity MaxPax: " + newMaxPax + "\n" ;
+					output += "Activity Date: " + newDate + "\n" ;
+					output += "Activity TimeSlot: " + newTimeSlot ;
 							
-							String output = "Activity ID: " + newID + "\n" ;
-							output += "Activity Type: " + newType + "\n" ;
-							output += "Activity Name: " + newName + "\n" ;
-							output += "Activity MaxPax: " + newMaxPax + "\n" ;
-							output += "Activity Date: " + newDate + "\n" ;
-							output += "Activity TimeSlot: " + newTimeSlot ;
-							
-							System.out.println(output) ;
-						} else {
-							System.out.println("Please enter a valid max pax (min: 20, max: 60).") ;
-						}
-				} else {
-					System.out.println("Please enter a valid activtiy type.") ;
-				}
+					System.out.println(output) ;
+					} else {
+						System.out.println("Please enter a valid max pax (min: 20, max: 60).") ;
+					}
 			} else {
-				System.out.println("Please enter a valid activtiy ID.") ;
+				System.out.println("Please enter a valid activtiy type.") ;
 			}
-		
+		} else {
+			System.out.println("Please enter a valid activtiy ID.") ;
+		}		
 	}
 
 	//Shou kang code, shows all applications under the teacher//
 	public static String showApplications4Teach(String userId, ArrayList<Applications> applicationList, ArrayList<Activity> activityList, ArrayList<Users> userList) {
-		String studentID = "";
-		String teacherID = "";
-		String userListID = "";
-		String studentName = "";
-		String status = "";
-		int applicationID = 0;
-		double activityListActID = 0;
-		double applicationListActID = 0;
-		String jOutput4 = "";
+		String studentID = "" ;
+		String teacherID = "" ;
+		String userListID = "" ;
+		String studentName = "" ;
+		String status = "" ;
+		int applicationID = 0 ;
+		double activityListActID = 0 ;
+		double applicationListActID = 0 ;
+		String jOutput4 = "" ;
 		
-		System.out.println(String.format("\n******Student Applications******\n\n%-18s%-15s%-15s%-15s%-17s%-10s","Application ID","Activity ID","Activity Name","Student ID","Student Name","Status"));
-		System.out.println(String.format("%-18s%-15s%-15s%-15s%-17s%-15s","--------------","-------------","-------------","----------","------------","------"));
+		System.out.println(String.format("\n******Student Applications******\n\n%-18s%-15s%-15s%-15s%-17s%-10s", "Application ID", "Activity ID", "Activity Name", "Student ID", "Student Name", "Status")) ;
+		System.out.println(String.format("%-18s%-15s%-15s%-15s%-17s%-15s", "--------------", "-------------", "-------------", "----------", "------------", "------")) ;
 		
-		for(int i = 0; i < applicationList.size(); i++) {
+		for (int i = 0; i < applicationList.size(); i++) {			
+			applicationID = applicationList.get(i).getAppId() ;
+			applicationListActID = applicationList.get(i).getActivityId() ;
+			studentID = applicationList.get(i).getStudentId() ;
+			status = applicationList.get(i).getStatus() ;	
 			
-			applicationID = applicationList.get(i).getAppId();
-			applicationListActID = applicationList.get(i).getActivityId();
-			studentID = applicationList.get(i).getStudentId();
-			status = applicationList.get(i).getStatus();	
-			
-			for(int y = 0; y < activityList.size(); y++) {
-				activityListActID = activityList.get(y).getActivityID();
-				String activityListName = activityList.get(y).getName();				
-				if(applicationListActID == activityListActID) {
-					teacherID = activityList.get(y).getTeacherID();
+			for (int y = 0; y < activityList.size(); y++) {
+				activityListActID = activityList.get(y).getActivityID() ;
+				String activityListName = activityList.get(y).getName() ;				
+				if (applicationListActID == activityListActID) {
+					teacherID = activityList.get(y).getTeacherID() ;
 					
-					if(teacherID.equals(userId)) {
-						
-						for(int x = 0; x < userList.size(); x++) {
-							userListID = userList.get(x).getID();
-							if(userListID.equals(studentID)) {
-								studentName = userList.get(x).getName();
-								jOutput4 += String.format("%-18d%-15s%-15s %-15s %-15s %-15s\n", applicationID, activityListActID ,activityListName,studentID, studentName, status);
-								
-							}
-							
+					if (teacherID.equals(userId)) {					
+						for (int x = 0; x < userList.size(); x++) {
+							userListID = userList.get(x).getID() ;
+							if (userListID.equals(studentID)) {
+								studentName = userList.get(x).getName() ;
+								jOutput4 += String.format("%-18d%-15s%-15s %-15s %-15s %-15s\n", applicationID, activityListActID ,activityListName,studentID, studentName, status) ;								
+							}							
 						}
-						System.out.println(jOutput4);
+						System.out.println(jOutput4) ;
 					}
 				}
 			}
 		}
-		return jOutput4;
+		return jOutput4 ;
 	}
 	
 	//Yvonne, student's view of all application
-	public static String showApplications4Student(String userID, ArrayList<Applications> applicationList, ArrayList<Activity> activityList, ArrayList<Users> userList) {
+	public static String showApplications4Student(String userID, ArrayList<Applications> applicationList, ArrayList<Activity> activityList, ArrayList<Users> userList) {		
+		String studentID = "" ;
+		String userListID = "" ;
+		String studentName = "" ;
+		String status = "" ;
+		int applicationID = 0 ;
+		double activityListActID = 0 ;
+		double applicationListActID = 0 ;
+		String jOutput5 ="" ;
 		
-		String studentID = "";
-		String userListID = "";
-		String studentName = "";
-		String status = "";
-		int applicationID = 0;
-		double activityListActID = 0;
-		double applicationListActID = 0;
-		String jOutput5 ="";
-		
-		String studName = "";
-		for(int i = 0; i<userList.size(); i++ ) {
-			if(userList.get(i).getID().equals(userID)) {
-				studName = userList.get(i).getName();
+		String studName = "" ;
+		for (int i = 0; i<userList.size(); i++ ) {
+			if (userList.get(i).getID().equals(userID)) {
+				studName = userList.get(i).getName() ;
 			}
-		}
+		}		
+		System.out.println(String.format("\n******"+ studName +"'s Activity Applications******\n\n%-18s%-15s%-15s%-15s%-17s%-10s", "Application ID", "Activity ID", "Activity Name", "Student ID", "Student Name", "Status")) ;
+		System.out.println(String.format("%-18s%-15s%-15s%-15s%-17s%-15s", "--------------", "-------------", "-------------", "----------", "------------", "------")) ;
 		
-		System.out.println(String.format("\n******"+ studName +"'s Activity Applications******\n\n%-18s%-15s%-15s%-15s%-17s%-10s","Application ID","Activity ID","Activity Name","Student ID","Student Name","Status"));
-		System.out.println(String.format("%-18s%-15s%-15s%-15s%-17s%-15s","--------------","-------------","-------------","----------","------------","------"));
-		
-		for(int i = 0; i < applicationList.size(); i++) {
+		for (int i = 0; i < applicationList.size(); i++) {			
+			applicationID = applicationList.get(i).getAppId() ;
+			applicationListActID = applicationList.get(i).getActivityId() ;
+			studentID = applicationList.get(i).getStudentId() ;
+			status = applicationList.get(i).getStatus() ;	
 			
-			applicationID = applicationList.get(i).getAppId();
-			applicationListActID = applicationList.get(i).getActivityId();
-			studentID = applicationList.get(i).getStudentId();
-			status = applicationList.get(i).getStatus();	
-			
-			for(int y = 0; y < activityList.size(); y++) {
-				activityListActID = activityList.get(y).getActivityID();
-				String activityListName = activityList.get(y).getName();				
-				if(applicationListActID == activityListActID) {
-					
-					if(studentID.equals(userID)) {
-						
-						for(int x = 0; x < userList.size(); x++) {
-							userListID = userList.get(x).getID();
-							if(userListID.equals(studentID)) {
-								studentName = userList.get(x).getName();
-								jOutput5 += String.format("%-18d%-15s%-15s %-15s %-15s %-15s\n", applicationID, activityListActID ,activityListName,studentID, studentName, status);
+			for (int y = 0; y < activityList.size(); y++) {
+				activityListActID = activityList.get(y).getActivityID() ;
+				String activityListName = activityList.get(y).getName() ;			
+				if (applicationListActID == activityListActID) {					
+					if (studentID.equals(userID)) {						
+						for (int x = 0; x < userList.size(); x++) {
+							userListID = userList.get(x).getID() ;
+							if (userListID.equals(studentID)) {
+								studentName = userList.get(x).getName() ;
+								jOutput5 += String.format("%-18d%-15s%-15s %-15s %-15s %-15s\n", applicationID, activityListActID, activityListName, studentID, studentName, status) ;
 							}
 						}
-						System.out.println(jOutput5);
+						System.out.println(jOutput5) ;
 					}
 				}
 			}
 		}
-		return jOutput5;
+		return jOutput5 ;
 	}
 	
 	//Yvonne, change the application status under manage applications
-	public static void chgAppliStatus(String userId, int appId, ArrayList<Activity> activityList, ArrayList<Applications> applicationList, ArrayList<Users> userList, ArrayList<Attendance> attendanceList) {
-		
-		
-		for(int i = 0 ; i < applicationList.size(); i++) {
-			int applicationListStudID = applicationList.get(i).getAppId();
-			if(appId == applicationListStudID) {
-				double applicationListActID = applicationList.get(i).getActivityId();
+	public static void chgAppliStatus(String userId, int appId, ArrayList<Activity> activityList, ArrayList<Applications> applicationList, ArrayList<Users> userList, ArrayList<Attendance> attendanceList) {		
+		for (int i = 0 ; i < applicationList.size(); i++) {
+			int applicationListStudID = applicationList.get(i).getAppId() ;
+			if (appId == applicationListStudID) {
+				double applicationListActID = applicationList.get(i).getActivityId() ;
 				
-				for(int y = 0; y < activityList.size(); y++) {
-					double activityListActID = activityList.get(y).getActivityID();
-					
-					if(applicationListActID == activityListActID) {
-						String cherID = activityList.get(y).getTeacherID();
+				for (int y = 0; y < activityList.size(); y++) {
+					double activityListActID = activityList.get(y).getActivityID() ;					
+					if (applicationListActID == activityListActID) {
+						String cherID = activityList.get(y).getTeacherID() ;
 						
-						boolean taskComplete = false;
-							String name = "";
-							if(userId.equals(cherID)) {
-								while(taskComplete == false ) {
-									String statusChg = Helper.readString("Approve Application? (Y/N) or enter C to cancel").toUpperCase();
-									if(statusChg.equals("Y")) {
-										applicationList.get(i).setStatus("Approved");
-										String stuID = applicationList.get(i).getStudentId();
-										for(int a = 0; a<userList.size(); a++) {
-											if(userList.get(a).getID()==stuID) {
-												name = userList.get(a).getName();
-											}
+						boolean taskComplete = false ;
+						String name = "" ;
+						if (userId.equals(cherID)) {
+							while (taskComplete == false ) {
+								String statusChg = Helper.readString("Approve Application? (Y/N) or enter C to cancel").toUpperCase() ;
+								if (statusChg.equals("Y")) {
+									applicationList.get(i).setStatus("Approved") ;
+									String stuID = applicationList.get(i).getStudentId() ;
+
+									for (int a = 0; a<userList.size(); a++) {
+										if (userList.get(a).getID()==stuID) {
+											name = userList.get(a).getName() ;
 										}
+									}										
+									attendanceList.add(new Attendance(attendanceList.size(), stuID , activityListActID)) ;
 										
-										attendanceList.add(new Attendance(attendanceList.size(), stuID , activityListActID));
+									System.out.println("Student " + name + "'s application has been approved") ;
+									taskComplete = true ;									
+								} else if (statusChg.equals("N")) {
+									applicationList.get(i).setStatus("Rejected") ;
+									String stuID = applicationList.get(i).getStudentId() ;
 										
-										System.out.println("Student " + name + "'s application has been approved");
-										
-										
-										taskComplete = true;
-									
-									}else if(statusChg.equals("N")) {
-										applicationList.get(i).setStatus("Rejected");
-										String stuID = applicationList.get(i).getStudentId();
-										for(int a = 0; a<userList.size(); a++) {
-											if(userList.get(a).getID()==stuID) {
-												name = userList.get(a).getName();
-											}
+									for (int a = 0; a<userList.size(); a++) {
+										if (userList.get(a).getID()==stuID) {
+											name = userList.get(a).getName() ;
 										}
-										System.out.println("Student " + name + "'s application has been rejected");
-										taskComplete = true;
-									}else if(statusChg.equals("C")){
-										System.out.println("Changing of application status for student has been cancelled");
-										taskComplete = true;
 									}
+									System.out.println("Student " + name + "'s application has been rejected") ;
+									taskComplete = true ;
+								} else if (statusChg.equals("C")){
+									System.out.println("Changing of application status for student has been cancelled") ;
+									taskComplete = true ;
 								}
-								
-						}
-						
+							}								
+						}						
 					}
 				}
 			}
-		}
-		
+		}		
 	}
 	
 	//Shou Kang code, removes the applications that have already been approved/disapproved by the teacher 
-	public static void removeApplication(String userId, int appId, ArrayList<Activity> activityList, ArrayList<Applications> applicationList) {
+	public static void removeApplication(String userId, int appId, ArrayList<Activity> activityList, ArrayList<Applications> applicationList) {		
+		boolean removed = false ;
 		
-		boolean removed = false;
-		
-		for(int i = 0 ; i < applicationList.size(); i++) {
-			int applicationListStudID = applicationList.get(i).getAppId();
-			if(appId == applicationListStudID) {
-				double applicationListActID = applicationList.get(i).getActivityId();
+		for (int i = 0 ; i < applicationList.size(); i++) {
+			int applicationListStudID = applicationList.get(i).getAppId() ;
+			if (appId == applicationListStudID) {
+				double applicationListActID = applicationList.get(i).getActivityId() ;
 				
-				for(int y = 0; y < activityList.size(); y++) {
-					double activityListActID = activityList.get(y).getActivityID();
-					
-					if(applicationListActID == activityListActID) {
-						String cherID = activityList.get(y).getTeacherID();
+				for (int y = 0; y < activityList.size(); y++) {
+					double activityListActID = activityList.get(y).getActivityID() ;					
+					if (applicationListActID == activityListActID) {
+						String cherID = activityList.get(y).getTeacherID() ;
 						
-						if(userId.equals(cherID)) {
-							applicationList.remove(i);
-							removed = true;
+						if (userId.equals(cherID)) {
+							applicationList.remove(i) ;
+							removed = true ;
 						}
 					}
 				}
 			}
 		}
-		if(removed) {
-			System.out.println("\nApplication has been deleted successfully");
+		if (removed) {
+			System.out.println("\nApplication has been deleted successfully") ;
+		} else {
+			System.out.println("\nPlease enter a proper application ID") ;
 		}
-		else {
-			System.out.println("\nPlease enter a proper application ID");
-		}
-		
 	}
 
 	//Yvonne, doLogin modifier adapted for Junit testing
-	public static AbstractMap.SimpleEntry<Integer, Boolean> doLogin(String userID, String password,Boolean login, int options, int role, ArrayList<Users> userList) {
-		
-
-			//Yvonne
-			for(int i = 0; i<userList.size(); i++) {
-				if(userID.equals(userList.get(i).getID())&&password.equals(userList.get(i).getPassword())) {
-					System.out.println("\nlogin successful");
-					role = userList.get(i).getRoleIndex();
-					login = true;
-					//break;
-				}
+	public static AbstractMap.SimpleEntry<Integer, Boolean> doLogin(String userID, String password, Boolean login, int options, int role, ArrayList<Users> userList) {
+		//Yvonne
+		for (int i = 0; i<userList.size(); i++) {
+			if (userID.equals(userList.get(i).getID())&&password.equals(userList.get(i).getPassword())) {
+				System.out.println("\nlogin successful") ;
+				role = userList.get(i).getRoleIndex() ;
+				login = true ;
+				//break;
 			}
-			if(!login) {
-				options =123;
-				role =0;
-				System.out.println("\nInvalid username or password");
-			}
-			return new AbstractMap.SimpleEntry<>(role,login);
 		}
+		if (!login) {
+			options =123 ;
+			role = 0 ;
+			System.out.println("\nInvalid username or password") ;
+		}
+		return new AbstractMap.SimpleEntry<>(role,login) ;
+	}
 	
 	//Shou kang code
 	public static void showAllStudentInActivity(String userID, double actIdInp, ArrayList<Attendance> attendanceList, ArrayList<Activity> activityList, ArrayList<Users> userList) {
+		System.out.format("\n%-20s %-20s %-20s %-20s", "Attendance ID", "Student ID", "Student Name", "Attendance status") ;
 		
-		System.out.format("\n%-20s %-20s %-20s %-20s", "Attendance ID", "Student ID", "Student Name", "Attendance status");
-		
-		for(int i = 0; i < activityList.size(); i++) {
-			String activityListCherId = activityList.get(i).getTeacherID();
-			double activityListActId = activityList.get(i).getActivityID();
+		for (int i = 0; i < activityList.size(); i++) {
+			String activityListCherId = activityList.get(i).getTeacherID() ;
+			double activityListActId = activityList.get(i).getActivityID() ;
 			
-			if(activityListCherId.equals(userID)) {
-				if(activityListActId == actIdInp) {
-					for(int x = 0; x < attendanceList.size(); x++) {
-						double attendanceListActId = attendanceList.get(x).getActivityId();
-						String attendanceListStudId = attendanceList.get(x).getStudentId();
-						int attendanceId = attendanceList.get(x).getAttendanceId();
-						String status = attendanceList.get(x).getAttended();
+			if (activityListCherId.equals(userID)) {
+				if (activityListActId == actIdInp) {
+					for (int x = 0; x < attendanceList.size(); x++) {
+						double attendanceListActId = attendanceList.get(x).getActivityId() ;
+						String attendanceListStudId = attendanceList.get(x).getStudentId() ;
+						int attendanceId = attendanceList.get(x).getAttendanceId() ;
+						String status = attendanceList.get(x).getAttended() ;
 						
-						if(attendanceListActId == activityListActId) {
-							for(int y = 0; y < userList.size(); y++) {
-								String userListId = userList.get(y) .getID();
-							
-								if(userListId.equals(attendanceListStudId)) {
-									String studentName = userList.get(y).getName();
+						if (attendanceListActId == activityListActId) {
+							for (int y = 0; y < userList.size(); y++) {
+								String userListId = userList.get(y).getID() ;							
+								if (userListId.equals(attendanceListStudId)) {
+									String studentName = userList.get(y).getName() ;
 								
-									System.out.format("\n%-20d %-20s %-20s %-20s\n", attendanceId, userListId, studentName, status);
+									System.out.format("\n%-20d %-20s %-20s %-20s\n", attendanceId, userListId, studentName, status) ;
 								}
 							}
 						}
@@ -1002,44 +902,39 @@ public class C206_CaseStudy {
 			}
 		}
 	}
+	
 	//Marcus and Shou Kang, Mark attendance
-	public static boolean markAttendance(String userID, int attendanceID, double actId,ArrayList<Attendance> attendanceList, ArrayList<Activity> activityList, ArrayList<Users> userList) {
+	public static boolean markAttendance(String userID, int attendanceID, double actId, ArrayList<Attendance> attendanceList, ArrayList<Activity> activityList, ArrayList<Users> userList) {
+		boolean junitIndicator = false ;
+		String studentName = "" ;
+		boolean marked = false ; 
+		boolean markedAlr = false ;
 		
-		boolean junitIndicator = false;
-		String studentName = "";
-		boolean marked = false; 
-		boolean markedAlr = false;
-		for(int i = 0; i < activityList.size(); i++) {
+		for (int i = 0; i < activityList.size(); i++) {			
+			String activityListCherId = activityList.get(i).getTeacherID() ;
+			double activityListActId = activityList.get(i).getActivityID() ;
 			
-			String activityListCherId = activityList.get(i).getTeacherID();
-			double activityListActId = activityList.get(i).getActivityID();
-			
-			if(activityListCherId.equals(userID)) {
-				
-				if(activityListActId == actId) {
-					
-					for(int x = 0; x < attendanceList.size(); x++) {
+			if (activityListCherId.equals(userID)) {
+				if (activityListActId == actId) {					
+					for (int x = 0; x < attendanceList.size(); x++) {						
+						String attendanceListStudId = attendanceList.get(x).getStudentId() ;
+						double attendanceListActId = attendanceList.get(x).getActivityId() ;
+						int attendanceId = attendanceList.get(x).getAttendanceId() ;
+						String status = attendanceList.get(x).getAttended() ;
 						
-						String attendanceListStudId = attendanceList.get(x).getStudentId();
-						double attendanceListActId = attendanceList.get(x).getActivityId();
-						int attendanceId = attendanceList.get(x).getAttendanceId();
-						String status = attendanceList.get(x).getAttended();
-						
-						if(attendanceListActId == activityListActId) {
-							if(attendanceId == attendanceID) {
-								
-								if(status.equalsIgnoreCase("Attended")) {
-									markedAlr = true;
-								}
-								else {
-									attendanceList.get(x).setAttended("Attended");
-									for(int y = 0; y < userList.size(); y++) {
-										String userListId = userList.get(y).getID();
-										if(userListId == attendanceListStudId) {
-											studentName = userList.get(y).getName();
-											marked = true;
-											junitIndicator = true;
-											
+						if (attendanceListActId == activityListActId) {
+							if (attendanceId == attendanceID) {								
+								if (status.equalsIgnoreCase("Attended")) {
+									markedAlr = true ;
+								} else {
+									attendanceList.get(x).setAttended("Attended") ;
+									
+									for (int y = 0; y < userList.size(); y++) {
+										String userListId = userList.get(y).getID() ;
+										if (userListId == attendanceListStudId) {
+											studentName = userList.get(y).getName() ;
+											marked = true ;
+											junitIndicator = true ;											
 										}
 									}
 								}
@@ -1049,41 +944,37 @@ public class C206_CaseStudy {
 				}
 			}
 		}
-		if(markedAlr) {
-			System.out.println("This attendance has already been marked");
+		if (markedAlr) {
+			System.out.println("This attendance has already been marked") ;
+		} else if(marked) {
+			System.out.println("Student " + studentName + " has been marked as present") ;
+		} else {
+			System.out.println("Please enter a valid attendance ID") ;
 		}
-		else if(marked) {
-			System.out.println("Student " + studentName + " has been marked as present");
-		}
-		else {
-			System.out.println("Please enter a valid attendance ID");
-		}
-		
-		return junitIndicator;
+		return junitIndicator ;
 	}
 	
 	//Alex,Edry code
 	public static boolean removeActivity(ArrayList<Activity> activityList, double activityInput) {
 		boolean activityfound = false ;
-		if(activityInput == 0.0) {
+		if (activityInput == 0.0) {
 			activityInput = Helper.readDouble("Enter activity to be deleted > ") ;
 		}
 		for (int i = 0; i< activityList.size(); i++) {
 			if (activityList.get(i).getActivityID()== activityInput) {
 				activityList.remove(i) ;
-				System.out.println("Successfully deleted a with  " + activityInput) ;
+				System.out.println("Successfully deleted a with " + activityInput) ;
 				activityfound = true ;
 			} else {
-				activityfound = false;
+				activityfound = false ;
 			}
 		}
-		return activityfound;
+		return activityfound ;
 	}
 	
-	//Aliyah code
-	public static String viewAttendanceRecord(String userID, ArrayList<Attendance> attendanceList, ArrayList<Users> userList, ArrayList<Activity> activityList) {
-		
-		String jOutput2 = "";
+	//Aliyah code, view attendance record for student
+	public static String viewAttendanceRecord(String userID, ArrayList<Attendance> attendanceList, ArrayList<Users> userList, ArrayList<Activity> activityList) {		
+		String jOutput2 = "" ;
 		System.out.println() ;
 		Helper.line(65, "=") ;
 		System.out.println("==========              ATTENDANCE RECORD              ==========") ;
@@ -1106,20 +997,25 @@ public class C206_CaseStudy {
 					Users u = userList.get(k) ;
 					
 					if (userID.equals(a.getStudentId())) {
-						if ((ac.getActivityID()) == (a.getActivityId())) {
-							String output = String.format("%s %11s", a.getStudentId(), "") ;
-							output += String.format("%-10s %7s", u.getName(), "") ;
-							output += String.format("%-18s %s", ac.getName(), "") ;
-							output += String.format("%-3s", a.getAttended()) ;
-							jOutput2 += output;
-							System.out.println(output) ;
-							break ;
-						}
-						
-					}
+						String studentID = a.getStudentId() ;
+						if (userID.equals(u.getID())) {
+							String studName = u.getName() ;
+							if ((a.getActivityId()) == (ac.getActivityID())) {
+								String activityName = ac.getName() ;
+								
+								String output = String.format("%s %11s", studentID, "") ;
+								output += String.format("%-10s %7s", studName, "") ;
+								output += String.format("%-18s %s", activityName, "") ;
+								output += String.format("%-3s", a.getAttended()) ;
+								jOutput2 += output ;
+								System.out.println(output) ;
+								break ;
+							}	
+						}											
+					}					
 				}				
 			}
 		}
-		return jOutput2;
+		return jOutput2 ;
 	}
 }
