@@ -319,7 +319,7 @@ public class C206_CaseStudy {
 					case 4: //view attendance record code here,Aliyah
 						//<<Insert code here:>>
 						
-						viewAttendanceRecord(userID, attendanceList, userList, activityList) ;
+						String jOuput2 =viewAttendanceRecord(userID, attendanceList, userList, activityList) ;
 						
 						//<<end of code for case 4>>
 						//System.out.print("student4") ;
@@ -1044,7 +1044,10 @@ public class C206_CaseStudy {
 		return activityfound;
 	}
 	
-	public static void viewAttendanceRecord(String userID, ArrayList<Attendance> attendanceList, ArrayList<Users> userList, ArrayList<Activity> activityList) {
+	//Aliyah code
+	public static String viewAttendanceRecord(String userID, ArrayList<Attendance> attendanceList, ArrayList<Users> userList, ArrayList<Activity> activityList) {
+		
+		String jOutput2 = "";
 		System.out.println() ;
 		Helper.line(65, "=") ;
 		System.out.println("==========              ATTENDANCE RECORD              ==========") ;
@@ -1072,7 +1075,7 @@ public class C206_CaseStudy {
 							output += String.format("%-10s %7s", u.getName(), "") ;
 							output += String.format("%-18s %s", ac.getName(), "") ;
 							output += String.format("%-3s", a.getAttended()) ;
-							
+							jOutput2 += output;
 							System.out.println(output) ;
 							break ;
 						}
@@ -1081,5 +1084,6 @@ public class C206_CaseStudy {
 				}				
 			}
 		}
+		return jOutput2;
 	}
 }
