@@ -73,9 +73,9 @@ public class C206_CaseStudyTest {
 		attendance3 = new Attendance(3, "S555", 2.1);
 		
 		applicationList = new ArrayList<Applications>();
-		apply1 = new Applications(1, 01, "S555");
-		apply2 = new Applications(2, 01, "S890");
-		apply3 = new Applications(3, 02, "S555"); //test whether if all can be shown instead of just under one activity ID
+		apply1 = new Applications(1, 1.1, "S555");
+		apply2 = new Applications(2, 1.1, "S890");
+		apply3 = new Applications(3, 2.1, "S555"); //test whether if all can be shown instead of just under one activity ID
 		
 	}
 	
@@ -222,7 +222,7 @@ public class C206_CaseStudyTest {
 	}
 			
 	@Test
-    public void testViewAllUsers() { //Aliyah, Edry, error
+    public void testViewAllUsers() { //Aliyah, Edry, done
         //Test if User List is not null but empty -boundary
         assertNotNull("Test if there is valid User arraylist to retrieve users", userList) ;
               
@@ -323,8 +323,28 @@ public class C206_CaseStudyTest {
 	}
 	
 	@Test
-	public void testViewApplicationStatus() { //Yvonne
+	public void testViewApplicationStatus() { //Yvonne, done
 		assertNotNull("Test if valid attendancelist to add to exist", applicationList);
+		String userID = "T789";
+		activityList.add(Acti1);
+		userList.add(Teacher1);
+		userList.add(Student1);
+		applicationList.add(apply1);
+		
+		//test for teacher's output if correctly displayed.
+		String testOutput = C206_CaseStudy.showApplications4Teach(userID, applicationList, activityList, userList);
+		String output = String.format("%-18d%-15s%-15s %-15s %-15s %-15s\n", 1, 1.1 ,"Football","S555", "Lisa", "pending");
+		
+		assertEquals("Test that activity arrayList size is 1", 1, applicationList.size());
+		assertEquals("Test that the display is correct.",output,testOutput);
+		
+		//test for student's output if correctly displayed
+		String userID2 = "S555";
+		String testOutput2 = C206_CaseStudy.showApplications4Student(userID2, applicationList, activityList, userList);
+		String output2 = String.format("%-18d%-15s%-15s %-15s %-15s %-15s\n", 1, 1.1 ,"Football","S555", "Lisa", "pending");
+		
+		assertEquals("Test that activity arrayList size is 1", 1, applicationList.size());
+		assertEquals("Test that the display is correct.",output2,testOutput2);
 		
 	}
 	

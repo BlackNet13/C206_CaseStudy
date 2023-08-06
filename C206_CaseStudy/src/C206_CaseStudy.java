@@ -252,7 +252,7 @@ public class C206_CaseStudy {
 						break;
 					case 4: //manage student applications code here, Yvonne, done//
 						//<<Insert code here:>>
-						showApplications4Teach(userID, applicationList, activityList, userList);
+						String jOuput5 = showApplications4Teach(userID, applicationList, activityList, userList);
 						
 						int appIdToChg = Helper.readInt("Please enter the application ID to change status > ");
 						chgAppliStatus(userID, appIdToChg,activityList,applicationList,userList,attendanceList);
@@ -264,7 +264,7 @@ public class C206_CaseStudy {
 					case 5: //Remove applications code here, Shou Kang 
 						//<<Insert code here:>>
 
-						showApplications4Teach(userID, applicationList, activityList, userList);
+						jOuput5 = showApplications4Teach(userID, applicationList, activityList, userList);
 						int appIdToRemove = Helper.readInt("Please enter the application ID to remove > ");
 						removeApplication(userID, appIdToRemove, activityList, applicationList);
 						
@@ -320,7 +320,7 @@ public class C206_CaseStudy {
 					case 3: //view application status code here,Yvonne, done//
 						//<<Insert code here:>>
 						
-						showApplications4Student(userID, applicationList, activityList, userList);
+						String jOutput6 = showApplications4Student(userID, applicationList, activityList, userList);
 						
 						//<<end of code for case 3>>
  						//System.out.print("student3");
@@ -757,7 +757,7 @@ public class C206_CaseStudy {
 	}
 
 	//Shou kang code, shows all applications under the teacher//
-	public static void showApplications4Teach(String userId, ArrayList<Applications> applicationList, ArrayList<Activity> activityList, ArrayList<Users> userList) {
+	public static String showApplications4Teach(String userId, ArrayList<Applications> applicationList, ArrayList<Activity> activityList, ArrayList<Users> userList) {
 		String studentID = "";
 		String teacherID = "";
 		String userListID = "";
@@ -766,6 +766,7 @@ public class C206_CaseStudy {
 		int applicationID = 0;
 		double activityListActID = 0;
 		double applicationListActID = 0;
+		String jOutput4 = "";
 		
 		System.out.println(String.format("\n******Student Applications******\n\n%-18s%-15s%-15s%-15s%-17s%-10s","Application ID","Activity ID","Activity Name","Student ID","Student Name","Status"));
 		System.out.println(String.format("%-18s%-15s%-15s%-15s%-17s%-15s","--------------","-------------","-------------","----------","------------","------"));
@@ -789,17 +790,21 @@ public class C206_CaseStudy {
 							userListID = userList.get(x).getID();
 							if(userListID.equals(studentID)) {
 								studentName = userList.get(x).getName();
-								System.out.format("%-18d%-15s%-15s %-15s %-15s %-15s\n", applicationID, activityListActID ,activityListName,studentID, studentName, status);
+								jOutput4 += String.format("%-18d%-15s%-15s %-15s %-15s %-15s\n", applicationID, activityListActID ,activityListName,studentID, studentName, status);
+								
 							}
+							
 						}
+						System.out.println(jOutput4);
 					}
 				}
 			}
 		}
+		return jOutput4;
 	}
 	
 	//Yvonne, student's view of all application
-	public static void showApplications4Student(String userID, ArrayList<Applications> applicationList, ArrayList<Activity> activityList, ArrayList<Users> userList) {
+	public static String showApplications4Student(String userID, ArrayList<Applications> applicationList, ArrayList<Activity> activityList, ArrayList<Users> userList) {
 		
 		String studentID = "";
 		String userListID = "";
@@ -808,6 +813,7 @@ public class C206_CaseStudy {
 		int applicationID = 0;
 		double activityListActID = 0;
 		double applicationListActID = 0;
+		String jOutput5 ="";
 		
 		String studName = "";
 		for(int i = 0; i<userList.size(); i++ ) {
@@ -837,13 +843,15 @@ public class C206_CaseStudy {
 							userListID = userList.get(x).getID();
 							if(userListID.equals(studentID)) {
 								studentName = userList.get(x).getName();
-								System.out.format("%-18d%-15s%-15s %-15s %-15s %-15s\n", applicationID, activityListActID ,activityListName,studentID, studentName, status);
+								jOutput5 += String.format("%-18d%-15s%-15s %-15s %-15s %-15s\n", applicationID, activityListActID ,activityListName,studentID, studentName, status);
 							}
 						}
+						System.out.println(jOutput5);
 					}
 				}
 			}
 		}
+		return jOutput5;
 	}
 	
 	//Yvonne, change the application status under manage applications
