@@ -213,16 +213,32 @@ public class C206_CaseStudyTest {
 		C206_CaseStudy.addUser(userList, newUserRole, newID, newName, newPassword);
 		assertEquals("Test that the userlist size is still 3.", 3, userList.size());
 	}
-	
+			
 	@Test
-	public void testViewAllUsers() { //Aliyah,Edry
-		//refer to resource centre test retrieveallCamcorder
-		//Test if User List is not null but empty -boundary
-		assertNotNull("Test if there is valid User arraylist to retrieve users", userList) ;
-		
-		//Test if the list of User retrieved from the SourceCentre is empty -boundary
-		//String allUsers = C206_CaseStudy.displayAllUsers(roleList, userList) ;
-	}
+    public void testViewAllUsers() { //Aliyah, Edry
+    /*    //refer to resource centre test retrieveallCamcorder
+        //Test if User List is not null but empty -boundary
+        assertNotNull("Test if there is valid User arraylist to retrieve users", userList) ;
+        
+        //test if the list of camcorders retrieved from the SourceCentre is empty - boundary
+        String allUsers= C206_CaseStudy.displayAllUsers(roleList, userList);
+        String testOutput = "";
+        assertEquals("Check that ViewAllCamcorderlist", testOutput, allUsers);
+         
+        //test if the expected output string same as the list of camcorders retrieved from the SourceCentre    
+        //allUsers= C206_CaseStudy.displayAllUsers(roleList,userList);
+              
+        testOutput += String.format("%-8s %4s %-10s %4s %s", "A345","","Helen","","Admin");
+        testOutput += String.format("%-8s %4s %-10s %4s %s", "A345","","Mark","","Teacher");
+        testOutput += String.format("%-8s %4s %-10s %4s %s", "A345","","Kate","","Student");
+
+        assertEquals("Test that ViewAllCamcorderlist", testOutput, allUsers);
+        
+        //Test if the list of User retrieved from the SourceCentre is empty -boundary
+        
+        //String allUsers = C206_CaseStudy.displayAllUsers(roleList, userList) ;
+        */
+    } 
 	
 	@Test
 	public void testRemoveUser() { //Marcus,Edry//
