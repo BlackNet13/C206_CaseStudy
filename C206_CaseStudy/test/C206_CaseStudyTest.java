@@ -222,7 +222,7 @@ public class C206_CaseStudyTest {
 	}
 			
 	@Test
-    public void testViewAllUsers() { //Aliyah, Edry
+    public void testViewAllUsers() { //Aliyah, Edry, error
         //Test if User List is not null but empty -boundary
         assertNotNull("Test if there is valid User arraylist to retrieve users", userList) ;
               
@@ -260,7 +260,7 @@ public class C206_CaseStudyTest {
 	
 	
 	@Test
-	public void testViewAllActivities() { //Alex, Edry
+	public void testViewAllActivities() { //Alex, Edry, error
 		assertNotNull("Test if there is valid Activity arrayList to retrieve activities", activityList);
 		activityList.add(Acti1);
 		activityList.add(Acti2); 
@@ -293,7 +293,7 @@ public class C206_CaseStudyTest {
 	}
 	
 	@Test
-	public void testMarkAttendance() { //Yvonne
+	public void testMarkAttendance() { //Yvonne, done
 		assertNotNull("Test if valid attendancelist to add to exist", attendanceList);
 		String userID = Teacher1.getID();
 		activityList.add(Acti1);
@@ -322,7 +322,7 @@ public class C206_CaseStudyTest {
 	}
 	
 	@Test
-	public void testViewAttendance() { //Yvonne
+	public void testViewAttendance() { //Yvonne, done
 		assertNotNull("Test if valid attendanceList exist", attendanceList);
 		
 		activityList.add(Acti1);
