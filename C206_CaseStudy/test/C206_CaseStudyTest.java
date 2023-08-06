@@ -259,24 +259,26 @@ public class C206_CaseStudyTest {
 	}
 	
 	
-	/*@Test
+	@Test
 	public void testViewAllActivities() { //Alex, Edry
-		//refer to resource centre test retrieveallCamcorder but might be more complex
-		assertNotNull("Test if thereius valid Activity arrayList to retreive activities", activityList);
-		assertNotEquals("Test that the Activity arrayList is not empty,",0,activityList.size());
-		assertEquals("Test that activity arraylist size is 4", 4, activityList.size());
-		String output = String.format("%-12s %4s", 1.1, "") ;
-		output += String.format("%-20s %4s", "sports", "") ;
-		output += String.format("%-15s %4s", "Football", "") ;
-		output += String.format("%-8s %4s", 25, "") ;
-		output += String.format("%-7s %4s", "Open", "") ;
-		output += String.format("%-10s %4s", "T897", "") ;
-		output += String.format("%-13s %4s", "01/08/2023", "") ;
-		output += String.format("%s", "15:00-17:00") ;
-		//assertEquals("Test that the display is correct.",output,C206_CaseStudy.showAllActivities(activityList));
-		//String allActivities = C206_CaseStudy.showAllActivities(activityList);
 		
-	}*/
+		/*//String allActivities = C206_CaseStudy.showAllActivities(activityList);
+		//refer to resource centre test retrieveallCamcorder but might be more complex
+		assertNotNull("Test if there is valid Activity arrayList to retrieve activities", activityList);
+		assertNotEquals("Test that the Activity arrayList is not empty,",0,activityList.size());
+		assertEquals("Test that activity arrayList size is 4", 4, activityList.size());
+		
+		String testCase = C206_CaseStudy.showAllActivities(activityList);
+		
+		String output = "";
+		
+		output += String.format("%-12s %4s %-20s %4s %-15s %4s %-8s %4s %-7s %4s %-10s %4s %-13s %4s %s, 1.1", "","Football", "",  "sports", "" , 25, "", "Open", "","01/08/2023", "" ,"15:00-17:00","","T897");
+		output += String.format("%-12s %4s %-20s %4s %-15s %4s %-8s %4s %-7s %4s %-10s %4s %-13s %4s %s, 1.2", "","Football", "",  "sports", "" , 25, "", "Open", "",  "02/08/2023", "" ,"14:00-16:00","","T897");
+		output += String.format("%-12s %4s %-20s %4s %-15s %4s %-8s %4s %-7s %4s %-10s %4s %-13s %4s %s, 2.1", "","NCC Sea", "",  "uniformGroup", "" , 60, "", "Open", "","15/08/2023", "" ,"14:00-17:00","","T567");
+		output += String.format("%-12s %4s %-20s %4s %-15s %4s %-8s %4s %-7s %4s %-10s %4s %-13s %4s %s, 3.1", "","Chinese Orchestra", "",  "performanceArts", "",  45, "", "Close",  "","16/07/2023", "" ,"15:00-18:00","","T567");
+		assertEquals("Test that the display is correct.",output,);
+		//String allActivities = C206_CaseStudy.showAllActivities(activityList); */
+	}
 	
 	@Test
 	public void testViewApplicationStatus() { //Yvonne
