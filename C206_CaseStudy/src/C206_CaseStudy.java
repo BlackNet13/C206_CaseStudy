@@ -1028,6 +1028,7 @@ public class C206_CaseStudy {
 		return jOutput2 ;
 	}
 	
+	//Shou Kang code
 	public static void removeAttendance(String userID, int atId, double actId,ArrayList<Attendance> attendanceList, ArrayList<Activity> activityList) {
 		boolean found = false;
 		for(int i = 0; i < activityList.size(); i++) {
@@ -1052,17 +1053,12 @@ public class C206_CaseStudy {
 									attendanceList.get(y).setAttended("Not Attended");
 									System.out.println("Attendance has been marked as not attended");
 									found = true;
-								}
-							
+								}							
 							}
-						}
-					
-					}
-			
+						}					
+					}			
 				}
 			}
-			
-
 		}
 		if(!found) {
 			System.out.println("Please enter a valid attendance ID");
