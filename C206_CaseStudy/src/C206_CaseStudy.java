@@ -477,7 +477,7 @@ public class C206_CaseStudy {
 			break ;
 			
 		case 3:
-			regex = "[S][0-9]+ ";
+			regex = "[S][0-9]+";
 			break ;
 			
 		default:	
@@ -495,6 +495,8 @@ public class C206_CaseStudy {
 			newUserRole = Helper.readInt("Enter new user role > ") ;
 		}
 		String regex = regexReturn(newUserRole) ;
+		
+		System.out.println(regex);
 		
 		if (!regex.equals("")) {
 			if (newID.equals("-")) {
