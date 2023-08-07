@@ -264,6 +264,14 @@ public class C206_CaseStudy {
 						//<<Insert code here:>>
 						// it says delete but what we want to do here is just set it back to not attended, so if the status of the attendance is
 						//already not attended , we will just show a message that says attendance have not been marked as attended instead
+						
+						showOwnActivties(userID, activityList) ;
+						
+						activityID = Helper.readDouble("Enter activity code > ") ;
+						showAllStudentInActivity(userID, activityID, attendanceList, activityList, userList) ;
+						
+						attendanceId = Helper.readInt("Enter attendance id > ") ;
+						removeAttendance(userID, attendanceId, activityID, attendanceList, activityList) ;
 												
 						//<<end of code for case 7>>
 						System.out.print("teach7") ;
@@ -1017,5 +1025,46 @@ public class C206_CaseStudy {
 			}
 		}
 		return jOutput2 ;
+	}
+	
+	public static void removeAttendance(String userID, int atId, double actId,ArrayList<Attendance> attendanceList, ArrayList<Activity> activityList) {
+		boolean found = false;
+		for(int i = 0; i < activityList.size(); i++) {
+			double activityListActId = activityList.get(i).getActivityID();
+			String activityListCherId = activityList.get(i).getTeacherID();
+			
+			if(actId == activityListActId) {
+				for(int y = 0; y < attendanceList.size(); y++) {
+					double attendanceListActId = attendanceList.get(y).getActivityId();
+					int attendanceId = attendanceList.get(y).getAttendanceId();
+					String status = attendanceList.get(y).getAttended();
+				
+					if(attendanceListActId == activityListActId) {
+						if(attendanceId == atId) {
+							if(userID.equals(activityListCherId)) {
+							
+								if(status.equalsIgnoreCase("Not Attended")) {
+									System.out.println("Attendance has not been marked as attended");
+									found = true;
+								}
+								else {
+									attendanceList.get(y).setAttended("Not Attended");
+									System.out.println("Attendance has been marked as not attended");
+									found = true;
+								}
+							
+							}
+						}
+					
+					}
+			
+				}
+			}
+			
+
+		}
+		if(!found) {
+			System.out.println("Please enter a valid attendance ID");
+		}
 	}
 }
