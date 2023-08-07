@@ -350,6 +350,10 @@ public class C206_CaseStudyTest {
 	
 	@Test
 	public void testAcceptApplication() { //marcus, Shou Kang
+		/*assertNotNull("Test if there is a valid application arraylist", applicationList);
+		C206_CaseStudy.chgAppliStatus("S555", 3, activityList, applicationList, userList, attendanceList);
+		String status = applicationList.get(2).getStatus();
+		assertEquals("Test if the application is approved","Approved", status);*/
 		
 	}
 	
