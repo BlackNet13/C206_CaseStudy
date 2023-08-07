@@ -749,7 +749,8 @@ public class C206_CaseStudy {
 				studName = userList.get(i).getName() ;
 			}
 		}		
-		System.out.println(String.format("\n******"+ studName +"'s Activity Applications******\n\n%-18s%-15s%-15s%-15s%-17s%-10s", "Application ID", "Activity ID", "Activity Name", "Student ID", "Student Name", "Status")) ;
+		System.out.println(String.format("\n******"+ studName +"'s Activity Applications******\n\n%-18s%-15s%-15s%-15s%-17s%-10s", "Application ID", "Activity ID", 
+				"Activity Name", "Student ID", "Student Name", "Status")) ;
 		System.out.println(String.format("%-18s%-15s%-15s%-15s%-17s%-15s", "--------------", "-------------", "-------------", "----------", "------------", "------")) ;
 		
 		for (int i = 0; i < applicationList.size(); i++) {			
