@@ -355,7 +355,13 @@ public class C206_CaseStudyTest {
 	
 	@Test
 	public void testRejectApplication() { //Aliyah
+		/*assertNotNull("Test if valid applicationList exist", applicationList) ;
 		
+		String userID = "T567" ;
+		int applicID = apply1.getAppId() ;
+		
+		String test = C206_CaseStudy.chgAppliStatus(userID, applicID, activityList, applicationList, userList, attendanceList) ;
+		assertEquals("Rejected", test); */
 	}
 	
 	@Test
