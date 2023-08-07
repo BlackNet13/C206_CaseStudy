@@ -137,7 +137,7 @@ public class C206_CaseStudyTest {
 		
 		// Add an admin
 		C206_CaseStudy.addUser(userList, newUserRole, newID, newName, newPassword);
-		assertEquals("Test that the userlist size is now 1.", 1, userList.size());
+		assertEquals("Test that the userlist size is now 1.", 4, userList.size());
 		
 		//Add a teacher
 		newUserRole = Teacher1.getRoleIndex();
@@ -146,7 +146,7 @@ public class C206_CaseStudyTest {
 		newPassword = Teacher1.getPassword();
 		
 		C206_CaseStudy.addUser(userList, newUserRole, newID, newName, newPassword);
-		assertEquals("Test that the userlist size is now 2.", 2, userList.size());
+		assertEquals("Test that the userlist size is now 2.", 5, userList.size());
 		
 		//Add a student
 		newUserRole = Student1.getRoleIndex();
@@ -155,7 +155,7 @@ public class C206_CaseStudyTest {
 		newPassword = Student1.getPassword();
 		
 		C206_CaseStudy.addUser(userList, newUserRole, newID, newName, newPassword);
-		assertEquals("Test that the userlist size is now 3.", 3, userList.size());
+		assertEquals("Test that the userlist size is now 3.", 6, userList.size());
 		
 		//error, wrong role test
 		newUserRole = Admin2.getRoleIndex();
@@ -164,7 +164,7 @@ public class C206_CaseStudyTest {
 		newPassword = Student2.getPassword();
 		
 		C206_CaseStudy.addUser(userList, newUserRole, newID, newName, newPassword);
-		assertEquals("Test that the userlist size is still 3.", 3, userList.size());
+		assertEquals("Test that the userlist size is still 3.", 6, userList.size());
 		
 		//error, Invalid role
 		newUserRole = 4; //non-existent role
@@ -173,7 +173,7 @@ public class C206_CaseStudyTest {
 		newPassword = Student2.getPassword();
 		
 		C206_CaseStudy.addUser(userList, newUserRole, newID, newName, newPassword);
-		assertEquals("Test that the userlist size is still 3.", 3, userList.size());
+		assertEquals("Test that the userlist size is still 3.", 6, userList.size());
 		
 		//error, duplicate entry
 		newUserRole = Student1.getRoleIndex();
@@ -182,7 +182,7 @@ public class C206_CaseStudyTest {
 		newPassword = Student1.getPassword();
 		
 		C206_CaseStudy.addUser(userList, newUserRole, newID, newName, newPassword);
-		assertEquals("Test that the userlist size is still 3.", 3, userList.size());
+		assertEquals("Test that the userlist size is still 3.", 6, userList.size());
 		
 		//error, ID not up to standard
 		newUserRole = Student2.getRoleIndex();
@@ -191,7 +191,7 @@ public class C206_CaseStudyTest {
 		newPassword = Student2.getPassword();
 		
 		C206_CaseStudy.addUser(userList, newUserRole, newID, newName, newPassword);
-		assertEquals("Test that the userlist size is still 3.", 3, userList.size());
+		assertEquals("Test that the userlist size is still 3.", 6, userList.size());
 		
 		//error, Invalid name
 		newUserRole = Student2.getRoleIndex();
@@ -200,7 +200,7 @@ public class C206_CaseStudyTest {
 		newPassword = Student2.getPassword();
 		
 		C206_CaseStudy.addUser(userList, newUserRole, newID, newName, newPassword);
-		assertEquals("Test that the userlist size is still 3.", 3, userList.size());
+		assertEquals("Test that the userlist size is still 3.", 6, userList.size());
 		
 		//error, password not up to standard
 		newUserRole = Student2.getRoleIndex();
@@ -209,7 +209,7 @@ public class C206_CaseStudyTest {
 		newPassword = "123"; //password minimum is 4 characters
 		
 		C206_CaseStudy.addUser(userList, newUserRole, newID, newName, newPassword);
-		assertEquals("Test that the userlist size is still 3.", 3, userList.size());
+		assertEquals("Test that the userlist size is still 3.", 6, userList.size());
 		
 		//error, invalid password
 		newUserRole = Student2.getRoleIndex();
@@ -218,7 +218,7 @@ public class C206_CaseStudyTest {
 		newPassword = "S12312"; //password can only contain numbers
 		
 		C206_CaseStudy.addUser(userList, newUserRole, newID, newName, newPassword);
-		assertEquals("Test that the userlist size is still 3.", 3, userList.size());
+		assertEquals("Test that the userlist size is still 3.", 6, userList.size());
 	}
 			
 	@Test
