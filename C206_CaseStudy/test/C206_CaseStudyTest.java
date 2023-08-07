@@ -367,14 +367,20 @@ public class C206_CaseStudyTest {
 	}
 	
 	@Test
-	public void testRejectApplication() { //Aliyah
-		/*assertNotNull("Test if valid applicationList exist", applicationList) ;
+	public void testRejectApplication() { //Aliyah, done
+		assertNotNull("Test if valid applicationList exist", applicationList) ;
 		
-		String userID = "T567" ;
-		int applicID = apply1.getAppId() ;
+		activityList.add(Acti1);
+		userList.add(Teacher1);
+		userList.add(Student1);
+		attendanceList.add(attendance1);
+		applicationList.add(apply1);
+		String userID = Teacher1.getID();
+		int appliID = apply1.getAppId();
 		
-		String test = C206_CaseStudy.chgAppliStatus(userID, applicID, activityList, applicationList, userList, attendanceList) ;
-		assertEquals("Rejected", test); */
+		C206_CaseStudy.chgAppliStatus(userID, appliID, activityList, applicationList, userList, attendanceList,"N") ;
+		String status = apply1.getStatus();
+		assertEquals("Rejected", status); 
 	}
 	
 	@Test
