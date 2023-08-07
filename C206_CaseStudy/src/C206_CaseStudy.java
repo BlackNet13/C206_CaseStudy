@@ -496,8 +496,6 @@ public class C206_CaseStudy {
 		}
 		String regex = regexReturn(newUserRole) ;
 		
-		System.out.println(regex);
-		
 		if (!regex.equals("")) {
 			if (newID.equals("-")) {
 				newID = Helper.readString("Enter new users id > ") ;
