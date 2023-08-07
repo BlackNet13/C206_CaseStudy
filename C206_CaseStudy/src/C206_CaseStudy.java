@@ -240,7 +240,7 @@ public class C206_CaseStudy {
 						//System.out.print("teach4");
 						break ;
 						
-					case 5: //Remove applications code here, Shou Kang 
+					case 5: //Remove applications code here, Shou Kang done//
 						//<<Insert code here:>>
 						jOuput5 = showApplications4Teach(userID, applicationList, activityList, userList) ;
 						int appIdToRemove = Helper.readInt("Please enter the application ID to remove > ") ;
