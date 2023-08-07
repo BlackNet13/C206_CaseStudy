@@ -349,7 +349,7 @@ public class C206_CaseStudyTest {
 	}
 	
 	@Test
-	public void testAcceptApplication() { //marcus, Shou Kang, done
+	public void testAcceptApplication() { //marcus, Shou Kang, done//
 		assertNotNull("Test if there is a valid application arraylist", applicationList);
 		
 		activityList.add(Acti1);
