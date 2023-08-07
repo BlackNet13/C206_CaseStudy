@@ -142,7 +142,8 @@ public class C206_CaseStudy {
 				double newDID = 0.0 ;
 				int newMaxPax = 0 ;
 				String newDate = "" ;
-				String newTimeSlot = "" ;				
+				String newTimeSlot = "" ;	
+				String statusChg = "";
 		
 		while (options != -9) {			
 			if (login == false) {
@@ -235,7 +236,7 @@ public class C206_CaseStudy {
 						String jOuput5 = showApplications4Teach(userID, applicationList, activityList, userList) ;
 						
 						int appIdToChg = Helper.readInt("Please enter the application ID to change status > ") ;
-						chgAppliStatus(userID, appIdToChg, activityList, applicationList, userList, attendanceList) ;												
+						chgAppliStatus(userID, appIdToChg, activityList, applicationList, userList, attendanceList, statusChg) ;												
 						//<<end of code for case 4>>
 						//System.out.print("teach4");
 						break ;
@@ -780,7 +781,8 @@ public class C206_CaseStudy {
 	}
 	
 	//Yvonne, change the application status under manage applications
-	public static void chgAppliStatus(String userId, int appId, ArrayList<Activity> activityList, ArrayList<Applications> applicationList, ArrayList<Users> userList, ArrayList<Attendance> attendanceList) {		
+	public static void chgAppliStatus(String userId, int appId, ArrayList<Activity> activityList, ArrayList<Applications> applicationList, ArrayList<Users> userList, ArrayList<Attendance> attendanceList, String statusChg) {		
+		
 		for (int i = 0 ; i < applicationList.size(); i++) {
 			int applicationListStudID = applicationList.get(i).getAppId() ;
 			if (appId == applicationListStudID) {
@@ -795,9 +797,12 @@ public class C206_CaseStudy {
 						String name = "" ;
 						if (userId.equals(cherID)) {
 							while (taskComplete == false ) {
-								String statusChg = Helper.readString("Approve Application? (Y/N) or enter C to cancel").toUpperCase() ;
+								if(statusChg=="") {
+									statusChg = Helper.readString("Approve Application? (Y/N) or enter C to cancel").toUpperCase() ;
+								}
 								if (statusChg.equals("Y")) {
 									applicationList.get(i).setStatus("Approved") ;
+									
 									String stuID = applicationList.get(i).getStudentId() ;
 
 									for (int a = 0; a<userList.size(); a++) {
@@ -811,6 +816,7 @@ public class C206_CaseStudy {
 									taskComplete = true ;									
 								} else if (statusChg.equals("N")) {
 									applicationList.get(i).setStatus("Rejected") ;
+						
 									String stuID = applicationList.get(i).getStudentId() ;
 										
 									for (int a = 0; a<userList.size(); a++) {

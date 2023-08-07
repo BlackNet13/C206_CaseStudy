@@ -349,11 +349,20 @@ public class C206_CaseStudyTest {
 	}
 	
 	@Test
-	public void testAcceptApplication() { //marcus, Shou Kang
-		/*assertNotNull("Test if there is a valid application arraylist", applicationList);
-		C206_CaseStudy.chgAppliStatus("S555", 3, activityList, applicationList, userList, attendanceList);
-		String status = applicationList.get(2).getStatus();
-		assertEquals("Test if the application is approved","Approved", status);*/
+	public void testAcceptApplication() { //marcus, Shou Kang, done
+		assertNotNull("Test if there is a valid application arraylist", applicationList);
+		
+		activityList.add(Acti1);
+		userList.add(Teacher1);
+		userList.add(Student1);
+		attendanceList.add(attendance1);
+		applicationList.add(apply1);
+		String userID = Teacher1.getID();
+		int appliID = apply1.getAppId();
+		
+		C206_CaseStudy.chgAppliStatus(userID, appliID , activityList, applicationList, userList, attendanceList, "Y");
+		String status = apply1.getStatus();
+		assertEquals("Test if the application is approved","Approved",status);
 		
 	}
 	
