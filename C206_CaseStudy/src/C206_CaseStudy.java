@@ -241,7 +241,7 @@ public class C206_CaseStudy {
 						//System.out.print("teach4");
 						break ;
 						
-					case 5: //Remove applications code here, Shou Kang 
+					case 5: //Remove applications code here, Shou Kang done-//
 						//<<Insert code here:>>
 						jOuput5 = showApplications4Teach(userID, applicationList, activityList, userList) ;
 						int appIdToRemove = Helper.readInt("Please enter the application ID to remove > ") ;
@@ -1034,6 +1034,7 @@ public class C206_CaseStudy {
 		return jOutput2 ;
 	}
 	
+	//Shou Kang code
 	public static void removeAttendance(String userID, int atId, double actId,ArrayList<Attendance> attendanceList, ArrayList<Activity> activityList) {
 		boolean found = false;
 		for(int i = 0; i < activityList.size(); i++) {
@@ -1058,17 +1059,12 @@ public class C206_CaseStudy {
 									attendanceList.get(y).setAttended("Not Attended");
 									System.out.println("Attendance has been marked as not attended");
 									found = true;
-								}
-							
+								}							
 							}
-						}
-					
-					}
-			
+						}					
+					}			
 				}
 			}
-			
-
 		}
 		if(!found) {
 			System.out.println("Please enter a valid attendance ID");
