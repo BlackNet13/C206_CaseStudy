@@ -289,7 +289,7 @@ public class C206_CaseStudy {
 						//<<Insert code here:>>						
 						String jOutput3 = showAllActivities(activityList) ;						
 						//<<end of code for case 1>>
-						System.out.print("student1") ;
+						//System.out.print("student1") ;
 						break ;
 						
 					case 2: //apply for activities code here,Yvonne, done//
