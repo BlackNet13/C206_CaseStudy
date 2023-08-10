@@ -5,7 +5,7 @@ public class C206_CaseStudy {
 	public static void main(String[] args) {
 		
 		/*flow:
-		 * 1.login -> show different menu choices
+		 * 1.login -> show different menu choices//
 		 * 
 		 * 1.1: admin: 
 		 * -view all user list(1st sprint)
