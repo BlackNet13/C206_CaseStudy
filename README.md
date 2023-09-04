@@ -90,6 +90,18 @@ The features we needed to implement in sprint 1 includes:<br>
     <td>Student Menu</td>
   </tr>
 </table>
+<table>
+  <tr>
+    <td>
+      <img src="https://github.com/BlackNet13/C206_CaseStudy/assets/123053395/61662d72-1545-4834-a162-afbc146768f0" height ="200"/>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Burn Down Chart
+    </td>
+  </tr>
+</table>
 
 
 ## 🛠 Skills/Tools
