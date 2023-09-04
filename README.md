@@ -17,6 +17,8 @@ Below you can see the details for this project.
 #### Create a system on eclipse that allows 3 different type of users to perform functions relating to CCA activity registration.
 We were provided a project description for this and have to ensure our app has CRUD functionality except for update which was written in documentation as the PBI for sprint2.
 
+<hr>
+
 ## Features
 The features we needed to implement in sprint 1 includes:<br>
 (Role: Admin)<br>
@@ -41,6 +43,7 @@ The features we needed to implement in sprint 1 includes:<br>
 · View all registrations / View all approval status<br> 
 · View all attendance<br><br>
 
+<hr>
 
 ## Screenshots
 
