@@ -67,7 +67,6 @@ The features we needed to implement in sprint 1 includes:<br>
 </td>
     <td>
       <img src="https://github.com/BlackNet13/C206_CaseStudy/assets/123053395/11b8f31a-8aa0-4f0a-9cd2-0e2b485faea4" height ="150"/>
-
     </td>
     </tr>
   <tr>
