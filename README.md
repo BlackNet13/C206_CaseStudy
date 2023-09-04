@@ -78,11 +78,11 @@ The features we needed to implement in sprint 1 includes:<br>
 <table>
   <tr>
     <td>
-  <img src="https://github.com/BlackNet13/C206_CaseStudy/assets/123053395/95418802-9e1c-4f0a-8f8c-818617b984d9" height ="150"/>
+  <img src="https://github.com/BlackNet13/C206_CaseStudy/assets/123053395/95418802-9e1c-4f0a-8f8c-818617b984d9" height ="200"/>
 
 </td>
     <td>
-      <img src="https://github.com/BlackNet13/C206_CaseStudy/assets/123053395/d0b05b04-da5f-4fa8-ae60-4e88a8d3aaae" height ="150"/>
+      <img src="https://github.com/BlackNet13/C206_CaseStudy/assets/123053395/d0b05b04-da5f-4fa8-ae60-4e88a8d3aaae" height ="200"/>
     </td>
     </tr>
   <tr>
