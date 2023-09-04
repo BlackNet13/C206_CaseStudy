@@ -1,7 +1,7 @@
 # CCA Registration System
 As you can see from the title of this repository this is one of the school projects I and my team had to work on, this project is suppose to emulate an agile project up to the end of sprint 1.
 
-##Project Collaborators(including myself)
+## Project Collaborators(including myself)
 - [@BlackNet13](https://github.com/BlackNet13) (scrum master)
 - [@ShouKang49](https://github.com/ShouKang49) (team member)
 - [@AliyahSum](https://github.com/AliyahSum) (team member)
