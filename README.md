@@ -98,5 +98,5 @@ Java, Eclipse, Github for version control, project cloning and merging.
 ## Lessons Learned
 - It was a good idea to establish the flow of the system before beginning a group project, I implemented it through the code itself so that members could see it the first thing they get into the main code body.
 - Discord pinning function works very well to keep our shared files for documentation always available for any team member to access them when needed.
-- Some merge errors when working as a team are better fixed when in person as the error consist of merge being undone or overwriten by some of the undesired code, I believe the difficulty was due to this being our first ever agile project.
+- Some merge errors when working as a team are better fixed when in person as the error consist of code being undone or overwriten by some of the undesired code, I believe the difficulty was due to this being our first ever agile project.
 - Junit was tough as when we first implemented the main code, the code was built more for user input and thus when doing up the junit we had to modify the code so that it have a workaround that can work with both the user input and the junit itself.
