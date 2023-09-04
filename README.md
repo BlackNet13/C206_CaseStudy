@@ -11,6 +11,8 @@ As you can see from the title of this repository this is one of the school proje
 
 Below you can see the details for this project.
 
+<hr>
+
 ### Task
 #### Create a system on eclipse that allows 3 different type of users perform functions relating to CCA activity registration.
 We were provided a project description for this and have to ensure our app has CRUD functionality except for update which was written in documentation as the PBI for sprint2.
