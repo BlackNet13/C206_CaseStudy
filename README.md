@@ -15,7 +15,18 @@ Below you can see the details for this project.
 
 ## Task
 #### Create a system on eclipse that allows 3 different type of users to perform functions relating to CCA activity registration.
-We were provided a project description for this and have to ensure our app has CRUD functionality except for update which was written in documentation as the PBI for sprint2.
+We were provided a project description for this and have to ensure our app has CRUD functionality except for update which was written in documentation as the PBI for sprint 2 We are also expected to produce the relevant burndown chart, use case diagram, user stories and documentation required in an agile project.
+
+<table>
+  <tr>
+    <td>
+       <img src="https://github.com/BlackNet13/C206_CaseStudy/assets/123053395/538168e2-9002-4caf-8221-e16efdef94bd" height ="500"/>
+    </td>
+  </tr>
+  <tr>
+    <td>Use Case Diagram</td>
+  </tr>
+</table>
 
 <hr>
 
@@ -56,7 +67,7 @@ The features we needed to implement in sprint 1 includes:<br>
 </td>
     </tr>
   <tr>
-    <td>sample text</td>   
+    <td>Login</td>   
   </tr>
 </table>
 
