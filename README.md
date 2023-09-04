@@ -13,33 +13,33 @@ Below you can see the details for this project.
 
 <hr>
 
-### Task
-#### Create a system on eclipse that allows 3 different type of users perform functions relating to CCA activity registration.
+## Task
+#### Create a system on eclipse that allows 3 different type of users to perform functions relating to CCA activity registration.
 We were provided a project description for this and have to ensure our app has CRUD functionality except for update which was written in documentation as the PBI for sprint2.
 
 ## Features
-The features we needed to implement in sprint 1 includes:
-(Role: Admin)
-· Add a new user.
-· View all users.
-· Delete an existing user.
+The features we needed to implement in sprint 1 includes:<br>
+(Role: Admin)<br>
+· Add a new user<br>
+· View all users<br>
+· Delete an existing user<br><br>
 
-(Role: Teacher)
-· Add a new activity / Add a new time slot
-· View all activities / View all time slots
-· Delete an existing activity / Delete an existing time slot
-· View all registrations / View all approval status
-· Add a new approval status
-· Delete an existing registration / Delete an existing approval status
-· Add a new attendance.
-· View all attendance.
-· Delete an existing attendance
+(Role: Teacher)<br>
+· Add a new activity / Add a new time slot<br>
+· View all activities / View all time slots<br>
+· Delete an existing activity / Delete an existing time slot<br>
+· View all registrations / View all approval status<br>
+· Add a new approval status<br>
+· Delete an existing registration / Delete an existing approval status<br>
+· Add a new attendance<br>
+· View all attendance<br>
+· Delete an existing attendance<br><br>
 
-(Role: Student)
-· Add a new registration.
-· View all activities / View all time slots
-· View all registrations / View all approval status. 
-· View all attendance.
+(Role: Student)<br>
+· Add a new registration<br>
+· View all activities / View all time slots<br>
+· View all registrations / View all approval status<br> 
+· View all attendance<br><br>
 
 
 ## Screenshots
