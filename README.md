@@ -15,7 +15,7 @@ Below you can see the details for this project.
 
 ## Task
 #### Create a system on eclipse that allows 3 different type of users to perform functions relating to CCA activity registration.
-We were provided a project description for this and have to ensure our system has CRUD functionality except for update which was written in documentation as the PBI for sprint 2 We are also expected to produce the relevant burndown chart, use case diagram, user stories and documentation required in an agile project. Additionally we also implemented Junit test cases and refactoring.
+We were provided a project description for this and have to ensure our system has CRUD functionality except for update which was written in documentation as the PBI for sprint 2 We are also expected to produce the relevant burndown chart, use case diagram, user stories and documentation required in an agile project. Additionally we also expected to implement Junit test cases and refactoring.
 
 <table>
   <tr>
