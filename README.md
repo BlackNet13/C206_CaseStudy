@@ -70,8 +70,25 @@ The features we needed to implement in sprint 1 includes:<br>
     </td>
     </tr>
   <tr>
-    <td>Login</td> 
+    <td>Login Menu</td> 
     <td>Admin Menu</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td>
+  <img src="https://github.com/BlackNet13/C206_CaseStudy/assets/123053395/95418802-9e1c-4f0a-8f8c-818617b984d9" height ="150"/>
+
+</td>
+    <td>
+      <img src="https://github.com/BlackNet13/C206_CaseStudy/assets/123053395/d0b05b04-da5f-4fa8-ae60-4e88a8d3aaae" height ="150"/>
+
+    </td>
+    </tr>
+  <tr>
+    <td>Teacher Menu</td> 
+    <td>Student Menu</td>
   </tr>
 </table>
 
@@ -80,3 +97,7 @@ The features we needed to implement in sprint 1 includes:<br>
 Java, Eclipse, Github for version control, project cloning and merging.
 
 ## Lessons Learned
+- It was a good idea to establish the flow of the system before beginning a group project, I implemented it through the code itself so that members could see it the first thing they get into the main code body.
+- Discord pinning function works very well to keep our shared files for documentation always available for any team member to access them when needed.
+- Some merge errors when working as a team are better fixed when in person as the error consist of merge being undone or overwriten by some of the undesired code, I believe the difficulty was due to this being our first ever agile project.
+- Junit was tough as when we first implemented the main code, the code was built more for user input and thus when doing up the junit we had to modify the code so that it have a workaround that can work with both the user input and the junit itself.
