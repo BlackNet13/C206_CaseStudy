@@ -112,3 +112,4 @@ Java, Eclipse, Github for version control, project cloning and merging.
 - Discord pinning function works very well to keep our shared files for documentation always available for any team member to access them when needed.
 - Some merge errors when working as a team are better fixed when in person as the error consist of code being undone or overwriten by some of the undesired code, I believe the difficulty was due to this being our first ever agile project.
 - Junit was tough as when we first implemented the main code, the code was built more for user input and thus when doing up the junit we had to modify the code so that it have a workaround that can work with both the user input and the junit itself.
+- Reading other members code and understanding it is very important in order for some parts of the code to work alongside with other parts of the code
